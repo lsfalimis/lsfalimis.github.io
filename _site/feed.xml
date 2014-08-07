@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-08-07T01:11:00+01:00</updated>
+<updated>2014-08-07T02:30:37+01:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>lsfalimis</name>
@@ -2075,8 +2075,7 @@ enlargelimits=upper] &lt;span class=&quot;c&quot;&gt;% extend the axes a bit to 
 
 &lt;p&gt;It’s hatred so I’m not ashamed.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;defaults write com.apple.finder AnimateSnapToGrid -bool false &amp;amp;&amp;amp; defaults write com.apple.finder DisableAllAnimations -bool true &amp;amp;&amp;amp; defaults write com.apple.finder ZoomRects -bool false &amp;amp;&amp;amp; defaults write com.apple.finder AnimateInfoPanes -bool false &amp;amp;&amp;amp; defaults write com.apple.finder QLEnableSlowMotion -bool false &amp;amp;&amp;amp; defaults write com.apple.finder PathBarRootAtHome -bool true &amp;amp;&amp;amp; defaults write com.apple.dock springboard-show-duration -float 0.1 &amp;amp;&amp;amp; defaults write com.apple.dock springboard-hide-duration -float 0 &amp;amp;&amp;amp; defaults write com.apple.dock expose-animation-duration -float 0 &amp;amp;&amp;amp; defaults write com.apple.dock workspaces-edge-delay -float 0 &amp;amp;&amp;amp; defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 &amp;amp;&amp;amp; defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false &amp;amp;&amp;amp; defaults write NSGlobalDomain AppleShowAllExtensions -bool true &amp;amp;&amp;amp; defaults write com.apple.dashboard mcx-disabled -boolean YES &amp;amp;&amp;amp; defaults write com.apple.dock persistent-apps -array-add “{tile-data={}; tile-type=‘spacer-tile’;}” &amp;amp;&amp;amp; killall Dock
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.finder AnimateSnapToGrid -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder DisableAllAnimations -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder ZoomRects -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder AnimateInfoPanes -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder QLEnableSlowMotion -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder PathBarRootAtHome -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock springboard-show-duration -float 0.1 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock springboard-hide-duration -float &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock expose-animation-duration -float &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock workspaces-edge-delay -float &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write NSGlobalDomain AppleShowAllExtensions -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dashboard mcx-disabled -boolean YES &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock persistent-apps -array-add “&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;tile-data&lt;span class=&quot;o&quot;&gt;={}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; tile-type&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;‘spacer-tile’&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;” &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; killall Dock&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;For first-time users:&lt;/strong&gt; meanings see &lt;a href=&quot;#Fuck_Animation_Commands&quot;&gt;Appendix 1&lt;/a&gt;, the last third one is to disable dashboard and the last second one is to add a spacer to divide “kept in Dock” apps and non-“kept in Dock” apps.&lt;/p&gt;
 
@@ -2834,61 +2833,61 @@ enlargelimits=upper] &lt;span class=&quot;c&quot;&gt;% extend the axes a bit to 
 
 &lt;p&gt;disable snap to grid animation&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.finder AnimateSnapToGrid -bool false&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.finder AnimateSnapToGrid -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;disable some animations&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.finder DisableAllAnimations -bool true&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.finder DisableAllAnimations -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;disable opening files zoom animation&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.finder ZoomRects -bool false&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.finder ZoomRects -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;disable animations in Get Info window&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.finder AnimateInfoPanes -bool false&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.finder AnimateInfoPanes -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;disable slow-motion animation when press shift&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.finder QLEnableSlowMotion -bool false&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.finder QLEnableSlowMotion -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;other… make ~ as path bar base location&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.finder PathBarRootAtHome -bool true&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.finder PathBarRootAtHome -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Launchpad&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;speed fade-in&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.dock springboard-show-duration -float 0.1&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.dock springboard-show-duration -float 0.1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;speed fade-out&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.dock springboard-hide-duration -float 0&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.dock springboard-hide-duration -float 0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Mission Control&lt;/p&gt;
 
 &lt;p&gt;speed show and hide animation&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.dock expose-animation-duration -float 0&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.dock expose-animation-duration -float 0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;reduce window drag delay&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write com.apple.dock workspaces-edge-delay -float 0&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.dock workspaces-edge-delay -float 0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Other&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;speed roll out animation of save dialog&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write NSGlobalDomain NSWindowResizeTime -float 0.1&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write NSGlobalDomain NSWindowResizeTime -float 0.1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;speed opening files zoom animation&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;other… show file extension globally&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;defaults write NSGlobalDomain AppleShowAllExtensions -bool true&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write NSGlobalDomain AppleShowAllExtensions -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;appendix-2-custom-search-urls&quot;&gt;Appendix 2 Custom Search URLs&lt;/h2&gt;
 
@@ -2999,11 +2998,7 @@ enlargelimits=upper] &lt;span class=&quot;c&quot;&gt;% extend the axes a bit to 
 
 &lt;p&gt;The first command is to get words using regex:&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;python -c &#39;import sys;import re;print re.findall(r&amp;quot;\b[a-zA-Z]+\b&amp;quot;,sys.argv[1])&#39; &amp;quot;$KMVAR_rein&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python -c &lt;span class=&quot;s1&quot;&gt;&amp;#39;import sys;import re;print re.findall(r&amp;quot;\b[a-zA-Z]+\b&amp;quot;,sys.argv[1])&amp;#39;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$KMVAR_rein&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;-c&lt;/code&gt; allows the following python code running direct in shell. &lt;code&gt;$KMVAR_&lt;/code&gt; is followed by a name of KM macro. I import &lt;code&gt;re&lt;/code&gt; and want to get a list of words returned; I can’t get a list but only one word if I use KM’s regex action. And I set KM to save the printed result as a KM variable, &lt;code&gt;reout&lt;/code&gt;.&lt;/p&gt;
 
@@ -3011,11 +3006,7 @@ enlargelimits=upper] &lt;span class=&quot;c&quot;&gt;% extend the axes a bit to 
 
 &lt;p&gt;The second command is to append a list of strings to a file, creating new lines (with each item in the list in a new line):&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;(echo &amp;quot;lst=$KMVAR_list&amp;quot;;echo &amp;quot;f=open(&#39;$KMVAR_file&#39;,&#39;r+&#39;)&amp;quot;;echo &amp;quot;f.seek(-1,2)&amp;quot;;echo &amp;quot;f.write(&#39;&#39;&#39;\n&#39;&#39;&#39;) if f.read(1) != &#39;&#39;&#39;\n&#39;&#39;&#39; else &#39;&#39;&amp;quot;;echo &amp;quot;f.close()&amp;quot;;echo &amp;quot;f=open(&#39;$KMVAR_file&#39;,&#39;a&#39;)&amp;quot;;echo &amp;quot;for e in lst: f.write(&#39;&#39;&#39;%s\n&#39;&#39;&#39; % e)&amp;quot;;echo &amp;quot;f.close&amp;quot;) | python
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;lst=$KMVAR_list&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;f=open(&amp;#39;$KMVAR_file&amp;#39;,&amp;#39;r+&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;f.seek(-1,2)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;f.write(&amp;#39;&amp;#39;&amp;#39;\n&amp;#39;&amp;#39;&amp;#39;) if f.read(1) != &amp;#39;&amp;#39;&amp;#39;\n&amp;#39;&amp;#39;&amp;#39; else &amp;#39;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;f.close()&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;f=open(&amp;#39;$KMVAR_file&amp;#39;,&amp;#39;a&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;for e in lst: f.write(&amp;#39;&amp;#39;&amp;#39;%s\n&amp;#39;&amp;#39;&amp;#39; % e)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;f.close&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; python&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You can notice that I put &lt;code&gt;$KMVAR_&lt;/code&gt; in the python code rather use it as an argument or parameter passed to python command. I think I can do this because of I use &lt;code&gt;echo&lt;/code&gt; here, anyway I’m not interested to figure it out. Next I need to make sure I append the first item of list in a blank line. However puting lines as a list for example &lt;code&gt;linelist&lt;/code&gt;, and the last two lines of file is &lt;code&gt;second last line\n&lt;/code&gt;. &lt;code&gt;linelist[-1]&lt;/code&gt; will return &lt;code&gt;second last line\n&lt;/code&gt; instead of &lt;code&gt;\n&lt;/code&gt;. So I use &lt;code&gt;read&lt;/code&gt; to tell if the last character is &lt;code&gt;\n&lt;/code&gt;. Before that &lt;code&gt;seek&lt;/code&gt; will move the cursor of &lt;code&gt;find&lt;/code&gt; to a location I want. &lt;code&gt;2&lt;/code&gt; in &lt;code&gt;seek(-1,2)&lt;/code&gt; means from the bottom of the file. After getting know if the last line is empty, I loop the line to write in the file with line break. Because &lt;code&gt;\n&lt;/code&gt; is recognised as a line break in &lt;code&gt;echo&lt;/code&gt; so I have to wrap it with &lt;code&gt;&#39;&#39;&#39;&lt;/code&gt; to make the string to write continued. I tried to write using &lt;code&gt;with open(PATHTOFILE, MODE) as VAR:&lt;/code&gt; but it doesn’t play well with &lt;code&gt;for&lt;/code&gt; loop chunk…&lt;/p&gt;
 
@@ -3023,11 +3014,7 @@ enlargelimits=upper] &lt;span class=&quot;c&quot;&gt;% extend the axes a bit to 
 
 &lt;p&gt;The third command to alphabetise a list of lines in &lt;code&gt;$KMVAR_file&lt;/code&gt; (here it’s &lt;code&gt;/Users/henry/Library/Spelling/LocalDictionary&lt;/code&gt;)&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;(echo &amp;quot;with open(&#39;$KMVAR_file&#39;,&#39;r&#39;) as f: lst = sorted(f)&amp;quot;; echo &amp;quot;with open(&#39;$KMVAR_file&#39;,&#39;w&#39;) as f: f.writelines(lst)&amp;quot;) | python
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;with open(&amp;#39;$KMVAR_file&amp;#39;,&amp;#39;r&amp;#39;) as f: lst = sorted(f)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;with open(&amp;#39;$KMVAR_file&amp;#39;,&amp;#39;w&amp;#39;) as f: f.writelines(lst)&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; python&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Python’s sort command is very handy.&lt;/p&gt;
 
@@ -3131,28 +3118,20 @@ enlargelimits=upper] &lt;span class=&quot;c&quot;&gt;% extend the axes a bit to 
 
 &lt;p&gt;And later I had &lt;code&gt;find * -exec ls -t {} | tail -n1 {} \; -exec mv {} ~ \;&lt;/code&gt; with the following output:&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;find: -exec: no terminating &amp;quot;;&amp;quot; or &amp;quot;+&amp;quot;
-tail: {}: No such file or directory
-tail: ;: No such file or directory
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;find: -exec: no terminating &lt;span class=&quot;s2&quot;&gt;&amp;quot;;&amp;quot;&lt;/span&gt; or &lt;span class=&quot;s2&quot;&gt;&amp;quot;+&amp;quot;&lt;/span&gt;
+tail: &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;: No such file or directory
+tail: &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;: No such file or directory
 tail: -exec: No such file or directory
 tail: mv: No such file or directory
-tail: {}: No such file or directory
-==&amp;gt; /Users/henry &amp;lt;==
-tail: ;: No such file or directory
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+tail: &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;: No such file or &lt;span class=&quot;nv&quot;&gt;directory&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; /Users/henry &amp;lt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;
+tail: &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;: No such file or directory&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;THIS IS CRAZY!!!&lt;/p&gt;
 
 &lt;p&gt;Finally I went back to the method looked down upon by the “professionals”.&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;mv &amp;quot;`ls -t | tail -n1`&amp;quot; /Users/henry/Desktop/B
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mv &lt;span class=&quot;s2&quot;&gt;&amp;quot;`ls -t | tail -n1`&amp;quot;&lt;/span&gt; /Users/henry/Desktop/B&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;where &lt;code&gt;-t&lt;/code&gt; means listing in the descending order (for date and time, it means 2014 is before 2013); &lt;code&gt;tail&lt;/code&gt; to select the last (first/one) item, according to &lt;code&gt;-n1&lt;/code&gt;, of the list; so &lt;code&gt;ls -tr | head -n1&lt;/code&gt;, where &lt;code&gt;-r&lt;/code&gt; means reverse, equals to &lt;code&gt;ls -t | tail -n1&lt;/code&gt;.&lt;/p&gt;
 
@@ -3203,13 +3182,9 @@ tail: ;: No such file or directory
 
 &lt;p&gt;To run an action (actually my scripting journey started from iOS with Drafts which symbolically called a trigger, some codes, a launcher as a action to my understanding, so take it easy), I need to write&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;tell application &amp;quot;APPNAME&amp;quot;
-    SOMECODES
-end tell
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-applescript&quot; data-lang=&quot;applescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;tell&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;application&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;APPNAME&amp;quot;&lt;/span&gt;
+	&lt;span class=&quot;nv&quot;&gt;SOMECODES&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;tell&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;how-to-set-a-file-input&quot;&gt;How to Set a File Input?&lt;/h3&gt;
 
@@ -3217,21 +3192,13 @@ end tell
 
 &lt;p&gt;Note that AS uses HSF path. For me, simply buy a copy of Path Finder and copy HSF path in that app. XtraFinder is free, but for me, Path Finder is expensive and complex and after trying for some time I believe it’s the best alternative to Finder.&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;set theFile to &amp;quot;Macintosh SSD:Users:henry:Desktop:1.py”
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-applescript&quot; data-lang=&quot;applescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theFile&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Macintosh&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;SSD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;henry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Desktop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;py&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;how-to-save-outputs-in-an-external-file&quot;&gt;How to Save Outputs in an External File?&lt;/h3&gt;
 
 &lt;p&gt;This’s useful when the outputs include special characters, such as &lt;code&gt;\&quot;&lt;/code&gt;, and maybe only in the external file, you can have confidence to say that’s the correct outputs you want.&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;do shell script &amp;quot;echo &amp;quot; &amp;amp; VARIABLE &amp;amp; &amp;quot; &amp;gt; ~/Desktop/test.txt&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-applescript&quot; data-lang=&quot;applescript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;do shell script&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;echo &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;VARIABLE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; &amp;gt; ~/Desktop/test.txt&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;group-codes-using-&quot;&gt;Group Codes Using &lt;code&gt;()&lt;/code&gt;&lt;/h3&gt;
 
@@ -3247,15 +3214,11 @@ end tell
 
 &lt;p&gt;Note that name and extension are devided by “.”, and for example the file is &lt;code&gt;1.py&lt;/code&gt;, by &lt;code&gt;set AppleScript&#39;s text item delimiters to &quot;.&quot;&lt;/code&gt;, from left to right, the first &lt;strong&gt;text item&lt;/strong&gt; is &lt;code&gt;1&lt;/code&gt;, the second &lt;strong&gt;text item&lt;/strong&gt; is &lt;code&gt;py&lt;/code&gt;, corresponding, in AS, the value of &lt;code&gt;text item 1&lt;/code&gt; is &lt;code&gt;1&lt;/code&gt; and the value of &lt;code&gt;text item 2&lt;/code&gt; is &lt;code&gt;py&lt;/code&gt;. From right to left, the first text item is marked as &lt;code&gt;-1&lt;/code&gt;. So the value of &lt;code&gt;text item -1&lt;/code&gt; is &lt;code&gt;py&lt;/code&gt; and the value of &lt;code&gt;text item -2&lt;/code&gt; is &lt;code&gt;1&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;set theName to name of (theFile as alias)
-set AppleScript&#39;s text item delimiters to &amp;quot;.&amp;quot;
-if number of text items of theName &amp;gt; 1 then
-    set theName to text items 1 thru -2 of theName
-end if
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-applescript&quot; data-lang=&quot;applescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;theFile&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AppleScript&lt;/span&gt;&amp;#39;s &lt;span class=&quot;no&quot;&gt;text item delimiters&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;thru&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Later I will chain the AS to a Python script and I don’t want another delimiter, so I continue to use “.” and negative text item becomes seemingly more meaningful, because, the number of parameters to pass to the Python script is uncertain.&lt;/p&gt;
 
@@ -3265,26 +3228,18 @@ end if
 
 &lt;h3 id=&quot;pass-a-list-to-python&quot;&gt;Pass A List to Python&lt;/h3&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;set theItems to &amp;quot;&amp;quot;
-repeat with i from 1 to count of theName
-    set theItems to theItems &amp;amp; &amp;quot;\&amp;quot;&amp;quot; &amp;amp; ((item i of theName) as text) &amp;amp; &amp;quot;\&amp;quot;&amp;quot; &amp;amp; &amp;quot;,&amp;quot;
-end repeat
-set theItems to text 1 thru -2 of theItems
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-applescript&quot; data-lang=&quot;applescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;repeat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;\&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as &lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;\&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;,&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;repeat&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;thru&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Here &lt;code&gt;&quot;\&quot;&quot;&lt;/code&gt; means character &lt;code&gt;&quot;&lt;/code&gt;, and for example &lt;code&gt;theName&lt;/code&gt; is &lt;code&gt;a.b&lt;/code&gt;, then the final value of &lt;code&gt;theItems&lt;/code&gt; is &lt;code&gt;&quot;a&quot;,&quot;b&quot;&lt;/code&gt;. I already have curly brackets ready in the Python script, so it will finally become &lt;code&gt;{&quot;a&quot;,&quot;b&quot;}&lt;/code&gt;, which is a list type data in Python.&lt;/p&gt;
 
 &lt;h4 id=&quot;pass-a-workable-file-path-to-a-python-script-in-as&quot;&gt;Pass a Workable File Path to a Python Script in AS&lt;/h4&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;set thePath to POSIX path of theFile
-do shell script &amp;quot;python /PATH/TO/THE/PYTHON/SCRIPT&amp;quot; &amp;amp; theItems &amp;amp; &amp;quot; &amp;quot; &amp;amp; quoted form of thePath
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-applescript&quot; data-lang=&quot;applescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;thePath&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;POSIX&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theFile&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;do shell script&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;python /PATH/TO/THE/PYTHON/SCRIPT&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;quoted form&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;thePath&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;At last, don’t forget put &lt;code&gt;end tell&lt;/code&gt; at the end of the AS.&lt;/p&gt;
 
@@ -3292,29 +3247,25 @@ do shell script &amp;quot;python /PATH/TO/THE/PYTHON/SCRIPT&amp;quot; &amp;amp; 
 
 &lt;p&gt;The final AS is&lt;/p&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;tell application &amp;quot;Finder&amp;quot;
-    
-    set theName to name of (theFile as alias)
-    set AppleScript&#39;s text item delimiters to &amp;quot;.&amp;quot;
-    if number of text items of theName &amp;gt; 1 then
-        set theName to text items 1 thru -2 of theName
-    end if
-    
-    set theItems to &amp;quot;&amp;quot;
-    repeat with i from 1 to count of theName
-        set theItems to theItems &amp;amp; &amp;quot;\&amp;quot;&amp;quot; &amp;amp; ((item i of theName) as text) &amp;amp; &amp;quot;\&amp;quot;&amp;quot; &amp;amp; &amp;quot;,&amp;quot;
-    end repeat
-    set theItems to text 1 thru -2 of theItems
-    
-    set thePath to POSIX path of theFile
-    
-    do shell script &amp;quot;python /PATH/TO/THE/PYTHON/SCRIPT&amp;quot; &amp;amp; theItems &amp;amp; &amp;quot; &amp;quot; &amp;amp; quoted form of thePath
-    
-end tell
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-applescript&quot; data-lang=&quot;applescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;tell&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;application&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Finder&amp;quot;&lt;/span&gt;
+	
+	&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;theFile&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AppleScript&lt;/span&gt;&amp;#39;s &lt;span class=&quot;no&quot;&gt;text item delimiters&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;thru&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;
+	
+	&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;repeat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;\&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as &lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;\&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;,&amp;quot;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;repeat&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;thru&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt;
+	
+	&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;thePath&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;POSIX&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theFile&lt;/span&gt;
+	
+	&lt;span class=&quot;nb&quot;&gt;do shell script&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;python /PATH/TO/THE/PYTHON/SCRIPT&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;quoted form&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;thePath&lt;/span&gt;
+	
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;tell&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/applescript-python-passing-filename/&quot;&gt;AppleScript-Python Passing Filename&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 29, 2014.&lt;/p&gt;</content>
@@ -3868,11 +3819,7 @@ end tell
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;mkdir ~/Dropbox/giti/ &amp;amp;&amp;amp; mkdir ~/Dropbox/giti/Qian-iOS-Log/ &amp;amp;&amp;amp; cd ~/Dropbox/giti/Qian-iOS-Log/ &amp;amp;&amp;amp; touch iPod-touch.md &amp;amp;&amp;amp; git init
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir ~/Dropbox/giti/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mkdir ~/Dropbox/giti/Qian-iOS-Log/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Dropbox/giti/Qian-iOS-Log/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; touch iPod-touch.md &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;On iOS:
@@ -3902,8 +3849,7 @@ end tell
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;drafts://x-callback-url/import_action?type=dropbox&amp;amp;name=logss&amp;amp;path=%2Fgiti%2FQian-iOS-Log%2F&amp;amp;filenametype=2&amp;amp;filename=iPod-touch&amp;amp;ext=md&amp;amp;writetype=2&amp;amp;template=%5B%5Bdraft%5D%5D
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;drafts://x-callback-url/import_action?type=dropbox&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;name=logss&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;path=%2Fgiti%2FQian-iOS-Log%2F&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;filenametype=2&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;filename=iPod-touch&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;ext=md&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;writetype=2&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;template=%5B%5Bdraft%5D%5D&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;On iOS:
@@ -3961,64 +3907,60 @@ end tell
   &lt;p&gt;I noted it as &lt;code&gt;xcode-select –install&lt;/code&gt;, but some say &lt;code&gt;sudo xcode-select –install&lt;/code&gt;, anyway, just type &lt;code&gt;git&lt;/code&gt; and choose Install. I mean for a new Mac.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
-  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;# Install command line developer tools
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Install command line developer tools&lt;/span&gt;
 git
-# choose Install
+&lt;span class=&quot;c&quot;&gt;# choose Install&lt;/span&gt;
     
-# Install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh
-curl -L http://install.ohmyz.sh | sh
+&lt;span class=&quot;c&quot;&gt;# Install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh&lt;/span&gt;
+curl -L http://install.ohmyz.sh &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; sh
 
-# Install Homebrew http://brew.sh/#install
-ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot;
+&lt;span class=&quot;c&quot;&gt;# Install Homebrew http://brew.sh/#install&lt;/span&gt;
+ruby -e &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot;&lt;/span&gt;
 
-# You need Homebrew to solve &#39;Requirements installation failed with status:
-#  1&#39; error when installing rvm, and you will need rvm to solve some error
-#  about ruby (I didn&#39;t jot it down at that time) when installing Jekyll
+&lt;span class=&quot;c&quot;&gt;# You need Homebrew to solve &amp;#39;Requirements installation failed with status:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#  1&amp;#39; error when installing rvm, and you will need rvm to solve some error&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#  about ruby (I didn&amp;#39;t jot it down at that time) when installing Jekyll&lt;/span&gt;
 
-# Install rvm http://rvm.io/rvm/install
+&lt;span class=&quot;c&quot;&gt;# Install rvm http://rvm.io/rvm/install&lt;/span&gt;
 
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
+&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;url -sSL https://get.rvm.io &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; bash -s stable --ruby
 
-# error
-# /Users/henry/.zshrc:57:export PATH=&amp;quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&amp;quot;
-#
-# * WARNING: Above files contains `PATH=` with no `$PATH` inside, this can break RVM,
-# for details check
-# https://github.com/wayneeseguin/rvm/issues/1351#issuecomment-10939525
-# to avoid this warning append #PATH.
-#
-# I should simply edit line 57 of .zshrc; before that, add subl to $PATH;
-#  vim is too hard for a dummy ass.
-# Create a symbolic link (instead of a hard link) by using ln -s
+&lt;span class=&quot;c&quot;&gt;# error&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# /Users/henry/.zshrc:57:export PATH=&amp;quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# * WARNING: Above files contains `PATH=` with no `$PATH` inside, this can break RVM,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# for details check&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# https://github.com/wayneeseguin/rvm/issues/1351#issuecomment-10939525&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# to avoid this warning append #PATH.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# I should simply edit line 57 of .zshrc; before that, add subl to $PATH;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#  vim is too hard for a dummy ass.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Create a symbolic link (instead of a hard link) by using ln -s&lt;/span&gt;
 
-ln -s &amp;quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;quot; ~/bin/subl
+ln -s &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;quot;&lt;/span&gt; ~/bin/subl
 vim .zshrc
 
-# Press i and go to the edit mode, and then paste:
-#  export PATH=$PATH:$HOME/bin
-# And it sets up subl
-# Press : and type in wq↩ which will save and quit vim.
-# Ok, I will not touch vim again.
-# However to save time, I can choose replace line 57
-#   export PATH=&amp;quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&amp;quot;
-#  with:
-#   export PATH=&amp;quot;$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/.rvm/bin&amp;quot;
-# Actually, &#39;export PATH=&amp;quot;$PATH:$HOME/.rvm/bin&amp;quot; # Add RVM to PATH for scripting&#39;
-#  has been added in the last line. We can choose to delete the last line.
+&lt;span class=&quot;c&quot;&gt;# Press i and go to the edit mode, and then paste:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#  export PATH=$PATH:$HOME/bin&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# And it sets up subl&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Press : and type in wq↩ which will save and quit vim.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Ok, I will not touch vim again.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# However to save time, I can choose replace line 57&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#   export PATH=&amp;quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#  with:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#   export PATH=&amp;quot;$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/.rvm/bin&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Actually, &amp;#39;export PATH=&amp;quot;$PATH:$HOME/.rvm/bin&amp;quot; # Add RVM to PATH for scripting&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#  has been added in the last line. We can choose to delete the last line.&lt;/span&gt;
 
-# Install jekyll
+&lt;span class=&quot;c&quot;&gt;# Install jekyll&lt;/span&gt;
 sudo gem install jekyll
 
-# I cannot figure out git clone in CLI so I wisely choose GitHub GUI Mac app
-#  to clone my git to the new OS X.
+&lt;span class=&quot;c&quot;&gt;# I cannot figure out git clone in CLI so I wisely choose GitHub GUI Mac app&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#  to clone my git to the new OS X.&lt;/span&gt;
 
-# cd to the path and type in
-rake post title=&amp;quot;POST TITLE&amp;quot;
-# Happy Blogging!
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;span class=&quot;c&quot;&gt;# cd to the path and type in&lt;/span&gt;
+rake post &lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;POST TITLE&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Happy Blogging!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Update:
 I remember…&lt;/p&gt;

@@ -35,9 +35,9 @@ It's mainly three python scripts. Of course I can put them in just one script, b
 
 The first command is to get words using regex:
 
-~~~ bash
+{% highlight bash %}
 python -c 'import sys;import re;print re.findall(r"\b[a-zA-Z]+\b",sys.argv[1])' "$KMVAR_rein"
-~~~
+{% endhighlight %}
 
 `-c` allows the following python code running direct in shell. `$KMVAR_` is followed by a name of KM macro. I import `re` and want to get a list of words returned; I can't get a list but only one word if I use KM's regex action. And I set KM to save the printed result as a KM variable, `reout`.
 
@@ -45,9 +45,9 @@ python -c 'import sys;import re;print re.findall(r"\b[a-zA-Z]+\b",sys.argv[1])' 
 
 The second command is to append a list of strings to a file, creating new lines (with each item in the list in a new line):
 
-~~~ bash
+{% highlight bash %}
 (echo "lst=$KMVAR_list";echo "f=open('$KMVAR_file','r+')";echo "f.seek(-1,2)";echo "f.write('''\n''') if f.read(1) != '''\n''' else ''";echo "f.close()";echo "f=open('$KMVAR_file','a')";echo "for e in lst: f.write('''%s\n''' % e)";echo "f.close") | python
-~~~
+{% endhighlight %}
 
 You can notice that I put `$KMVAR_` in the python code rather use it as an argument or parameter passed to python command. I think I can do this because of I use `echo` here, anyway I'm not interested to figure it out. Next I need to make sure I append the first item of list in a blank line. However puting lines as a list for example `linelist`, and the last two lines of file is `second last line\n`. `linelist[-1]` will return `second last line\n` instead of `\n`. So I use `read` to tell if the last character is `\n`. Before that `seek` will move the cursor of `find` to a location I want. `2` in `seek(-1,2)` means from the bottom of the file. After getting know if the last line is empty, I loop the line to write in the file with line break. Because `\n` is recognised as a line break in `echo` so I have to wrap it with `'''` to make the string to write continued. I tried to write using `with open(PATHTOFILE, MODE) as VAR:` but it doesn't play well with `for` loop chunk...
 
@@ -55,9 +55,9 @@ You can notice that I put `$KMVAR_` in the python code rather use it as an argum
 
 The third command to alphabetise a list of lines in `$KMVAR_file` (here it's `/Users/henry/Library/Spelling/LocalDictionary`)
 
-~~~ bash
+{% highlight bash %}
 (echo "with open('$KMVAR_file','r') as f: lst = sorted(f)"; echo "with open('$KMVAR_file','w') as f: f.writelines(lst)") | python
-~~~
+{% endhighlight %}
 
 Python's sort command is very handy.
 
@@ -107,22 +107,4 @@ This part is about the type of KM macros, KM taxonomy, Mac action taxonomy, or s
 5. **Pastes processed texts.** The processing can be replacing text, capitalisation, title case, lowercase, uppercase, percent encode of URL, cutting kinds of path (file path and URL), regex filter, list split, list joining.
 
 6. **Workflow expanded.** You can gather and pool fragmented unconscious moves on Mac whether it happens on desktop app or browser, you make a target for the computer, you streamline the pieces and ditch irrelevant waste of attention, and you are able to make a purpose for yourself; because right now you can have the computer listening to you, thought you are not mastering the machine; you can see the machine more clear, so yourself. You free the less meaningless in exchange for the space for the more meaningful. It's an evolution.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

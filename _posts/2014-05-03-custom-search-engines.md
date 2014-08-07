@@ -24,12 +24,12 @@ z     | Zhihu                   | `http://www.zhihu.com/search?q=%s&type=questio
 
 Snippet 1
 
-~~~ javascript
+{% highlight javascript %}
 javascript:location=‘http://www.google.com/search?num=100&q=site:'%20+%20escape(location.hostname)%20+%20'%20%S'%20;%20void%200
-~~~
+{% endhighlight %}
 
 Snippet 2
 
-~~~
+{% highlight html %}
 https://www.google.co.uk/#q=on+the+App+Store+on+iTunes+%s&btnI
-~~~
+{% endhighlight %}

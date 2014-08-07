@@ -10,7 +10,7 @@ share: true
 
 ⌘, then add `"open_files_in_new_window": false` so it looks like
 
-~~~ javascript
+{% highlight javascript %}
 {
 	"ignored_packages":
 	[
@@ -18,6 +18,6 @@ share: true
 	],
 	"open_files_in_new_window": false
 }
-~~~
+{% endhighlight %}
 
 But it needs the cursor in the URL.

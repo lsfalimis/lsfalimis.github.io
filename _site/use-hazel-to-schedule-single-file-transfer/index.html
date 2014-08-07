@@ -120,28 +120,20 @@
 
 <p>And later I had <code>find * -exec ls -t {} | tail -n1 {} \; -exec mv {} ~ \;</code> with the following output:</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>find: -exec: no terminating &quot;;&quot; or &quot;+&quot;
-tail: {}: No such file or directory
-tail: ;: No such file or directory
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">find: -exec: no terminating <span class="s2">&quot;;&quot;</span> or <span class="s2">&quot;+&quot;</span>
+tail: <span class="o">{}</span>: No such file or directory
+tail: <span class="p">;</span>: No such file or directory
 tail: -exec: No such file or directory
 tail: mv: No such file or directory
-tail: {}: No such file or directory
-==&gt; /Users/henry &lt;==
-tail: ;: No such file or directory
-</pre></div>
-</div>
-</div>
+tail: <span class="o">{}</span>: No such file or <span class="nv">directory</span>
+<span class="o">==</span>&gt; /Users/henry &lt;<span class="o">==</span>
+tail: <span class="p">;</span>: No such file or directory</code></pre></div>
 
 <p>THIS IS CRAZY!!!</p>
 
 <p>Finally I went back to the method looked down upon by the “professionals”.</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>mv &quot;`ls -t | tail -n1`&quot; /Users/henry/Desktop/B
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">mv <span class="s2">&quot;`ls -t | tail -n1`&quot;</span> /Users/henry/Desktop/B</code></pre></div>
 
 <p>where <code>-t</code> means listing in the descending order (for date and time, it means 2014 is before 2013); <code>tail</code> to select the last (first/one) item, according to <code>-n1</code>, of the list; so <code>ls -tr | head -n1</code>, where <code>-r</code> means reverse, equals to <code>ls -t | tail -n1</code>.</p>
 

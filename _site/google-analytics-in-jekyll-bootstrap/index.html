@@ -97,7 +97,7 @@
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
           
-          1 min. read
+          2 min. read
           
         </p><!-- /.entry-reading-time -->
         
@@ -113,16 +113,10 @@
 <ul>
   <li>Create a new repository <a href="https://github.com/new">here</a>, fill in Repository name with <code>GITHUBID.github.io</code>, and click <strong>Create repository</strong> button</li>
   <li>Download zip file of Jekyll Bootstrap from <a href="https://github.com/plusjade/jekyll-bootstrap/">here</a> <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></li>
-  <li>The blog should be able to be opened on <a href="http://GITHUBID.github.io/">http://GITHUBID.github.io/</a> after running</li>
+  <li>The blog should be able to be opened on <a href="http://GITHUBID.github.io/">http://GITHUBID.github.io/</a> after running the code <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></li>
 </ul>
 
-<p>the code <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre>mv jekyll-bootstrap-master.zip /path// &amp;&amp; cd /path/ &amp;&amp; unzip jekyll-bootstrap-master.zip &amp;&amp; mv jekyll-bootstrap-master GITHUBID.github.io &amp;&amp; cd GITHUBID.github.io &amp;&amp; git init &amp;&amp; jekyll build &amp;&amp; git add . &amp;&amp; git commit -m &quot;first commit&quot; &amp;&amp; git remote add origin https://github.com/GITHUBID/GITHUBID.github.io.git &amp;&amp; git push -u origin master
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">mv jekyll-bootstrap-master.zip /path// <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /path/ <span class="o">&amp;&amp;</span> unzip jekyll-bootstrap-master.zip <span class="o">&amp;&amp;</span> mv jekyll-bootstrap-master GITHUBID.github.io <span class="o">&amp;&amp;</span> <span class="nb">cd </span>GITHUBID.github.io <span class="o">&amp;&amp;</span> git init <span class="o">&amp;&amp;</span> jekyll build <span class="o">&amp;&amp;</span> git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;first commit&quot;</span> <span class="o">&amp;&amp;</span> git remote add origin https://github.com/GITHUBID/GITHUBID.github.io.git <span class="o">&amp;&amp;</span> git push -u origin master</code></pre></div>
 
 <ul>
   <li>Create a Google Analytics account by clicking <strong>Access Google Analytics</strong> button</li>
@@ -130,33 +124,25 @@
   <li>Create google_analytics.html under <code>_includes/</code> with the content</li>
 </ul>
 
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="tag">&lt;script&gt;</span>
-<span class="inline">  (<span class="keyword">function</span>(i,s,o,g,r,a,m){i[<span class="string"><span class="delimiter">'</span><span class="content">GoogleAnalyticsObject</span><span class="delimiter">'</span></span>]=r;i[r]=i[r]||<span class="keyword">function</span>(){
-  (i[r].q=i[r].q||[]).push(<span class="local-variable">arguments</span>)},i[r].l=<span class="integer">1</span>*<span class="keyword">new</span> Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[<span class="integer">0</span>];a.async=<span class="integer">1</span>;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,<span class="string"><span class="delimiter">'</span><span class="content">script</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">//www.google-analytics.com/analytics.js</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">ga</span><span class="delimiter">'</span></span>);    
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+  <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">s</span><span class="p">,</span><span class="nx">o</span><span class="p">,</span><span class="nx">g</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="nx">a</span><span class="p">,</span><span class="nx">m</span><span class="p">){</span><span class="nx">i</span><span class="p">[</span><span class="s1">&#39;GoogleAnalyticsObject&#39;</span><span class="p">]</span><span class="o">=</span><span class="nx">r</span><span class="p">;</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">]</span><span class="o">=</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">]</span><span class="o">||</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="p">(</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">].</span><span class="nx">q</span><span class="o">=</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">].</span><span class="nx">q</span><span class="o">||</span><span class="p">[]).</span><span class="nx">push</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)},</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">].</span><span class="nx">l</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="k">new</span> <span class="nb">Date</span><span class="p">();</span><span class="nx">a</span><span class="o">=</span><span class="nx">s</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">o</span><span class="p">),</span>
+  <span class="nx">m</span><span class="o">=</span><span class="nx">s</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">o</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span><span class="nx">a</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="nx">g</span><span class="p">;</span><span class="nx">m</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">m</span><span class="p">)</span>
+  <span class="p">})(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;script&#39;</span><span class="p">,</span><span class="s1">&#39;//www.google-analytics.com/analytics.js&#39;</span><span class="p">,</span><span class="s1">&#39;ga&#39;</span><span class="p">);</span>    
 
-  ga(<span class="string"><span class="delimiter">'</span><span class="content">create</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">TRACKID</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">GITHUBID.github.io</span><span class="delimiter">'</span></span>);
-  ga(<span class="string"><span class="delimiter">'</span><span class="content">require</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">displayfeatures</span><span class="delimiter">'</span></span>);
-  ga(<span class="string"><span class="delimiter">'</span><span class="content">require</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">linkid</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">linkid.js</span><span class="delimiter">'</span></span>);
-  ga(<span class="string"><span class="delimiter">'</span><span class="content">send</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">pageview</span><span class="delimiter">'</span></span>);    </span>
+  <span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">,</span> <span class="s1">&#39;TRACKID&#39;</span><span class="p">,</span> <span class="s1">&#39;GITHUBID.github.io&#39;</span><span class="p">);</span>
+  <span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;require&#39;</span><span class="p">,</span> <span class="s1">&#39;displayfeatures&#39;</span><span class="p">);</span>
+  <span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;require&#39;</span><span class="p">,</span> <span class="s1">&#39;linkid&#39;</span><span class="p">,</span> <span class="s1">&#39;linkid.js&#39;</span><span class="p">);</span>
+  <span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span> <span class="s1">&#39;pageview&#39;</span><span class="p">);</span>    
 
-<span class="tag">&lt;/script&gt;</span>
-</pre></div>
-</div>
-</div>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
 <ul>
   <li>Open <code>_includes/themes/twitter/default.html</code> and change <code>include JB/analytics</code> to <code>include google_analytics.html</code></li>
   <li>Run the code under the folder <code>GITHUBID.github.io</code></li>
 </ul>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>jekyll build &amp;&amp; git add . &amp;&amp; git commit -m &quot;commit&quot; &amp;&amp; git push -u origin master
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll build <span class="o">&amp;&amp;</span> git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;commit&quot;</span> <span class="o">&amp;&amp;</span> git push -u origin master</code></pre></div>
 
 <p>I also delete some other files but the above steps should be enough to get Google Analytics to work.</p>
 

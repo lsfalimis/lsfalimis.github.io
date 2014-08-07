@@ -24,7 +24,7 @@ After googling, I came up with `gfind * -printf '%p\n' | sort | head -n1` with o
 
 And later I had `find * -exec ls -t {} | tail -n1 {} \; -exec mv {} ~ \;` with the following output:
 
-~~~ bash
+{% highlight bash %}
 find: -exec: no terminating ";" or "+"
 tail: {}: No such file or directory
 tail: ;: No such file or directory
@@ -33,15 +33,15 @@ tail: mv: No such file or directory
 tail: {}: No such file or directory
 ==> /Users/henry <==
 tail: ;: No such file or directory
-~~~
+{% endhighlight %}
 
 THIS IS CRAZY!!!
 
 Finally I went back to the method looked down upon by the "professionals".
 
-~~~ bash
+{% highlight bash %}
 mv "`ls -t | tail -n1`" /Users/henry/Desktop/B
-~~~
+{% endhighlight %}
 
 where `-t` means listing in the descending order (for date and time, it means 2014 is before 2013); `tail` to select the last (first/one) item, according to `-n1`, of the list; so `ls -tr | head -n1`, where `-r` means reverse, equals to `ls -t | tail -n1`.
 

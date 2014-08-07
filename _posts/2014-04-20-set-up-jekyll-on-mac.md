@@ -20,27 +20,27 @@ The guide is only for Mac OS X Mavericks and most of the blog posts will be the 
 
 - Download your repository. Open Terminal and `cd` to the directory you want your blog stay.
 
-~~~ bash
+{% highlight bash %}
 git clone https://github.com/yourGitHubUsername/yourGitHubUsername.github.io.git
-~~~
+{% endhighlight %}
 
 - Install Jekyll.
 
-~~~ bash
+{% highlight bash %}
 xcode-select --install # click Install
 \curl -L https://get.rvm.io | bash -s stable --ruby
 sudo gem install jekyll # Type your system login password and enter
-~~~
+{% endhighlight %}
 
 - Use Jekyll to produce a new blog.
 
-~~~ bash
+{% highlight bash %}
 jekyll new blog
 mv blog/* yourGitHubUsername.github.io.git
 cd yourGitHubUsername.github.io.git
 jekyll build
 jekyll serve
-~~~
+{% endhighlight %}
 
 - Open your browser, type in <http://localhost:4000/> and if you see the webpage, that means so far all is right. End `jekyll serve` by `⌃C`.
 

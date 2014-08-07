@@ -97,7 +97,7 @@
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
           
-          4 min. read
+          5 min. read
           
         </p><!-- /.entry-reading-time -->
         
@@ -135,13 +135,9 @@
 
 <p>To run an action (actually my scripting journey started from iOS with Drafts which symbolically called a trigger, some codes, a launcher as a action to my understanding, so take it easy), I need to write</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>tell application &quot;APPNAME&quot;
-    SOMECODES
-end tell
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;APPNAME&quot;</span>
+	<span class="nv">SOMECODES</span>
+<span class="k">end</span> <span class="k">tell</span></code></pre></div>
 
 <h3 id="how-to-set-a-file-input">How to Set a File Input?</h3>
 
@@ -149,21 +145,13 @@ end tell
 
 <p>Note that AS uses HSF path. For me, simply buy a copy of Path Finder and copy HSF path in that app. XtraFinder is free, but for me, Path Finder is expensive and complex and after trying for some time I believe it’s the best alternative to Finder.</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>set theFile to &quot;Macintosh SSD:Users:henry:Desktop:1.py”
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">set</span> <span class="nv">theFile</span> <span class="k">to</span> <span class="err">&quot;</span><span class="nv">Macintosh</span> <span class="nv">SSD</span><span class="p">:</span><span class="nv">Users</span><span class="p">:</span><span class="nv">henry</span><span class="p">:</span><span class="nv">Desktop</span><span class="p">:</span><span class="mf">1.</span><span class="nv">py</span><span class="err">”</span></code></pre></div>
 
 <h3 id="how-to-save-outputs-in-an-external-file">How to Save Outputs in an External File?</h3>
 
 <p>This’s useful when the outputs include special characters, such as <code>\"</code>, and maybe only in the external file, you can have confidence to say that’s the correct outputs you want.</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>do shell script &quot;echo &quot; &amp; VARIABLE &amp; &quot; &gt; ~/Desktop/test.txt&quot;
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="nb">do shell script</span> <span class="s2">&quot;echo &quot;</span> <span class="o">&amp;</span> <span class="nv">VARIABLE</span> <span class="o">&amp;</span> <span class="s2">&quot; &gt; ~/Desktop/test.txt&quot;</span></code></pre></div>
 
 <h3 id="group-codes-using-">Group Codes Using <code>()</code></h3>
 
@@ -179,15 +167,11 @@ end tell
 
 <p>Note that name and extension are devided by “.”, and for example the file is <code>1.py</code>, by <code>set AppleScript's text item delimiters to "."</code>, from left to right, the first <strong>text item</strong> is <code>1</code>, the second <strong>text item</strong> is <code>py</code>, corresponding, in AS, the value of <code>text item 1</code> is <code>1</code> and the value of <code>text item 2</code> is <code>py</code>. From right to left, the first text item is marked as <code>-1</code>. So the value of <code>text item -1</code> is <code>py</code> and the value of <code>text item -2</code> is <code>1</code>.</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>set theName to name of (theFile as alias)
-set AppleScript's text item delimiters to &quot;.&quot;
-if number of text items of theName &gt; 1 then
-    set theName to text items 1 thru -2 of theName
-end if
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">set</span> <span class="nv">theName</span> <span class="k">to</span> <span class="na">name</span> <span class="k">of</span> <span class="p">(</span><span class="nv">theFile</span> <span class="k">as</span> <span class="nv">alias</span><span class="p">)</span>
+<span class="k">set</span> <span class="no">AppleScript</span>&#39;s <span class="no">text item delimiters</span> <span class="k">to</span> <span class="s2">&quot;.&quot;</span>
+<span class="k">if</span> <span class="nv">number</span> <span class="k">of</span> <span class="nb">text</span> <span class="nb">items</span> <span class="k">of</span> <span class="nv">theName</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">then</span>
+	<span class="k">set</span> <span class="nv">theName</span> <span class="k">to</span> <span class="nb">text</span> <span class="nb">items</span> <span class="mi">1</span> <span class="nb">thru</span> <span class="o">-</span><span class="mi">2</span> <span class="k">of</span> <span class="nv">theName</span>
+<span class="k">end</span> <span class="k">if</span></code></pre></div>
 
 <p>Later I will chain the AS to a Python script and I don’t want another delimiter, so I continue to use “.” and negative text item becomes seemingly more meaningful, because, the number of parameters to pass to the Python script is uncertain.</p>
 
@@ -197,26 +181,18 @@ end if
 
 <h3 id="pass-a-list-to-python">Pass A List to Python</h3>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>set theItems to &quot;&quot;
-repeat with i from 1 to count of theName
-    set theItems to theItems &amp; &quot;\&quot;&quot; &amp; ((item i of theName) as text) &amp; &quot;\&quot;&quot; &amp; &quot;,&quot;
-end repeat
-set theItems to text 1 thru -2 of theItems
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">set</span> <span class="nv">theItems</span> <span class="k">to</span> <span class="s2">&quot;&quot;</span>
+<span class="k">repeat</span> <span class="nv">with</span> <span class="nv">i</span> <span class="k">from</span> <span class="mi">1</span> <span class="k">to</span> <span class="nb">count</span> <span class="k">of</span> <span class="nv">theName</span>
+	<span class="k">set</span> <span class="nv">theItems</span> <span class="k">to</span> <span class="nv">theItems</span> <span class="o">&amp;</span> <span class="s2">&quot;\&quot;&quot;</span> <span class="o">&amp;</span> <span class="p">((</span><span class="nb">item</span> <span class="nv">i</span> <span class="k">of</span> <span class="nv">theName</span><span class="p">)</span> <span class="k">as </span><span class="nc">text</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s2">&quot;\&quot;&quot;</span> <span class="o">&amp;</span> <span class="s2">&quot;,&quot;</span>
+<span class="k">end</span> <span class="k">repeat</span>
+<span class="k">set</span> <span class="nv">theItems</span> <span class="k">to</span> <span class="nb">text</span> <span class="mi">1</span> <span class="nb">thru</span> <span class="o">-</span><span class="mi">2</span> <span class="k">of</span> <span class="nv">theItems</span></code></pre></div>
 
 <p>Here <code>"\""</code> means character <code>"</code>, and for example <code>theName</code> is <code>a.b</code>, then the final value of <code>theItems</code> is <code>"a","b"</code>. I already have curly brackets ready in the Python script, so it will finally become <code>{"a","b"}</code>, which is a list type data in Python.</p>
 
 <h4 id="pass-a-workable-file-path-to-a-python-script-in-as">Pass a Workable File Path to a Python Script in AS</h4>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>set thePath to POSIX path of theFile
-do shell script &quot;python /PATH/TO/THE/PYTHON/SCRIPT&quot; &amp; theItems &amp; &quot; &quot; &amp; quoted form of thePath
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">set</span> <span class="nv">thePath</span> <span class="k">to</span> <span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="nv">theFile</span>
+<span class="nb">do shell script</span> <span class="s2">&quot;python /PATH/TO/THE/PYTHON/SCRIPT&quot;</span> <span class="o">&amp;</span> <span class="nv">theItems</span> <span class="o">&amp;</span> <span class="s2">&quot; &quot;</span> <span class="o">&amp;</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="nv">thePath</span></code></pre></div>
 
 <p>At last, don’t forget put <code>end tell</code> at the end of the AS.</p>
 
@@ -224,29 +200,25 @@ do shell script &quot;python /PATH/TO/THE/PYTHON/SCRIPT&quot; &amp; theItems &am
 
 <p>The final AS is</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>tell application &quot;Finder&quot;
-    
-    set theName to name of (theFile as alias)
-    set AppleScript's text item delimiters to &quot;.&quot;
-    if number of text items of theName &gt; 1 then
-        set theName to text items 1 thru -2 of theName
-    end if
-    
-    set theItems to &quot;&quot;
-    repeat with i from 1 to count of theName
-        set theItems to theItems &amp; &quot;\&quot;&quot; &amp; ((item i of theName) as text) &amp; &quot;\&quot;&quot; &amp; &quot;,&quot;
-    end repeat
-    set theItems to text 1 thru -2 of theItems
-    
-    set thePath to POSIX path of theFile
-    
-    do shell script &quot;python /PATH/TO/THE/PYTHON/SCRIPT&quot; &amp; theItems &amp; &quot; &quot; &amp; quoted form of thePath
-    
-end tell
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Finder&quot;</span>
+	
+	<span class="k">set</span> <span class="nv">theName</span> <span class="k">to</span> <span class="na">name</span> <span class="k">of</span> <span class="p">(</span><span class="nv">theFile</span> <span class="k">as</span> <span class="nv">alias</span><span class="p">)</span>
+	<span class="k">set</span> <span class="no">AppleScript</span>&#39;s <span class="no">text item delimiters</span> <span class="k">to</span> <span class="s2">&quot;.&quot;</span>
+	<span class="k">if</span> <span class="nv">number</span> <span class="k">of</span> <span class="nb">text</span> <span class="nb">items</span> <span class="k">of</span> <span class="nv">theName</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">then</span>
+		<span class="k">set</span> <span class="nv">theName</span> <span class="k">to</span> <span class="nb">text</span> <span class="nb">items</span> <span class="mi">1</span> <span class="nb">thru</span> <span class="o">-</span><span class="mi">2</span> <span class="k">of</span> <span class="nv">theName</span>
+	<span class="k">end</span> <span class="k">if</span>
+	
+	<span class="k">set</span> <span class="nv">theItems</span> <span class="k">to</span> <span class="s2">&quot;&quot;</span>
+	<span class="k">repeat</span> <span class="nv">with</span> <span class="nv">i</span> <span class="k">from</span> <span class="mi">1</span> <span class="k">to</span> <span class="nb">count</span> <span class="k">of</span> <span class="nv">theName</span>
+		<span class="k">set</span> <span class="nv">theItems</span> <span class="k">to</span> <span class="nv">theItems</span> <span class="o">&amp;</span> <span class="s2">&quot;\&quot;&quot;</span> <span class="o">&amp;</span> <span class="p">((</span><span class="nb">item</span> <span class="nv">i</span> <span class="k">of</span> <span class="nv">theName</span><span class="p">)</span> <span class="k">as </span><span class="nc">text</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s2">&quot;\&quot;&quot;</span> <span class="o">&amp;</span> <span class="s2">&quot;,&quot;</span>
+	<span class="k">end</span> <span class="k">repeat</span>
+	<span class="k">set</span> <span class="nv">theItems</span> <span class="k">to</span> <span class="nb">text</span> <span class="mi">1</span> <span class="nb">thru</span> <span class="o">-</span><span class="mi">2</span> <span class="k">of</span> <span class="nv">theItems</span>
+	
+	<span class="k">set</span> <span class="nv">thePath</span> <span class="k">to</span> <span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="nv">theFile</span>
+	
+	<span class="nb">do shell script</span> <span class="s2">&quot;python /PATH/TO/THE/PYTHON/SCRIPT&quot;</span> <span class="o">&amp;</span> <span class="nv">theItems</span> <span class="o">&amp;</span> <span class="s2">&quot; &quot;</span> <span class="o">&amp;</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="nv">thePath</span>
+	
+<span class="k">end</span> <span class="k">tell</span></code></pre></div>
 
 
       <footer class="entry-meta">

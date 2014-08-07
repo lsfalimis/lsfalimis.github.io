@@ -200,8 +200,7 @@
 
 <p>It’s hatred so I’m not ashamed.</p>
 
-<pre><code>defaults write com.apple.finder AnimateSnapToGrid -bool false &amp;&amp; defaults write com.apple.finder DisableAllAnimations -bool true &amp;&amp; defaults write com.apple.finder ZoomRects -bool false &amp;&amp; defaults write com.apple.finder AnimateInfoPanes -bool false &amp;&amp; defaults write com.apple.finder QLEnableSlowMotion -bool false &amp;&amp; defaults write com.apple.finder PathBarRootAtHome -bool true &amp;&amp; defaults write com.apple.dock springboard-show-duration -float 0.1 &amp;&amp; defaults write com.apple.dock springboard-hide-duration -float 0 &amp;&amp; defaults write com.apple.dock expose-animation-duration -float 0 &amp;&amp; defaults write com.apple.dock workspaces-edge-delay -float 0 &amp;&amp; defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 &amp;&amp; defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false &amp;&amp; defaults write NSGlobalDomain AppleShowAllExtensions -bool true &amp;&amp; defaults write com.apple.dashboard mcx-disabled -boolean YES &amp;&amp; defaults write com.apple.dock persistent-apps -array-add “{tile-data={}; tile-type=‘spacer-tile’;}” &amp;&amp; killall Dock
-</code></pre>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.finder AnimateSnapToGrid -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder DisableAllAnimations -bool <span class="nb">true</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder ZoomRects -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder AnimateInfoPanes -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder QLEnableSlowMotion -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder PathBarRootAtHome -bool <span class="nb">true</span> <span class="o">&amp;&amp;</span> defaults write com.apple.dock springboard-show-duration -float 0.1 <span class="o">&amp;&amp;</span> defaults write com.apple.dock springboard-hide-duration -float <span class="m">0</span> <span class="o">&amp;&amp;</span> defaults write com.apple.dock expose-animation-duration -float <span class="m">0</span> <span class="o">&amp;&amp;</span> defaults write com.apple.dock workspaces-edge-delay -float <span class="m">0</span> <span class="o">&amp;&amp;</span> defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 <span class="o">&amp;&amp;</span> defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write NSGlobalDomain AppleShowAllExtensions -bool <span class="nb">true</span> <span class="o">&amp;&amp;</span> defaults write com.apple.dashboard mcx-disabled -boolean YES <span class="o">&amp;&amp;</span> defaults write com.apple.dock persistent-apps -array-add “<span class="o">{</span>tile-data<span class="o">={}</span><span class="p">;</span> tile-type<span class="o">=</span>‘spacer-tile’<span class="p">;</span><span class="o">}</span>” <span class="o">&amp;&amp;</span> killall Dock</code></pre></div>
 
 <p><strong>For first-time users:</strong> meanings see <a href="#Fuck_Animation_Commands">Appendix 1</a>, the last third one is to disable dashboard and the last second one is to add a spacer to divide “kept in Dock” apps and non-“kept in Dock” apps.</p>
 
@@ -959,61 +958,61 @@
 
 <p>disable snap to grid animation</p>
 
-<p><code>defaults write com.apple.finder AnimateSnapToGrid -bool false</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.finder AnimateSnapToGrid -bool <span class="nb">false</span></code></pre></div>
 
 <p>disable some animations</p>
 
-<p><code>defaults write com.apple.finder DisableAllAnimations -bool true</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.finder DisableAllAnimations -bool <span class="nb">true</span></code></pre></div>
 
 <p>disable opening files zoom animation</p>
 
-<p><code>defaults write com.apple.finder ZoomRects -bool false</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.finder ZoomRects -bool <span class="nb">false</span></code></pre></div>
 
 <p>disable animations in Get Info window</p>
 
-<p><code>defaults write com.apple.finder AnimateInfoPanes -bool false</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.finder AnimateInfoPanes -bool <span class="nb">false</span></code></pre></div>
 
 <p>disable slow-motion animation when press shift</p>
 
-<p><code>defaults write com.apple.finder QLEnableSlowMotion -bool false</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.finder QLEnableSlowMotion -bool <span class="nb">false</span></code></pre></div>
 
 <p>other… make ~ as path bar base location</p>
 
-<p><code>defaults write com.apple.finder PathBarRootAtHome -bool true</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.finder PathBarRootAtHome -bool <span class="nb">true</span></code></pre></div>
 
 <p><strong>Launchpad</strong></p>
 
 <p>speed fade-in</p>
 
-<p><code>defaults write com.apple.dock springboard-show-duration -float 0.1</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.dock springboard-show-duration -float 0.1</code></pre></div>
 
 <p>speed fade-out</p>
 
-<p><code>defaults write com.apple.dock springboard-hide-duration -float 0</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.dock springboard-hide-duration -float 0</code></pre></div>
 
 <p>Mission Control</p>
 
 <p>speed show and hide animation</p>
 
-<p><code>defaults write com.apple.dock expose-animation-duration -float 0</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.dock expose-animation-duration -float 0</code></pre></div>
 
 <p>reduce window drag delay</p>
 
-<p><code>defaults write com.apple.dock workspaces-edge-delay -float 0</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.dock workspaces-edge-delay -float 0</code></pre></div>
 
 <p><strong>Other</strong></p>
 
 <p>speed roll out animation of save dialog</p>
 
-<p><code>defaults write NSGlobalDomain NSWindowResizeTime -float 0.1</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write NSGlobalDomain NSWindowResizeTime -float 0.1</code></pre></div>
 
 <p>speed opening files zoom animation</p>
 
-<p><code>defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool <span class="nb">false</span></code></pre></div>
 
 <p>other… show file extension globally</p>
 
-<p><code>defaults write NSGlobalDomain AppleShowAllExtensions -bool true</code></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write NSGlobalDomain AppleShowAllExtensions -bool <span class="nb">true</span></code></pre></div>
 
 <h2 id="appendix-2-custom-search-urls">Appendix 2 Custom Search URLs</h2>
 

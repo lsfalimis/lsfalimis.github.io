@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>lsfalimis &#8211; lsfalimis</title>
+<title>lsfalimis</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 
@@ -90,12 +90,12 @@
   
   
     <div class="entry-image">
-      <img src="http://localhost:4000/images/Unsplash_Sonja-Langford.jpg" alt="lsfalimis">
+      <img src="http://localhost:4000/images/Unsplash_Sonja-Langford.jpg" alt="">
     </div><!-- /.entry-image -->
   
   <div class="header-title">
     <div class="header-title-wrap">
-      <h1><a href="http://localhost:4000">lsfalimis</a></h1>
+      <h1><a href="http://localhost:4000"></a></h1>
     </div><!-- /.header-title-wrap -->
   </div><!-- /.header-title -->
 </div><!-- /.entry-header -->
@@ -187,16 +187,12 @@
 
 <p>Snippet 1</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>javascript:location=<span class="error">‘</span>http:<span class="comment">//www.google.com/search?num=100&amp;q=site:'%20+%20escape(location.hostname)%20+%20'%20%S'%20;%20void%200</span>
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="o">:</span><span class="nx">location</span><span class="o">=</span><span class="err">‘</span><span class="nx">http</span><span class="o">:</span><span class="c1">//www.google.com/search?num=100&amp;q=site:&#39;%20+%20escape(location.hostname)%20+%20&#39;%20%S&#39;%20;%20void%200</span></code></pre></div>
 
 <p>Snippet 2</p>
 
-<pre><code>https://www.google.co.uk/#q=on+the+App+Store+on+iTunes+%s&amp;btnI
-</code></pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html">https://www.google.co.uk/#q=on+the+App+Store+on+iTunes+%s<span class="err">&amp;</span>btnI</code></pre></div>
+
 
     
   </div><!-- /.entry-content -->
@@ -254,17 +250,13 @@
     
       <p>⌘, then add <code>"open_files_in_new_window": false</code> so it looks like</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">ignored_packages</span><span class="delimiter">&quot;</span></span>:
-    [
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">Vintage</span><span class="delimiter">&quot;</span></span>
-    ],
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">open_files_in_new_window</span><span class="delimiter">&quot;</span></span>: <span class="predefined-constant">false</span>
-}
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+	<span class="s2">&quot;ignored_packages&quot;</span><span class="o">:</span>
+	<span class="p">[</span>
+		<span class="s2">&quot;Vintage&quot;</span>
+	<span class="p">],</span>
+	<span class="s2">&quot;open_files_in_new_window&quot;</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">}</span></code></pre></div>
 
 <p>But it needs the cursor in the URL.</p>
 
@@ -282,7 +274,7 @@
       <span class="entry-reading-time pull-right">
         <i class="fa fa-clock-o"></i>
         
-        1 min. read
+        2 min. read
         
       </span><!-- /.entry-reading-time -->
       
@@ -324,43 +316,32 @@
 
 <p>⌘c</p>
 
-<pre><code>command-c://x-callback-url/copyText?text=[[selection]]&amp;deviceIndex=0&amp;x-success=
-</code></pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copyText?text=[[selection]]<span class="err">&amp;</span>deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
 
 <p>⌘c.o</p>
 
-<pre><code>command-c://x-callback-url/copyAndOpenURL?url=[[clipboard]]&amp;deviceIndex=0&amp;x-success=
-</code></pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copyAndOpenURL?url=[[clipboard]]<span class="err">&amp;</span>deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
 
 <h3 id="launch">Launch</h3>
 
 <p>(untitled)</p>
 
-<pre><code>command-c://x-callback-url/copy?deviceIndex=0&amp;x-success=
-</code></pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copy?deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
 
 <p>open</p>
 
-<pre><code>command-c://x-callback-url/copyAndOpenURL?url=[clipboard]&amp;deviceIndex=0&amp;x-success=
-</code></pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copyAndOpenURL?url=[clipboard]<span class="err">&amp;</span>deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
 
 <h3 id="bookmarklets">Bookmarklets</h3>
 
 <p>o.chrome</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>javascript:location.href=%<span class="integer">22</span>googlechrome%<span class="integer">22</span>+location.href.substring(<span class="integer">4</span>);
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="o">:</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=%</span><span class="mi">22</span><span class="nx">googlechrome</span><span class="o">%</span><span class="mi">22</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span></code></pre></div>
 
 <p>o.clipboard</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>javascript:window.location=<span class="string"><span class="delimiter">'</span><span class="content">command-c://x-callback-url/copy?x-success=</span><span class="delimiter">'</span></span>+encodeURIComponent(window.location)+<span class="string"><span class="delimiter">'</span><span class="content">&amp;deviceIndex=0</span><span class="delimiter">'</span></span>
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="o">:</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="o">=</span><span class="s1">&#39;command-c://x-callback-url/copy?x-success=&#39;</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;&amp;deviceIndex=0&#39;</span></code></pre></div>
+
 
     
   </div><!-- /.entry-content -->
@@ -399,11 +380,7 @@
   </li>
 </ul>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>echo '[{ &quot;button&quot;: &quot;button1&quot;, &quot;modifiers&quot;: [&quot;control&quot;], &quot;press_command&quot;: &quot;open_url&quot; }]' &gt; ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(OSX\).sublime-mousemap
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;[{ &quot;button&quot;: &quot;button1&quot;, &quot;modifiers&quot;: [&quot;control&quot;], &quot;press_command&quot;: &quot;open_url&quot; }]&#39;</span> &gt; ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/User/Default<span class="se">\ \(</span>OSX<span class="se">\)</span>.sublime-mousemap</code></pre></div>
 
     
   </div><!-- /.entry-content -->

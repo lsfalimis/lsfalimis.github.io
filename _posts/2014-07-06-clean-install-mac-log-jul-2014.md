@@ -52,7 +52,9 @@ share: true
 
 It's hatred so I'm not ashamed.
 
-    defaults write com.apple.finder AnimateSnapToGrid -bool false && defaults write com.apple.finder DisableAllAnimations -bool true && defaults write com.apple.finder ZoomRects -bool false && defaults write com.apple.finder AnimateInfoPanes -bool false && defaults write com.apple.finder QLEnableSlowMotion -bool false && defaults write com.apple.finder PathBarRootAtHome -bool true && defaults write com.apple.dock springboard-show-duration -float 0.1 && defaults write com.apple.dock springboard-hide-duration -float 0 && defaults write com.apple.dock expose-animation-duration -float 0 && defaults write com.apple.dock workspaces-edge-delay -float 0 && defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 && defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false && defaults write NSGlobalDomain AppleShowAllExtensions -bool true && defaults write com.apple.dashboard mcx-disabled -boolean YES && defaults write com.apple.dock persistent-apps -array-add “{tile-data={}; tile-type=‘spacer-tile’;}” && killall Dock
+{% highlight bash %}
+defaults write com.apple.finder AnimateSnapToGrid -bool false && defaults write com.apple.finder DisableAllAnimations -bool true && defaults write com.apple.finder ZoomRects -bool false && defaults write com.apple.finder AnimateInfoPanes -bool false && defaults write com.apple.finder QLEnableSlowMotion -bool false && defaults write com.apple.finder PathBarRootAtHome -bool true && defaults write com.apple.dock springboard-show-duration -float 0.1 && defaults write com.apple.dock springboard-hide-duration -float 0 && defaults write com.apple.dock expose-animation-duration -float 0 && defaults write com.apple.dock workspaces-edge-delay -float 0 && defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 && defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false && defaults write NSGlobalDomain AppleShowAllExtensions -bool true && defaults write com.apple.dashboard mcx-disabled -boolean YES && defaults write com.apple.dock persistent-apps -array-add “{tile-data={}; tile-type=‘spacer-tile’;}” && killall Dock
+{% endhighlight %}
 
 **For first-time users:** meanings see [Appendix 1](#Fuck_Animation_Commands), the last third one is to disable dashboard and the last second one is to add a spacer to divide "kept in Dock" apps and non-"kept in Dock" apps.
 
@@ -516,61 +518,87 @@ Non-essential MAS apps are not in my workflows.
 
 disable snap to grid animation
 
-`defaults write com.apple.finder AnimateSnapToGrid -bool false`
+{% highlight bash %}
+defaults write com.apple.finder AnimateSnapToGrid -bool false
+{% endhighlight %}
 
 disable some animations
 
-`defaults write com.apple.finder DisableAllAnimations -bool true`
+{% highlight bash %}
+defaults write com.apple.finder DisableAllAnimations -bool true
+{% endhighlight %}
 
 disable opening files zoom animation
 
-`defaults write com.apple.finder ZoomRects -bool false`
+{% highlight bash %}
+defaults write com.apple.finder ZoomRects -bool false
+{% endhighlight %}
 
 disable animations in Get Info window
 
-`defaults write com.apple.finder AnimateInfoPanes -bool false`
+{% highlight bash %}
+defaults write com.apple.finder AnimateInfoPanes -bool false
+{% endhighlight %}
 
 disable slow-motion animation when press shift
 
-`defaults write com.apple.finder QLEnableSlowMotion -bool false`
+{% highlight bash %}
+defaults write com.apple.finder QLEnableSlowMotion -bool false
+{% endhighlight %}
 
 other... make ~ as path bar base location
 
-`defaults write com.apple.finder PathBarRootAtHome -bool true`
+{% highlight bash %}
+defaults write com.apple.finder PathBarRootAtHome -bool true
+{% endhighlight %}
 
 **Launchpad**
 
 speed fade-in
 
-`defaults write com.apple.dock springboard-show-duration -float 0.1`
+{% highlight bash %}
+defaults write com.apple.dock springboard-show-duration -float 0.1
+{% endhighlight %}
 
 speed fade-out
 
-`defaults write com.apple.dock springboard-hide-duration -float 0`
+{% highlight bash %}
+defaults write com.apple.dock springboard-hide-duration -float 0
+{% endhighlight %}
 
 Mission Control
 
 speed show and hide animation
 
-`defaults write com.apple.dock expose-animation-duration -float 0`
+{% highlight bash %}
+defaults write com.apple.dock expose-animation-duration -float 0
+{% endhighlight %}
 
 reduce window drag delay
 
-`defaults write com.apple.dock workspaces-edge-delay -float 0`
+{% highlight bash %}
+defaults write com.apple.dock workspaces-edge-delay -float 0
+{% endhighlight %}
 
 **Other**
 
 speed roll out animation of save dialog
 
-`defaults write NSGlobalDomain NSWindowResizeTime -float 0.1`
+{% highlight bash %}
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.1
+{% endhighlight %}
 
 speed opening files zoom animation
 
-`defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false`
+{% highlight bash %}
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+{% endhighlight %}
 
 other... show file extension globally
 
-`defaults write NSGlobalDomain AppleShowAllExtensions -bool true`
+{% highlight bash %}
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+{% endhighlight %}
 
 ## Appendix 2 Custom Search URLs
 

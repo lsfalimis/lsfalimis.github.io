@@ -138,11 +138,7 @@
 
 <p>The first command is to get words using regex:</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>python -c 'import sys;import re;print re.findall(r&quot;\b[a-zA-Z]+\b&quot;,sys.argv[1])' &quot;$KMVAR_rein&quot;
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">python -c <span class="s1">&#39;import sys;import re;print re.findall(r&quot;\b[a-zA-Z]+\b&quot;,sys.argv[1])&#39;</span> <span class="s2">&quot;$KMVAR_rein&quot;</span></code></pre></div>
 
 <p><code>-c</code> allows the following python code running direct in shell. <code>$KMVAR_</code> is followed by a name of KM macro. I import <code>re</code> and want to get a list of words returned; I can’t get a list but only one word if I use KM’s regex action. And I set KM to save the printed result as a KM variable, <code>reout</code>.</p>
 
@@ -150,11 +146,7 @@
 
 <p>The second command is to append a list of strings to a file, creating new lines (with each item in the list in a new line):</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>(echo &quot;lst=$KMVAR_list&quot;;echo &quot;f=open('$KMVAR_file','r+')&quot;;echo &quot;f.seek(-1,2)&quot;;echo &quot;f.write('''\n''') if f.read(1) != '''\n''' else ''&quot;;echo &quot;f.close()&quot;;echo &quot;f=open('$KMVAR_file','a')&quot;;echo &quot;for e in lst: f.write('''%s\n''' % e)&quot;;echo &quot;f.close&quot;) | python
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span><span class="nb">echo</span> <span class="s2">&quot;lst=$KMVAR_list&quot;</span><span class="p">;</span><span class="nb">echo</span> <span class="s2">&quot;f=open(&#39;$KMVAR_file&#39;,&#39;r+&#39;)&quot;</span><span class="p">;</span><span class="nb">echo</span> <span class="s2">&quot;f.seek(-1,2)&quot;</span><span class="p">;</span><span class="nb">echo</span> <span class="s2">&quot;f.write(&#39;&#39;&#39;\n&#39;&#39;&#39;) if f.read(1) != &#39;&#39;&#39;\n&#39;&#39;&#39; else &#39;&#39;&quot;</span><span class="p">;</span><span class="nb">echo</span> <span class="s2">&quot;f.close()&quot;</span><span class="p">;</span><span class="nb">echo</span> <span class="s2">&quot;f=open(&#39;$KMVAR_file&#39;,&#39;a&#39;)&quot;</span><span class="p">;</span><span class="nb">echo</span> <span class="s2">&quot;for e in lst: f.write(&#39;&#39;&#39;%s\n&#39;&#39;&#39; % e)&quot;</span><span class="p">;</span><span class="nb">echo</span> <span class="s2">&quot;f.close&quot;</span><span class="o">)</span> <span class="p">|</span> python</code></pre></div>
 
 <p>You can notice that I put <code>$KMVAR_</code> in the python code rather use it as an argument or parameter passed to python command. I think I can do this because of I use <code>echo</code> here, anyway I’m not interested to figure it out. Next I need to make sure I append the first item of list in a blank line. However puting lines as a list for example <code>linelist</code>, and the last two lines of file is <code>second last line\n</code>. <code>linelist[-1]</code> will return <code>second last line\n</code> instead of <code>\n</code>. So I use <code>read</code> to tell if the last character is <code>\n</code>. Before that <code>seek</code> will move the cursor of <code>find</code> to a location I want. <code>2</code> in <code>seek(-1,2)</code> means from the bottom of the file. After getting know if the last line is empty, I loop the line to write in the file with line break. Because <code>\n</code> is recognised as a line break in <code>echo</code> so I have to wrap it with <code>'''</code> to make the string to write continued. I tried to write using <code>with open(PATHTOFILE, MODE) as VAR:</code> but it doesn’t play well with <code>for</code> loop chunk…</p>
 
@@ -162,11 +154,7 @@
 
 <p>The third command to alphabetise a list of lines in <code>$KMVAR_file</code> (here it’s <code>/Users/henry/Library/Spelling/LocalDictionary</code>)</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>(echo &quot;with open('$KMVAR_file','r') as f: lst = sorted(f)&quot;; echo &quot;with open('$KMVAR_file','w') as f: f.writelines(lst)&quot;) | python
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span><span class="nb">echo</span> <span class="s2">&quot;with open(&#39;$KMVAR_file&#39;,&#39;r&#39;) as f: lst = sorted(f)&quot;</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;with open(&#39;$KMVAR_file&#39;,&#39;w&#39;) as f: f.writelines(lst)&quot;</span><span class="o">)</span> <span class="p">|</span> python</code></pre></div>
 
 <p>Python’s sort command is very handy.</p>
 

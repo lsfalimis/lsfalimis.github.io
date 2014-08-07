@@ -97,7 +97,7 @@
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
           
-          2 min. read
+          3 min. read
           
         </p><!-- /.entry-reading-time -->
         
@@ -134,64 +134,60 @@
   <p>I noted it as <code>xcode-select –install</code>, but some say <code>sudo xcode-select –install</code>, anyway, just type <code>git</code> and choose Install. I mean for a new Mac.</p>
 </blockquote>
 
-<div><div class="CodeRay">
-  <div class="code"><pre># Install command line developer tools
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install command line developer tools</span>
 git
-# choose Install
+<span class="c"># choose Install</span>
     
-# Install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh
-curl -L http://install.ohmyz.sh | sh
+<span class="c"># Install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh</span>
+curl -L http://install.ohmyz.sh <span class="p">|</span> sh
 
-# Install Homebrew http://brew.sh/#install
-ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
+<span class="c"># Install Homebrew http://brew.sh/#install</span>
+ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</span>
 
-# You need Homebrew to solve 'Requirements installation failed with status:
-#  1' error when installing rvm, and you will need rvm to solve some error
-#  about ruby (I didn't jot it down at that time) when installing Jekyll
+<span class="c"># You need Homebrew to solve &#39;Requirements installation failed with status:</span>
+<span class="c">#  1&#39; error when installing rvm, and you will need rvm to solve some error</span>
+<span class="c">#  about ruby (I didn&#39;t jot it down at that time) when installing Jekyll</span>
 
-# Install rvm http://rvm.io/rvm/install
+<span class="c"># Install rvm http://rvm.io/rvm/install</span>
 
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
+<span class="se">\c</span>url -sSL https://get.rvm.io <span class="p">|</span> bash -s stable --ruby
 
-# error
-# /Users/henry/.zshrc:57:export PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&quot;
-#
-# * WARNING: Above files contains `PATH=` with no `$PATH` inside, this can break RVM,
-# for details check
-# https://github.com/wayneeseguin/rvm/issues/1351#issuecomment-10939525
-# to avoid this warning append #PATH.
-#
-# I should simply edit line 57 of .zshrc; before that, add subl to $PATH;
-#  vim is too hard for a dummy ass.
-# Create a symbolic link (instead of a hard link) by using ln -s
+<span class="c"># error</span>
+<span class="c"># /Users/henry/.zshrc:57:export PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&quot;</span>
+<span class="c">#</span>
+<span class="c"># * WARNING: Above files contains `PATH=` with no `$PATH` inside, this can break RVM,</span>
+<span class="c"># for details check</span>
+<span class="c"># https://github.com/wayneeseguin/rvm/issues/1351#issuecomment-10939525</span>
+<span class="c"># to avoid this warning append #PATH.</span>
+<span class="c">#</span>
+<span class="c"># I should simply edit line 57 of .zshrc; before that, add subl to $PATH;</span>
+<span class="c">#  vim is too hard for a dummy ass.</span>
+<span class="c"># Create a symbolic link (instead of a hard link) by using ln -s</span>
 
-ln -s &quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&quot; ~/bin/subl
+ln -s <span class="s2">&quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&quot;</span> ~/bin/subl
 vim .zshrc
 
-# Press i and go to the edit mode, and then paste:
-#  export PATH=$PATH:$HOME/bin
-# And it sets up subl
-# Press : and type in wq↩ which will save and quit vim.
-# Ok, I will not touch vim again.
-# However to save time, I can choose replace line 57
-#   export PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&quot;
-#  with:
-#   export PATH=&quot;$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/.rvm/bin&quot;
-# Actually, 'export PATH=&quot;$PATH:$HOME/.rvm/bin&quot; # Add RVM to PATH for scripting'
-#  has been added in the last line. We can choose to delete the last line.
+<span class="c"># Press i and go to the edit mode, and then paste:</span>
+<span class="c">#  export PATH=$PATH:$HOME/bin</span>
+<span class="c"># And it sets up subl</span>
+<span class="c"># Press : and type in wq↩ which will save and quit vim.</span>
+<span class="c"># Ok, I will not touch vim again.</span>
+<span class="c"># However to save time, I can choose replace line 57</span>
+<span class="c">#   export PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&quot;</span>
+<span class="c">#  with:</span>
+<span class="c">#   export PATH=&quot;$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/.rvm/bin&quot;</span>
+<span class="c"># Actually, &#39;export PATH=&quot;$PATH:$HOME/.rvm/bin&quot; # Add RVM to PATH for scripting&#39;</span>
+<span class="c">#  has been added in the last line. We can choose to delete the last line.</span>
 
-# Install jekyll
+<span class="c"># Install jekyll</span>
 sudo gem install jekyll
 
-# I cannot figure out git clone in CLI so I wisely choose GitHub GUI Mac app
-#  to clone my git to the new OS X.
+<span class="c"># I cannot figure out git clone in CLI so I wisely choose GitHub GUI Mac app</span>
+<span class="c">#  to clone my git to the new OS X.</span>
 
-# cd to the path and type in
-rake post title=&quot;POST TITLE&quot;
-# Happy Blogging!
-</pre></div>
-</div>
-</div>
+<span class="c"># cd to the path and type in</span>
+rake post <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;POST TITLE&quot;</span>
+<span class="c"># Happy Blogging!</span></code></pre></div>
 
 <p>Update:
 I remember…</p>

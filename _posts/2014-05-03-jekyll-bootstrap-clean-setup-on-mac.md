@@ -24,7 +24,7 @@ Grab a free iTerm2 at `http://www.iterm2.com/#/section/home` and use iTerm2 inst
 
 > I noted it as `xcode-select –install`, but some say `sudo xcode-select –install`, anyway, just type `git` and choose Install. I mean for a new Mac.
 
-~~~ bash
+{% highlight bash %}
 # Install command line developer tools
 git
 # choose Install
@@ -79,7 +79,7 @@ sudo gem install jekyll
 # cd to the path and type in
 rake post title="POST TITLE"
 # Happy Blogging!
-~~~
+{% endhighlight %}
 
 Update:
 I remember...

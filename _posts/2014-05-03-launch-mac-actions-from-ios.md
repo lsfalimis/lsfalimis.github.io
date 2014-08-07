@@ -25,9 +25,9 @@ This post will guide you to post last taken iOS screenshot to GitHub.
 	- Open iTerm2, create a git locally under Dropbox folder. See the code below.
 	- At Chrome's address bar, input `it TextExpander↩` (where `it` is the custom search of `https://www.google.co.uk/#q=on+the+App+Store+on+iTunes+%s&btnI`) and also Dropbox, Cmd-C, Launch Center Pro (LCP) and Drafts, download them in iTunes, and install them on iOS.
 
-~~~ bash
+{% highlight bash %}
 mkdir ~/Dropbox/giti/ && mkdir ~/Dropbox/giti/Qian-iOS-Log/ && cd ~/Dropbox/giti/Qian-iOS-Log/ && touch iPod-touch.md && git init
-~~~
+{% endhighlight %}
 
 - On iOS:
 	- Sign in Dropbox.
@@ -43,9 +43,9 @@ mkdir ~/Dropbox/giti/ && mkdir ~/Dropbox/giti/Qian-iOS-Log/ && cd ~/Dropbox/giti
 	- Select and `⌃⇧1`. See the code below
 	- Go to Hazel.prefPane (use [Alfred](http://www.alfredapp.com/)), add folder `~/Dropbox/giti/Qian-iOS-Log/`, then add rule: If `Date Last Modified` `is in the last` `1` `hour` Do `Run shell script`, then tap `i` and paste this `git add . && git commit -m "upload" && git push -u origin master`
 
-~~~
+{% highlight html %}
 drafts://x-callback-url/import_action?type=dropbox&name=logss&path=%2Fgiti%2FQian-iOS-Log%2F&filenametype=2&filename=iPod-touch&ext=md&writetype=2&template=%5B%5Bdraft%5D%5D
-~~~
+{% endhighlight %}
 
 - On iOS:
 	- Set up the pasted code in LCP.

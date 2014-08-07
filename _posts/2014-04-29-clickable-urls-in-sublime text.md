@@ -14,6 +14,6 @@ share: true
 
 - Bind ⌃ left click as the way to click and open URLs in ST3. You can change `control` in the code to any modifier key you like.
 
-~~~ bash
+{% highlight bash %}
 echo '[{ "button": "button1", "modifiers": ["control"], "press_command": "open_url" }]' > ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(OSX\).sublime-mousemap
-~~~
+{% endhighlight %}

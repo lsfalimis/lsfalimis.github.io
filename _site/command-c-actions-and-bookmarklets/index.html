@@ -108,43 +108,32 @@
 
 <p>⌘c</p>
 
-<pre><code>command-c://x-callback-url/copyText?text=[[selection]]&amp;deviceIndex=0&amp;x-success=
-</code></pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copyText?text=[[selection]]<span class="err">&amp;</span>deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
 
 <p>⌘c.o</p>
 
-<pre><code>command-c://x-callback-url/copyAndOpenURL?url=[[clipboard]]&amp;deviceIndex=0&amp;x-success=
-</code></pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copyAndOpenURL?url=[[clipboard]]<span class="err">&amp;</span>deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
 
 <h3 id="launch">Launch</h3>
 
 <p>(untitled)</p>
 
-<pre><code>command-c://x-callback-url/copy?deviceIndex=0&amp;x-success=
-</code></pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copy?deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
 
 <p>open</p>
 
-<pre><code>command-c://x-callback-url/copyAndOpenURL?url=[clipboard]&amp;deviceIndex=0&amp;x-success=
-</code></pre>
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copyAndOpenURL?url=[clipboard]<span class="err">&amp;</span>deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
 
 <h3 id="bookmarklets">Bookmarklets</h3>
 
 <p>o.chrome</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>javascript:location.href=%<span class="integer">22</span>googlechrome%<span class="integer">22</span>+location.href.substring(<span class="integer">4</span>);
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="o">:</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=%</span><span class="mi">22</span><span class="nx">googlechrome</span><span class="o">%</span><span class="mi">22</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span></code></pre></div>
 
 <p>o.clipboard</p>
 
-<div><div class="CodeRay">
-  <div class="code"><pre>javascript:window.location=<span class="string"><span class="delimiter">'</span><span class="content">command-c://x-callback-url/copy?x-success=</span><span class="delimiter">'</span></span>+encodeURIComponent(window.location)+<span class="string"><span class="delimiter">'</span><span class="content">&amp;deviceIndex=0</span><span class="delimiter">'</span></span>
-</pre></div>
-</div>
-</div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="o">:</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="o">=</span><span class="s1">&#39;command-c://x-callback-url/copy?x-success=&#39;</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;&amp;deviceIndex=0&#39;</span></code></pre></div>
+
 
       <footer class="entry-meta">
         <span class="entry-tags"></span>
