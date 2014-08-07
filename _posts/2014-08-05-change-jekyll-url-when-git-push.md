@@ -8,7 +8,7 @@ comments: true
 share: true
 ---
 
-I just don't get it. What should I supposed to set 'url' in Jekyll's `_config.yml` to `http://localhost:4000` when I'm coding and previewing locally (`jekyll serve --watch`) for the first place?
+I just don't get it. Why should I manually set 'url' in Jekyll's `_config.yml` to `http://localhost:4000` when I'm coding and previewing locally (`jekyll serve --watch`) for the first place?
 
 Luckily, I can have `sed` do this for me :)
 
