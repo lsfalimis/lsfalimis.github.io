@@ -1,0 +1,861 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>LaTeX Notes &#8211; lsfalimis</title>
+<meta name="description" content="Write like a Pro">
+<meta name="keywords" content="LaTeX">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/">
+<meta name="twitter:title" content="LaTeX Notes">
+<meta name="twitter:description" content="Write like a Pro">
+<meta name="twitter:creator" content="@lsfalimis">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX Notes">
+<meta property="og:description" content="Write like a Pro">
+<meta property="og:url" content="http://localhost:4000/latex-notes/">
+<meta property="og:site_name" content="lsfalimis">
+
+
+<link rel="canonical" href="http://localhost:4000/latex-notes/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="lsfalimis Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="http://localhost:4000">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li><a href="https://www.v2ex.com/member/qian"><i class="fa fa-coffee"></i> V2EX </a></li>
+				<li><a href="http://www.zhihu.com/people/lsfalimis"><i class="fa fa-anchor"></i> Zhihu </a></li>
+				<li><a href="http://www.weibo.com/3215266455/profile"><i class="fa fa-weibo"></i> Weibo </a></li>
+				<li><a href="http://www.douban.com/people/74771258"><i class="fa fa-book"></i> Douban </a></li>
+			</ul><!-- /.dl-submenu -->
+		</li>		
+		<li><a href="http://localhost:4000/archives/">Archives</a></li>
+		<li><a href="http://localhost:4000/categories/">Categories</a></li>
+		<li><a href="http://localhost:4000/tags/">Tags</a></li>
+		<li><a href="https://gist.github.com/lsfalimis"> Gist </a></li>
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        <h1 class="entry-title"><a href="http://localhost:4000" title="LaTeX Notes">LaTeX Notes</a></h1>
+        <h2>July 07, 2014</h2>
+        
+        <p class="entry-reading-time">
+          <i class="fa fa-clock-o"></i>
+          
+          10+ min. read
+        </p><!-- /.entry-reading-time -->
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<figure>
+    <img src="http://i.imgur.com/qyFP7we.png" alt="" />
+</figure>
+
+<h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#basic-structure">Basic Structure</a></li>
+  <li><a href="#preamble">Preamble</a>    <ul>
+      <li><a href="#usepackage">\usepackage</a>        <ul>
+          <li><a href="#font-rendering">Font Rendering</a></li>
+          <li><a href="#environments-or-objects">Environments or Objects</a>            <ul>
+              <li><a href="#maths">Maths</a></li>
+              <li><a href="#floats">Floats</a></li>
+              <li><a href="#tables">Tables</a></li>
+              <li><a href="#drawing-graphics">Drawing Graphics</a></li>
+            </ul>
+          </li>
+          <li><a href="#miscellaneous">Miscellaneous</a></li>
+        </ul>
+      </li>
+      <li><a href="#other-package-specifications">Other Package Specifications</a></li>
+      <li><a href="#new-command-declarations">New Command Declarations</a></li>
+      <li><a href="#title-page">Title Page</a></li>
+    </ul>
+  </li>
+  <li><a href="#document">Document</a>    <ul>
+      <li><a href="#math-symbols">Math Symbols</a></li>
+      <li><a href="#more-on-math-typesetting">More on Math Typesetting</a></li>
+      <li><a href="#pgftikz">PGF/TikZ</a></li>
+      <li><a href="#others">Others</a></li>
+      <li><a href="#environments">Environments</a></li>
+    </ul>
+  </li>
+  <li><a href="#resources">Resources</a></li>
+</ul>
+
+<!--more-->
+
+<h2 id="basic-structure">Basic Structure</h2>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="nb">{</span>...<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+...
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></code></pre></div>
+
+<p>Use <code>\documentclass[a4paper]{article}</code> to start. On document classes (article, book, beamer, etc.) and options, see <a href="http://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes">Wikibooks</a>.</p>
+
+<h2 id="preamble">Preamble</h2>
+
+<h3 id="usepackage">\usepackage</h3>
+
+<p>The preamble is the area between <code>\documentclass{...}</code> and <code>\begin{document}</code> where we can use the <code>\usepackage</code> command at the beginning:</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>ae,aecompl,microtype,amsmath,amsthm,amssymb,mathtools,empheq,bm,siunitx,accents,floatrow,subfig,caption,float,wrapfig,booktabs,array,multirow,threeparttable,tablefootnote,tikz,pgfplots,hyperref,listings,graphicx<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[integrals]</span><span class="nb">{</span>wasysym<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[style=verbose,backend=bibtex]</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+<span class="c">% \renewcommand{\familydefault}{\sfdefault}</span></code></pre></div>
+
+<p>I copy or paraphrase some sentences from <a href="http://www.ctan.org/">CTAN</a> (Comprehensive TeX Archive Network). You can search package information by adding <a href="http://www.ctan.org/pkg/%s">http://www.ctan.org/pkg/%s</a> as a Chrome’s search engine. Note some package can’t be found using this URL, for example, aecompl. Then you will need to google it.</p>
+
+<h4 id="font-rendering">Font Rendering</h4>
+
+<blockquote>
+  <ul>
+    <li>fontenc [T1] - ‘selecte font encoding’, activate EC fonts / T1 font en­cod­ing</li>
+    <li>ae - ‘al­most Euro­pean’, vir­tual fonts which em­u­lates T1 coded fonts us­ing the stan­dard CM fonts
+      <ul>
+        <li>pro­duce PDFs us­ing Type 1 ver­sions of the CM fonts in­stead of bitmapped EC fonts</li>
+      </ul>
+    </li>
+    <li>aecompl - add the characters missing in the ae fonts as bitmaps</li>
+  </ul>
+</blockquote>
+
+<p>On T1, ae, aecompl, see <a href="http://dsanta.users.ch/resources/type1.html">“High quality PDF output from LaTeX and TeX”</a></p>
+
+<blockquote>
+  <ul>
+    <li>microtype - ‘mi­cro-ty­po­graphic ex­ten­sions’, subliminal refinements towards typographical perfection: char­ac­ter pro­tru­sion, font ex­pan­sion, etc.</li>
+  </ul>
+</blockquote>
+
+<p>On microtype, see <a href="http://www.khirevich.com/latex/microtype/">“Tips on Writing a Thesis in LaTeX: Microtype”</a></p>
+
+<p>You can also change fonts. <code>\renewcommand{\familydefault}{\sfdefault}</code> changes the default font, Computer Modern Serif, to Computer Modern Sans Serif. More on changing font, see <a href="http://www.forkosh.com/pstex/latexcommands.htm">this</a>.</p>
+
+<h4 id="environments-or-objects">Environments or Objects</h4>
+
+<p>We can sort objects in LaTeX into different <em>environments</em>. According to <a href="http://latex.wikia.com/wiki/List_of_LaTeX_environments">Wikia</a>, there are</p>
+
+<ul>
+  <li>Float: figure, table</li>
+  <li>List: description, enumerate, itemize</li>
+  <li>Math: math, displaymath, array, eqnarray, equation, theorem</li>
+  <li>Matrix: cases, align</li>
+  <li>Paragraph: center, flushleft, flushright, minipage, quotation, quote, verbatim, verse</li>
+  <li>Picture</li>
+  <li>Table: tabular</li>
+  <li>thebibliography</li>
+  <li>titlepage</li>
+</ul>
+
+<p>The order of declarations matters, so when errors come out, you need to debug yourself by googling or other methods.</p>
+
+<h5 id="maths">Maths</h5>
+
+<blockquote>
+  <ul>
+    <li>amsmath - ‘American Mathematical Society (AMS) mathematical facilities’</li>
+    <li>amsthm - typeset AMS style theorems</li>
+    <li>amssymb - provide an extended symbol collection <a href="http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf">(PDF)</a></li>
+  </ul>
+</blockquote>
+
+<p>On AMS packages, see <a href="http://tex.stackexchange.com/questions/32100/">StackExchange</a> and AMS’s <a href="ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf">Short Math Guide for LaTeX (PDF)</a></p>
+
+<blockquote>
+  <ul>
+    <li>mathtools - math­e­mat­i­cal type­set­ting tools to use with amsmath</li>
+    <li>empheq - ‘EMPHasizing EQuations’, to put a set of equa­tions in­side a box thus en­hanc­ing ams­math’s \boxed</li>
+    <li>bm - access bold symbols in maths mode</li>
+    <li>siunitx - ‘Le Système international d’unités (SI) or the international system of units units package’</li>
+    <li>accents - multiple mathematical accents</li>
+  </ul>
+</blockquote>
+
+<h5 id="floats">Floats</h5>
+
+<blockquote>
+  <ul>
+    <li>floatrow - cus­tomize layouts of floats; of­fers mech­a­nisms
+      <ul>
+        <li>to put floats side by side</li>
+        <li>to put the cap­tion be­side its float</li>
+      </ul>
+    </li>
+    <li>subfig - figures broken into ‘subfigures’
+      <ul>
+        <li>It is con­ve­nient to use this pack­age when your sub­fig­ures are to be sep­a­rately cap­tioned or ref­er­enced.</li>
+      </ul>
+    </li>
+    <li>caption - customise captions in floats</li>
+    <li>float - introduce the boxed float, the ruled float and the plain­top float; provide the H option for floats</li>
+    <li>wrapfig - allow fig­ures or ta­bles to have text wrapped around them</li>
+  </ul>
+</blockquote>
+
+<h5 id="tables">Tables</h5>
+
+<blockquote>
+  <ul>
+    <li>booktabs - ‘publication quality tables’; provide be­hind-the-scenes op­ti­mi­sa­tion</li>
+    <li>array - extend the array and tabular environments</li>
+    <li>multirow - create tabular cells spanning multiple rows</li>
+    <li>threeparttable - tables with captions and notes; no need for foot­notes</li>
+    <li>tablefootnote - permit footnotes in tables; provide \table­foot­note</li>
+  </ul>
+</blockquote>
+
+<h5 id="drawing-graphics">Drawing Graphics</h5>
+
+<blockquote>
+  <ul>
+    <li>tikz - a recursive acronym for ‘TikZ ist <em>kein</em> Zeichenprogramm’ (German for ‘TikZ is <em>not</em> a drawing program’); create PostScript and PDF graphics</li>
+    <li>pgfplots - draw plots in two and three dimensions; based on PGF/TikZ</li>
+  </ul>
+</blockquote>
+
+<h4 id="miscellaneous">Miscellaneous</h4>
+
+<blockquote>
+  <ul>
+    <li>hyperref - ‘support for hypertext and cross-ref­er­enc­ing’</li>
+    <li>listings - typeset code listings</li>
+    <li>graphicx - enhanced support for graphics; improve \in­clude­graph­ics</li>
+    <li>wasysym [integrals] - WASY2 (Waldi Sym­bol) fonts by Roland Waldi</li>
+    <li>biblatex [style=verbose,backend=bibtex] - bibliographies using BibTeX for sorting only</li>
+  </ul>
+</blockquote>
+
+<h3 id="other-package-specifications">Other Package Specifications</h3>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\addbibresource</span><span class="nb">{</span>references.bib<span class="nb">}</span>
+<span class="k">\sisetup</span><span class="nb">{</span>group-separator = <span class="nb">{</span>,<span class="nb">}}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>arrows,shapes,positioning<span class="nb">}</span>
+<span class="k">\pgfplotsset</span><span class="nb">{</span>compat=1.8<span class="nb">}</span>
+<span class="k">\pgfplotsset</span><span class="nb">{</span>soldot/.style=<span class="nb">{</span>color=black,only marks,mark=*<span class="nb">}}</span>
+<span class="k">\pgfplotsset</span><span class="nb">{</span>holdot/.style=<span class="nb">{</span>color=black,fill=white,only marks,mark=*<span class="nb">}}</span>
+<span class="k">\delimitershortfall</span>-1sp
+<span class="k">\floatsetup</span><span class="na">[table]</span><span class="nb">{</span>footposition=bottom<span class="nb">}</span></code></pre></div>
+
+<ul>
+  <li><code>\sisetup{group-separator = {,}}</code> adds thousand separators.</li>
+  <li><code>\delimitershortfall-1sp</code> adjusts the size of nested parentheses.</li>
+</ul>
+
+<h3 id="new-command-declarations">New Command Declarations</h3>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\newcommand\abs</span><span class="na">[1]</span><span class="nb">{</span><span class="k">\left</span>|#1<span class="k">\right</span>|<span class="nb">}</span>
+<span class="k">\newcommand*\widefbox</span><span class="na">[1]</span><span class="nb">{</span><span class="k">\fbox</span><span class="nb">{</span><span class="k">\hspace</span><span class="nb">{</span>2em<span class="nb">}</span>#1<span class="k">\hspace</span><span class="nb">{</span>2em<span class="nb">}}}</span>
+<span class="k">\newcolumntype</span><span class="nb">{</span>C<span class="nb">}</span>[1]<span class="nb">{</span>&gt;<span class="nb">{</span><span class="k">\centering\arraybackslash</span><span class="nb">}</span>p<span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\DeclarePairedDelimiter\ceil</span><span class="nb">{</span><span class="k">\lceil</span><span class="nb">}{</span><span class="k">\rceil</span><span class="nb">}</span>
+<span class="k">\DeclarePairedDelimiter\floor</span><span class="nb">{</span><span class="k">\lfloor</span><span class="nb">}{</span><span class="k">\rfloor</span><span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\sech</span><span class="nb">}{</span>sech<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\csch</span><span class="nb">}{</span>csch<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\arcsec</span><span class="nb">}{</span>arcsec<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\arccot</span><span class="nb">}{</span>arcCot<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\arccsc</span><span class="nb">}{</span>arcCsc<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\arccosh</span><span class="nb">}{</span>arcCosh<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\arcsinh</span><span class="nb">}{</span>arcsinh<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\arctanh</span><span class="nb">}{</span>arctanh<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\arcsech</span><span class="nb">}{</span>arcsech<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\arccsch</span><span class="nb">}{</span>arcCsch<span class="nb">}</span>
+<span class="k">\DeclareMathOperator</span><span class="nb">{</span><span class="k">\arccoth</span><span class="nb">}{</span>arcCoth<span class="nb">}</span>
+<span class="k">\DeclareMathOperator*</span><span class="nb">{</span><span class="k">\plim</span><span class="nb">}{</span><span class="k">\mathnormal</span><span class="nb">{</span>p<span class="nb">}</span><span class="k">\mkern</span>2mu-lim<span class="nb">}</span>
+<span class="k">\definecolor</span><span class="nb">{</span>color1<span class="nb">}{</span>RGB<span class="nb">}{</span>249,215,177<span class="nb">}</span>
+<span class="k">\newcommand\gauss</span><span class="na">[2]</span><span class="nb">{</span>1/(#2*sqrt(2*pi))*exp(-((x-#1)<span class="nb">^</span>2)/(2*#2<span class="nb">^</span>2))<span class="nb">}</span>
+<span class="k">\newtheorem*</span><span class="nb">{</span>thm<span class="nb">}{</span>Theorem<span class="nb">}</span>
+<span class="k">\newlength</span><span class="nb">{</span><span class="k">\dhatheight</span><span class="nb">}</span></code></pre></div>
+
+<p>You can let new commands having no parameter,</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\A</span><span class="nb">}{</span><span class="k">\alpha</span><span class="nb">}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\sg</span><span class="nb">}{</span><span class="k">\sigma</span><span class="nb">}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\is</span><span class="nb">}{_</span>i<span class="nb">^</span>2<span class="nb">}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\Yi</span><span class="nb">}{</span>Y<span class="nb">_</span>i<span class="nb">}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\Xi</span><span class="nb">}{</span>X<span class="nb">_</span>i<span class="nb">}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\lyi</span><span class="nb">}{</span>y<span class="nb">_</span>i<span class="nb">}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\ey</span><span class="nb">}{</span><span class="k">\hat</span><span class="nb">{</span>Y<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\eu</span><span class="nb">}{</span><span class="k">\hat</span><span class="nb">{</span>u<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\esg</span><span class="nb">}{</span><span class="k">\hat</span><span class="nb">{</span><span class="k">\sg</span><span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\mr</span><span class="nb">}{</span><span class="k">\mathrm</span><span class="nb">}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\S</span><span class="nb">}{</span><span class="k">\sum</span><span class="nb">}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\bold</span><span class="nb">}{</span><span class="k">\textbf</span><span class="nb">}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\TA</span><span class="nb">}{</span><span class="k">\T</span><span class="nb">{</span>Assets<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\TP</span><span class="nb">}{</span><span class="k">\T</span><span class="nb">{</span>Personnel<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\TE</span><span class="nb">}{</span><span class="k">\T</span><span class="nb">{</span>Expenditure<span class="nb">}}</span></code></pre></div>
+
+<p>or having parameters.</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\B</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\beta</span><span class="nb">_{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\eb</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\hat</span><span class="nb">{</span><span class="k">\beta</span><span class="nb">}_{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\pt</span><span class="nb">}</span>[1]
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\bk</span><span class="nb">}</span>[1]
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\T</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\text</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\Xni</span><span class="nb">}</span>[1]<span class="nb">{</span>X<span class="nb">_{</span>#1i<span class="nb">}}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\ni</span><span class="nb">}</span>[1]<span class="nb">{</span>x<span class="nb">_{</span>#1i<span class="nb">}}</span></code></pre></div>
+
+<p>Sometimes a new command declaration can be complex:</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\doublehat</span><span class="nb">}</span>[1]<span class="nb">{</span> <span class="c">%</span>
+    <span class="k">\settoheight</span><span class="nb">{</span><span class="k">\dhatheight</span><span class="nb">}{</span><span class="k">\ensuremath</span><span class="nb">{</span><span class="k">\hat</span><span class="nb">{</span>#1<span class="nb">}}}</span><span class="c">%</span>
+    <span class="k">\addtolength</span><span class="nb">{</span><span class="k">\dhatheight</span><span class="nb">}{</span>-0.35ex<span class="nb">}</span><span class="c">%</span>
+    <span class="k">\hat</span><span class="nb">{</span><span class="k">\vphantom</span><span class="nb">{</span><span class="k">\rule</span><span class="nb">{</span>1pt<span class="nb">}{</span><span class="k">\dhatheight</span><span class="nb">}}</span><span class="c">%</span>
+    <span class="k">\smash</span><span class="nb">{</span><span class="k">\hat</span><span class="nb">{</span>#1<span class="nb">}}}}</span></code></pre></div>
+
+<p>Note that if the desired command name has already existed, you need to use <code>\renewcommand</code>.</p>
+
+<h3 id="title-page">Title Page</h3>
+
+<p>There are many at <a href="http://www.latextemplates.com/cat/title-pages">LaTeX Templates</a></p>
+
+<p>Here is an example:</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\titleAT</span><span class="nb">}{</span><span class="k">\begingroup</span> <span class="c">% Create the command for including the title page in the document</span>
+<span class="k">\newlength</span><span class="nb">{</span><span class="k">\drop</span><span class="nb">}</span> <span class="c">% Command for generating a specific amount of whitespace</span>
+<span class="k">\drop</span>=0.1<span class="k">\textheight</span> <span class="c">% Define the command as 10% of the total text height</span>
+    
+<span class="k">\centering</span>
+<span class="k">\rule</span><span class="nb">{</span><span class="k">\textwidth</span><span class="nb">}{</span>1pt<span class="nb">}</span><span class="k">\par</span> <span class="c">% Thick horizontal line</span>
+<span class="k">\vspace</span><span class="nb">{</span>2pt<span class="nb">}</span><span class="k">\vspace</span><span class="nb">{</span>-<span class="k">\baselineskip</span><span class="nb">}</span> <span class="c">% Whitespace between lines</span>
+<span class="k">\rule</span><span class="nb">{</span><span class="k">\textwidth</span><span class="nb">}{</span>0.4pt<span class="nb">}</span><span class="k">\par</span> <span class="c">% Thin horizontal line</span>
+    
+<span class="k">\vspace</span><span class="nb">{</span><span class="k">\drop</span><span class="nb">}</span> <span class="c">% Whitespace between the top lines and title1</span>
+<span class="nb">{</span><span class="k">\Huge</span> Anything<span class="nb">}</span><span class="k">\\</span><span class="na">[0.5\baselineskip]</span> <span class="c">% Title line 1</span>
+<span class="nb">{</span><span class="k">\Large</span> of<span class="nb">}</span><span class="k">\\</span><span class="na">[0.75\baselineskip]</span> <span class="c">% Title line 2</span>
+<span class="nb">{</span><span class="k">\Huge</span> Anything<span class="nb">}</span><span class="k">\\</span><span class="na">[0.75\baselineskip]</span>
+<span class="nb">{</span><span class="k">\Huge</span> and Anything<span class="nb">}</span> <span class="c">% Title line 3</span>
+    
+<span class="k">\vspace</span><span class="nb">{</span>0.25<span class="k">\drop</span><span class="nb">}</span> <span class="c">% Whitespace between the title and short horizontal line</span>
+<span class="k">\rule</span><span class="nb">{</span>0.3<span class="k">\textwidth</span><span class="nb">}{</span>0.4pt<span class="nb">}</span><span class="k">\par</span> <span class="c">% Short horizontal line under the title</span>
+<span class="k">\vspace</span><span class="nb">{</span><span class="k">\drop</span><span class="nb">}</span> <span class="c">% Whitespace between the thin horizontal line and the author name</span>
+    
+<span class="nb">{</span><span class="k">\Large</span> <span class="k">\textsc</span><span class="nb">{</span>Something<span class="nb">}}</span><span class="k">\par</span> <span class="c">% Author name</span>
+    
+<span class="k">\vfill</span>
+    
+<span class="k">\rule</span><span class="nb">{</span><span class="k">\textwidth</span><span class="nb">}{</span>0.4pt<span class="nb">}</span><span class="k">\par</span> <span class="c">% Thin horizontal line</span>
+<span class="k">\vspace</span><span class="nb">{</span>2pt<span class="nb">}</span><span class="k">\vspace</span><span class="nb">{</span>-<span class="k">\baselineskip</span><span class="nb">}</span> <span class="c">% Whitespace between lines</span>
+<span class="k">\rule</span><span class="nb">{</span><span class="k">\textwidth</span><span class="nb">}{</span>1pt<span class="nb">}</span><span class="k">\par</span> <span class="c">% Thick horizontal line</span>
+    
+<span class="k">\endgroup</span><span class="nb">}</span></code></pre></div>
+
+<h2 id="document">Document</h2>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+    
+<span class="k">\pagestyle</span><span class="nb">{</span>empty<span class="nb">}</span> <span class="c">% Removes page numbers</span>
+<span class="k">\titleAT</span> <span class="c">% This command includes the title page</span>
+    
+<span class="k">\newpage</span>
+<span class="k">\tableofcontents</span>
+<span class="k">\listoffigures</span>
+<span class="k">\listoftables</span>
+<span class="k">\newpage</span>
+    
+<span class="k">\pagestyle</span><span class="nb">{</span>plain<span class="nb">}</span>
+Dedication
+<span class="k">\newpage</span>
+
+<span class="k">\pagestyle</span><span class="nb">{</span>plain<span class="nb">}</span>
+Acknowledgement
+<span class="k">\newpage</span>
+
+<span class="k">\chapter*</span><span class="nb">{</span><span class="k">\centering</span> Abstract<span class="nb">}</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abstract<span class="nb">}</span>
+Write something.
+
+<span class="k">\input</span><span class="nb">{</span>section1.tex<span class="nb">}</span>
+<span class="c">% or</span>
+<span class="k">\section</span><span class="nb">{</span>section1<span class="nb">}</span>
+<span class="k">\footcite</span><span class="na">[1]</span><span class="nb">{</span>elder2012practical<span class="nb">}</span> <span class="c">% elder2012practical can been seen in references.bib</span>
+    
+<span class="k">\newpage</span>
+<span class="k">\printbibliography</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></code></pre></div>
+
+<ul>
+  <li>It’s recommended to use <code>\input{file.tex}</code> for a large writing project.</li>
+  <li>biblatex’s \printbibliography is very convenient.</li>
+</ul>
+
+<p>Another example see <a href="http://tex.stackexchange.com/questions/20538/">StackExchange</a></p>
+
+<p>There are many commands we can use in the document. <a href="http://kapeli.com/dash">Dash</a> has a LaTeX documentation. Here I only list the commands I have used.</p>
+
+<h3 id="math-symbols">Math Symbols</h3>
+
+<p>Math symbols include greek letters <code>\alpha</code> <script type="math/tex">\alpha</script>, <code>\beta</code> <script type="math/tex">\beta</script>, <code>\chi</code> <script type="math/tex">\chi</script>, <code>\delta</code> <script type="math/tex">\delta</script>, <code>\Delta</code> <script type="math/tex">\Delta</script>, <code>\epsilon</code> <script type="math/tex">\epsilon</script>, <code>\lambda</code> <script type="math/tex">\lambda</script>, <code>\mu</code> <script type="math/tex">\mu</script>, <code>\pi</code> <script type="math/tex">\pi</script>, <code>\rho</code> <script type="math/tex">\rho</script>, <code>\sigma</code> <script type="math/tex">\sigma</script>, <code>\theta</code> <script type="math/tex">\theta</script>, <code>\varepsilon</code> <script type="math/tex">\varepsilon</script>, and others: <code>\approx</code> <script type="math/tex">\approx</script>, <code>\geq</code> <script type="math/tex">\geq</script>, <code>\leq</code> <script type="math/tex">\leq</script>, <code>\neq</code> <script type="math/tex">\neq</script>, <code>\bar{x}</code> <script type="math/tex">\bar{x}</script>, <code>\hat{x}</code> <script type="math/tex">\hat{x}</script>, <code>\frac{a}{b}</code> <script type="math/tex">\frac{a}{b}</script>, ‘logic and’ <code>\land</code> <script type="math/tex">\land</script>, <code>\ln</code> <script type="math/tex">\ln</script>, <code>\log</code> <script type="math/tex">\log</script>, <code>\mid</code> <script type="math/tex">\mid</script>, <code>\pm</code> <script type="math/tex">\pm</script>, <code>\prod</code> <script type="math/tex">\prod</script>, <code>\sim</code> <script type="math/tex">\sim</script>, <code>\sqrt{3}</code> <script type="math/tex">\sqrt{3}</script>, <code>\sum</code> <script type="math/tex">\sum</script>, <code>\times</code> <script type="math/tex">\times</script>, <code>\lceil</code> <script type="math/tex">\lceil</script>, <code>\lfloor</code> <script type="math/tex">\lfloor</script>, <code>\rceil</code> <script type="math/tex">\rceil</script>, <code>\rfloor</code> <script type="math/tex">\rfloor</script>, <code>\infty</code> <script type="math/tex">\infty</script>, <code>\int_a^b\!f(x)\,\mathrm{d}x</code>, <script type="math/tex">\int_a^b\!f(x)\,\mathrm{d}x</script></p>
+
+<p>Equations, for examples,</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\lim</span><span class="nb">_{</span>x<span class="k">\to</span> a<span class="nb">}</span> f(x)=L</code></pre></div>
+
+<p>will produce</p>
+
+<script type="math/tex; mode=display">\lim_{x\to a} f(x)=L</script>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\frac</span><span class="nb">{</span>dy<span class="nb">}{</span>dx<span class="nb">}</span> = <span class="k">\lim</span><span class="nb">_{</span><span class="k">\Delta</span> x<span class="k">\to</span> 0<span class="nb">}</span> <span class="k">\frac</span><span class="nb">{</span><span class="k">\Delta</span> y<span class="nb">}{</span><span class="k">\Delta</span> x<span class="nb">}</span></code></pre></div>
+
+<script type="math/tex; mode=display">\frac{dy}{dx} = \lim_{\Delta x\to 0} \frac{\Delta y}{\Delta x}</script>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\underset</span><span class="nb">{</span>n<span class="k">\rightarrow\infty</span><span class="nb">}{</span><span class="k">\bar</span><span class="nb">{</span>X<span class="nb">}}</span><span class="k">\sim</span> <span class="nb">{</span><span class="k">\left</span>(<span class="k">\mu</span>, <span class="k">\frac</span><span class="nb">{</span><span class="k">\sigma</span><span class="nb">^</span>2<span class="nb">}{</span>n<span class="nb">}</span><span class="k">\right</span>)<span class="nb">}</span></code></pre></div>
+
+<script type="math/tex; mode=display">\underset{n\rightarrow\infty}{\bar{X}}\sim {\left(\mu, \frac{\sigma^2}{n}\right)}</script>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex">(f <span class="k">\circ</span> g)(x)=f(g(x))</code></pre></div>
+
+<script type="math/tex; mode=display">(f \circ g)(x)=f(g(x))</script>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex">f(X)=<span class="k">\binom</span><span class="nb">{</span>n<span class="nb">}{</span>x<span class="nb">}</span><span class="k">\,</span>p<span class="nb">^</span>x<span class="k">\,</span><span class="nb">{</span><span class="k">\left</span>(1-p<span class="k">\right</span>)<span class="nb">}^{</span>n-x<span class="nb">}</span></code></pre></div>
+
+<script type="math/tex; mode=display">f(X)=\binom{n}{x}\,p^x\,{\left(1-p\right)}^{n-x}</script>
+
+<p>More math symbols see <a href="http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols">this</a>. You can look up at <a href="http://detexify.kirelabs.org/classify.html">Detexify</a> which is a engine for LaTeX handwritten symbol recognition.</p>
+
+<h3 id="more-on-math-typesetting">More on Math Typesetting</h3>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="s">\(</span><span class="nb"> and </span><span class="s">\)</span>
+<span class="sb">\[</span><span class="nb"> and </span><span class="s">\]</span>
+<span class="k">\bm</span>
+<span class="k">\displaystyle</span>
+<span class="k">\eqref</span>
+<span class="k">\left</span> and <span class="k">\right</span>
+<span class="k">\mathbb</span>
+<span class="k">\mathnormal</span>
+<span class="k">\mathop</span>
+<span class="k">\mathrm</span></code></pre></div>
+
+<h3 id="pgftikz">PGF/TikZ</h3>
+
+<p>Common commands are</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\closedcycle</span>
+<span class="k">\coordinate</span>
+<span class="k">\draw</span>
+<span class="k">\empty</span>
+<span class="k">\fill</span>
+<span class="k">\foreach</span>, <span class="k">\x</span>, <span class="k">\y</span>
+<span class="k">\node</span>
+<span class="k">\path</span></code></pre></div>
+
+<p>The following are examples:</p>
+
+<p><img src="http://i.imgur.com/yYLZ8t5.png" alt="alt text" title="1" /></p>
+
+<p>was produced by</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[
+block/.style=<span class="nb">{</span>rectangle,draw,fill=blue!20,text width=6em,text centered,rounded corners,minimum height=4em,node distance=2cm,auto<span class="nb">}</span>,
+line/.style=<span class="nb">{</span>draw,-latex&#39;,node distance= 2cm,auto<span class="nb">}</span>]
+<span class="k">\node</span> [block] (a) <span class="nb">{</span>Real-world problem<span class="nb">}</span>;
+<span class="k">\node</span> [block, right=of a] (b) <span class="nb">{</span>Mathematical model<span class="nb">}</span>;
+<span class="k">\node</span> [block, below=of b] (c) <span class="nb">{</span>Mathematical conclusions<span class="nb">}</span>;
+<span class="k">\node</span> [block, left=of c] (d) <span class="nb">{</span>Real-world predictions<span class="nb">}</span>;
+<span class="k">\path</span> [line] (a) -- node <span class="nb">{</span>Formulate<span class="nb">}</span>(b);
+<span class="k">\path</span> [line] (b) -- node <span class="nb">{</span>Solve<span class="nb">}</span>(c);
+<span class="k">\path</span> [line] (c) -- node <span class="nb">{</span>Interpret<span class="nb">}</span>(d);
+<span class="k">\path</span> [line] (d) -- node <span class="nb">{</span>Test<span class="nb">}</span>(a);
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/hkPkI1K.png" alt="alt text" title="2" /></p>
+
+<p>was produced by</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h]<span class="k">\centering</span>
+<span class="k">\subfloat</span><span class="na">[$y=x^2+x+1$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\coordinate</span> (x) at (2,0); <span class="k">\coordinate</span> (y) at (0,3); <span class="k">\draw</span> [&lt;-&gt;] (x) node[below] <span class="nb">{</span><span class="s">$</span><span class="nb">x</span><span class="s">$</span><span class="nb">}</span> -- (0,0) -- (y) node[left] <span class="nb">{</span><span class="s">$</span><span class="nb">y</span><span class="s">$</span><span class="nb">}</span>; <span class="k">\draw</span> [-] (-2,0) -- (0,0) -- (0,-1);
+    <span class="k">\foreach</span> <span class="k">\x</span> in <span class="nb">{</span>1<span class="nb">}</span> <span class="k">\draw</span> (<span class="k">\x</span> cm,1pt) -- (<span class="k">\x</span> cm,-1pt) node[anchor=north] <span class="nb">{</span><span class="s">$</span><span class="nv">\x</span><span class="s">$</span><span class="nb">}</span>; <span class="k">\foreach</span> <span class="k">\y</span> in <span class="nb">{</span>2<span class="nb">}</span> <span class="k">\draw</span> (1pt,<span class="k">\y</span> cm) -- (-1pt,<span class="k">\y</span> cm) node[anchor=east] <span class="nb">{</span><span class="s">$</span><span class="nv">\y</span><span class="s">$</span><span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[domain=-2:1]</span> plot (<span class="k">\x</span>, <span class="nb">{</span><span class="k">\x*\x</span>+<span class="k">\x</span>+1<span class="nb">}</span>);<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span>
+<span class="k">\subfloat</span><span class="na">[$y=-2x^2+3x+1$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\coordinate</span> (x) at (2,0); <span class="k">\coordinate</span> (y) at (0,3); <span class="k">\draw</span> [&lt;-&gt;] (x) node[below] <span class="nb">{</span><span class="s">$</span><span class="nb">x</span><span class="s">$</span><span class="nb">}</span> -- (0,0) -- (y) node[left] <span class="nb">{</span><span class="s">$</span><span class="nb">y</span><span class="s">$</span><span class="nb">}</span>; <span class="k">\draw</span> [-] (-2,0) -- (0,0) -- (0,-1);
+    <span class="k">\foreach</span> <span class="k">\x</span> in <span class="nb">{</span>1<span class="nb">}</span> <span class="k">\draw</span> (<span class="k">\x</span> cm,1pt) -- (<span class="k">\x</span> cm,-1pt) node[anchor=north] <span class="nb">{</span><span class="s">$</span><span class="nv">\x</span><span class="s">$</span><span class="nb">}</span>; <span class="k">\foreach</span> <span class="k">\y</span> in <span class="nb">{</span>2<span class="nb">}</span> <span class="k">\draw</span> (1pt,<span class="k">\y</span> cm) -- (-1pt,<span class="k">\y</span> cm) node[anchor=east] <span class="nb">{</span><span class="s">$</span><span class="nv">\y</span><span class="s">$</span><span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[domain=-0.55:2.05]</span> plot (<span class="k">\x</span>, <span class="nb">{</span>-2*<span class="k">\x*\x</span>+3*<span class="k">\x</span>+1<span class="nb">}</span>); <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span><span class="k">\qquad</span>
+<span class="k">\subfloat</span><span class="na">[$y=x^3-x+1$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=0.5]
+    <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[axis x line=middle,axis y line=middle,domain=-1.5:1.5,samples=100,xlabel=<span class="s">$</span><span class="nb">x</span><span class="s">$</span>,ylabel=<span class="s">$</span><span class="nb">y</span><span class="s">$</span>,legend pos=north west,legend style=<span class="nb">{</span>draw=none, empty legend<span class="nb">}</span>]
+    <span class="k">\addplot</span> [thick] <span class="nb">{</span>x<span class="nb">^</span>3-x+1<span class="nb">}</span>;<span class="k">\legend</span><span class="nb">{}</span><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span>
+<span class="k">\subfloat</span><span class="na">[$y=x^4-3x^2+x$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=0.5]
+    <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[axis x line=middle,axis y line=middle,domain=-2:2,samples=100,xlabel=<span class="s">$</span><span class="nb">x</span><span class="s">$</span>,ylabel=<span class="s">$</span><span class="nb">y</span><span class="s">$</span>,legend pos=north west,legend style=<span class="nb">{</span>draw=none, empty legend<span class="nb">}</span>]
+    <span class="k">\addplot</span> [thick] <span class="nb">{</span>x<span class="nb">^</span>4-3*x<span class="nb">^</span>2+x<span class="nb">}</span>;<span class="k">\legend</span><span class="nb">{}</span><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span>
+<span class="k">\subfloat</span><span class="na">[$y=3x^5-25x^3+60x$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=0.5]
+    <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[axis x line=middle,axis y line=middle,domain=-2.5:2.5,samples=100,xlabel=<span class="s">$</span><span class="nb">x</span><span class="s">$</span>,ylabel=<span class="s">$</span><span class="nb">y</span><span class="s">$</span>,legend pos=north west,legend style=<span class="nb">{</span>draw=none, empty legend<span class="nb">}</span>]
+    <span class="k">\addplot</span> [thick] <span class="nb">{</span>3*x<span class="nb">^</span>5-25*x<span class="nb">^</span>3+60*x<span class="nb">}</span>;<span class="k">\legend</span><span class="nb">{}</span><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/oXIjG0C.png" alt="alt text" title="3" /></p>
+
+<p>was produced by</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=.75]
+<span class="k">\draw</span><span class="na">[-&gt;,thick]</span> (-8,0) -- (-2,0);
+<span class="k">\draw</span><span class="na">[-&gt;,thick]</span> (2,0) -- (8,0);
+<span class="k">\draw</span><span class="na">[-&gt;,thick]</span> (-6,0) node[below]<span class="nb">{</span><span class="s">$</span><span class="nb">x</span><span class="s">$</span><span class="nb">}</span> parabola bend (0,2.5) (6,0) node[below]<span class="nb">{</span><span class="s">$</span><span class="nb">f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="s">$</span><span class="nb">}</span>;
+<span class="k">\draw</span><span class="na">[-&gt;,thick]</span> (-4,0) node[below]<span class="nb">{</span><span class="s">$</span><span class="nb">a</span><span class="s">$</span><span class="nb">}</span> parabola bend (0,1.5) (4,0) node[below]<span class="nb">{</span><span class="s">$</span><span class="nb">f</span><span class="o">(</span><span class="nb">a</span><span class="o">)</span><span class="s">$</span><span class="nb">}</span>;
+<span class="k">\node</span> at (0,1) <span class="nb">{</span><span class="s">$</span><span class="nb">f</span><span class="s">$</span><span class="nb">}</span>;
+<span class="k">\fill</span> (-6,0) circle[radius=2pt];
+<span class="k">\fill</span> (-4,0) circle[radius=2pt];
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=.75]
+<span class="k">\draw</span><span class="na">[-&gt;,thick]</span> (-8,0) -- (-2,0);
+<span class="k">\draw</span><span class="na">[-&gt;,thick]</span> (2,0) -- (8,0);
+<span class="k">\draw</span><span class="na">[-&gt;,thick]</span> (-5.5,0) node[above]<span class="nb">{</span><span class="s">$</span><span class="nb">x</span><span class="s">$</span><span class="nb">}</span> parabola bend (0,2) (5.5,0) node[above]<span class="nb">{</span><span class="s">$</span><span class="nb">f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="s">$</span><span class="nb">}</span>;
+<span class="k">\node</span> at (0,1.5) <span class="nb">{</span><span class="s">$</span><span class="nb">f</span><span class="s">$</span><span class="nb">}</span>;
+<span class="k">\foreach</span> <span class="k">\x</span>/<span class="k">\y</span> in <span class="nb">{</span>-6/<span class="s">$</span><span class="nb">a</span><span class="o">-</span><span class="nv">\delta</span><span class="s">$</span>,-5/<span class="s">$</span><span class="nb">a</span><span class="s">$</span>,-4/<span class="s">$</span><span class="nb">a</span><span class="o">+</span><span class="nv">\delta</span><span class="s">$</span>,4/<span class="s">$</span><span class="nb">L</span><span class="o">-</span><span class="nv">\varepsilon</span><span class="s">$</span>,5/<span class="s">$</span><span class="nb">L</span><span class="s">$</span>,6/<span class="s">$</span><span class="nb">L</span><span class="o">+</span><span class="nv">\varepsilon</span><span class="s">$</span><span class="nb">}{</span>
+    <span class="k">\node</span><span class="na">[below]</span> at (<span class="k">\x</span>,0) <span class="nb">{</span><span class="k">\y</span><span class="nb">}</span>;
+    <span class="k">\fill</span> (<span class="k">\x</span>,0) circle[radius=2pt];
+<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/4uqMRib.png" alt="alt text" title="4" /></p>
+
+<p>was produced by</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h]<span class="k">\centering</span>
+<span class="k">\subfloat</span><span class="na">[$f(x)= \frac{x^2-x-2}{x-2}$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=0.5]
+    <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[axis x line=middle,axis y line=middle,domain=-3:3,samples=100,xlabel=<span class="s">$</span><span class="nb">x</span><span class="s">$</span>,ylabel=<span class="s">$</span><span class="nb">y</span><span class="s">$</span>]
+    <span class="k">\addplot</span> [thick] <span class="nb">{</span>x+1<span class="nb">}</span>;<span class="k">\addplot</span><span class="na">[holdot]</span> coordinates<span class="nb">{</span>(2,3)<span class="nb">}</span>;<span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span>
+<span class="k">\subfloat</span><span class="na">[$f(x) = \frac{1}{x^2}$ if $x\neq 0$ \qquad or $1$ if $x=0$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=0.5]
+    <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[axis x line=middle,axis y line=middle,domain=-0.005:0.005,samples=100,xlabel=<span class="s">$</span><span class="nb">x</span><span class="s">$</span>,ylabel=<span class="s">$</span><span class="nb">y</span><span class="s">$</span>]
+    <span class="k">\addplot</span> [thick] <span class="nb">{</span>1/(x<span class="nb">^</span>2)<span class="nb">}</span>;<span class="k">\addplot</span><span class="na">[soldot]</span> coordinates<span class="nb">{</span>(0,1)<span class="nb">}</span>;<span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span>
+<span class="k">\subfloat</span><span class="na">[$f(x)=|\floor*{x}|$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=0.5]
+    <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[axis x line=middle,axis y line=middle,domain=-1.5:4,samples=100,xlabel=<span class="s">$</span><span class="nb">x</span><span class="s">$</span>,ylabel=<span class="s">$</span><span class="nb">y</span><span class="s">$</span>]
+    <span class="k">\addplot</span> [thick,jump mark left,samples at=<span class="nb">{</span>-1,0,...,4<span class="nb">}</span>] <span class="nb">{</span>floor(x)<span class="nb">}</span>;<span class="k">\foreach</span> <span class="k">\x</span> in <span class="nb">{</span>-1,...,3<span class="nb">}{</span><span class="k">\addplot</span><span class="na">[soldot]</span> coordinates<span class="nb">{</span>(<span class="k">\x</span>,<span class="k">\x</span>)<span class="nb">}</span>;<span class="k">\addplot</span><span class="na">[holdot]</span> coordinates<span class="nb">{</span>(<span class="k">\x</span>+1,<span class="k">\x</span>)<span class="nb">}</span>;<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/wR4r8OM.png" alt="alt text" title="5" /></p>
+
+<p>was produced by</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h]<span class="k">\centering</span>
+<span class="k">\subfloat</span><span class="na">[$y=f(x)=\abs{x}$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\coordinate</span> (x) at (3,0); <span class="k">\coordinate</span> (y) at (0,3); <span class="k">\draw</span> [&lt;-&gt;] (x) node[below] <span class="nb">{</span><span class="s">$</span><span class="nb">x</span><span class="s">$</span><span class="nb">}</span> -- (0,0) -- (y) node[left] <span class="nb">{</span><span class="s">$</span><span class="nb">y</span><span class="s">$</span><span class="nb">}</span>; <span class="k">\draw</span> [-] (-3,0) -- (0,0) -- (0,-1);
+    <span class="k">\draw</span><span class="na">[domain=-2.5:0]</span> plot (<span class="k">\x</span>, <span class="nb">{</span>-<span class="k">\x</span><span class="nb">}</span>);<span class="k">\draw</span><span class="na">[domain=0:2.5]</span> plot (<span class="k">\x</span>, <span class="nb">{</span><span class="k">\x</span><span class="nb">}</span>);<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span>
+<span class="k">\subfloat</span><span class="na">[$y=f&#39;(x)$]</span><span class="nb">{</span><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\coordinate</span> (x) at (3,0); <span class="k">\coordinate</span> (y) at (0,2); <span class="k">\draw</span> [&lt;-&gt;] (x) node[below] <span class="nb">{</span><span class="s">$</span><span class="nb">x</span><span class="s">$</span><span class="nb">}</span> -- (0,0) -- (y) node[left] <span class="nb">{</span><span class="s">$</span><span class="nb">y</span><span class="s">$</span><span class="nb">}</span>; <span class="k">\draw</span> [-] (-3,0) -- (0,0) -- (0,-2);
+    <span class="k">\foreach</span> <span class="k">\y</span> in <span class="nb">{</span>-1,1<span class="nb">}</span> <span class="k">\draw</span> (1pt,<span class="k">\y</span> cm) -- (-1pt,<span class="k">\y</span> cm) node[anchor=east] <span class="nb">{</span><span class="s">$</span><span class="nv">\y</span><span class="s">$</span><span class="nb">}</span>;
+    <span class="k">\draw</span><span class="na">[domain=-3:0]</span> plot (<span class="k">\x</span>, <span class="nb">{</span>-1<span class="nb">}</span>);<span class="k">\draw</span><span class="na">[domain=0:3]</span> plot (<span class="k">\x</span>, <span class="nb">{</span>1<span class="nb">}</span>);<span class="k">\foreach</span> <span class="k">\y</span> in <span class="nb">{</span>-1,1<span class="nb">}</span> <span class="k">\draw</span><span class="na">[fill=white]</span> (0,<span class="k">\y</span>) circle[radius=2pt];<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/d8z2dK8.png" alt="alt text" title="6" /></p>
+
+<p>was produced by</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[
+	axis x line=bottom,
+	axis y line=middle,
+	xlabel=<span class="s">$</span><span class="nb">t</span><span class="s">$</span>, xlabel style=<span class="nb">{</span>at=(current axis.right of origin), anchor=west<span class="nb">}</span>,
+	ylabel=<span class="s">$</span><span class="nb">y</span><span class="s">$</span>, ylabel style=<span class="nb">{</span>at=(current axis.above origin), anchor=south<span class="nb">}</span>,
+	domain=1:6,
+	samples=100,
+	ymin=0,ymax=7,xmin=0,xmax=7,
+	xtick=<span class="nb">{</span>0,1,4,6<span class="nb">}</span>,xticklabels=<span class="nb">{</span>0,a,x,b<span class="nb">}</span>,ytick=<span class="k">\empty</span>]
+<span class="k">\addplot</span> [] <span class="nb">{</span>sin(deg(x-0.5))+4<span class="nb">}</span> <span class="k">\closedcycle</span>;
+<span class="k">\addplot</span> [fill=color1,domain=1:4,samples=100] <span class="nb">{</span>sin(deg(x-0.5))+4<span class="nb">}</span> <span class="k">\closedcycle</span>;
+<span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+<span class="k">\node</span> at (2.5,2) <span class="nb">{</span>area = <span class="s">$</span><span class="nb">g</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="s">$</span><span class="nb">}</span>;
+<span class="k">\node</span> at (4,4) <span class="nb">{</span><span class="s">$</span><span class="nb">y</span><span class="o">=</span><span class="nb">f</span><span class="o">(</span><span class="nb">t</span><span class="o">)</span><span class="s">$</span><span class="nb">}</span>;
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/JTaQIgo.png" alt="alt text" title="7" /></p>
+
+<p>was produced by</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[every axis plot post/.append style=<span class="nb">{</span>
+  mark=none,domain=-2:3,samples=100,smooth<span class="nb">}</span>, <span class="c">% All plots: from -2:2, 50 samples, smooth, no marks</span>
+axis x line*=bottom, <span class="c">% no box around the plot, only x and y axis</span>
+axis y line*=left, <span class="c">% the * suppresses the arrow tips</span>
+enlargelimits=upper] <span class="c">% extend the axes a bit to the right and top</span>
+<span class="k">\addplot</span> <span class="nb">{</span><span class="k">\gauss</span><span class="nb">{</span>0<span class="nb">}{</span>0.5<span class="nb">}}</span>;
+<span class="k">\addplot</span> <span class="nb">{</span><span class="k">\gauss</span><span class="nb">{</span>1<span class="nb">}{</span>0.75<span class="nb">}}</span>;
+<span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span></code></pre></div>
+
+<p><img src="http://i.imgur.com/qyFP7we.png" alt="alt text" title="8" /></p>
+
+<p>was produced by</p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]<span class="k">\centering</span>
+<span class="k">\caption</span><span class="nb">{</span>Breakdown of the variation of <span class="s">$</span><span class="nv">\Yi</span><span class="s">$</span> into two components<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[
+	axis x line=bottom,
+	axis y line=middle,
+	xlabel=<span class="s">$</span><span class="nb">X</span><span class="s">$</span>, xlabel style=<span class="nb">{</span>at=(current axis.right of origin), anchor=west<span class="nb">}</span>,
+	ylabel=<span class="s">$</span><span class="nb">Y</span><span class="s">$</span>, ylabel style=<span class="nb">{</span>at=(current axis.above origin), anchor=south<span class="nb">}</span>,
+	domain=0:6,
+	samples=100,
+	ymin=0,ymax=9,xmin=0,
+	xtick=<span class="nb">{</span>0,3.5<span class="nb">}</span>,xticklabels=<span class="nb">{</span>0,<span class="s">$</span><span class="nv">\Xi</span><span class="s">$</span><span class="nb">}</span>,ytick=<span class="nb">{</span>4<span class="nb">}</span>,yticklabels=<span class="nb">{</span><span class="s">$</span><span class="nv">\bar</span><span class="nb">{Y}</span><span class="s">$</span><span class="nb">}</span>,
+	legend pos=north west,legend style=<span class="nb">{</span>empty legend<span class="nb">}</span>]
+<span class="k">\addplot</span> [thick] <span class="nb">{</span>1.5*x+1<span class="nb">}</span>;
+<span class="k">\addplot</span> [] <span class="nb">{</span>4<span class="nb">}</span>;
+<span class="k">\legend</span><span class="nb">{</span><span class="s">$</span><span class="nv">\Yi</span><span class="o">=</span><span class="nv">\eb</span><span class="m">1</span><span class="o">+</span><span class="nv">\eb</span><span class="m">2</span><span class="nv">\Xi</span><span class="s">$</span><span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+<span class="k">\draw</span> [dashed] (4,0) -- (4,5.5);
+<span class="k">\draw</span><span class="na">[fill]</span> (4,5.5) circle[radius=1pt] node[anchor=south] <span class="nb">{</span><span class="s">$</span><span class="nv">\Yi</span><span class="s">$</span><span class="nb">}</span>;
+<span class="k">\draw</span><span class="na">[fill]</span> (4,3.975) circle[radius=1pt];
+<span class="k">\node</span> at (4.5,4) <span class="nb">{</span><span class="s">$</span><span class="nv">\ey</span><span class="nb">_i</span><span class="s">$</span><span class="nb">}</span>;
+<span class="k">\node</span> at (6.75,5.5) <span class="nb">{</span>SRF<span class="nb">}</span>;
+<span class="k">\draw</span> [decorate,decoration=<span class="nb">{</span>brace,amplitude=5pt<span class="nb">}</span>,xshift=-2pt,yshift=0pt]
+(4,2.6) -- (4,5.5) node [black,midway,xshift=-1.5cm] <span class="nb">{</span><span class="k">\footnotesize</span> <span class="s">$</span><span class="nv">\lyi</span><span class="o">=(</span><span class="nv">\Yi</span><span class="o">-</span><span class="nv">\bar</span><span class="nb">{Y}</span><span class="o">)=</span><span class="s">$</span> total<span class="nb">}</span>;
+<span class="k">\draw</span> [decorate,decoration=<span class="nb">{</span>brace,amplitude=5pt,mirror,raise=2pt<span class="nb">}</span>,yshift=0pt]
+(4,4) -- (4,5.5) node [black,midway,xshift=2.5cm] <span class="nb">{</span><span class="k">\footnotesize</span> <span class="s">$</span><span class="nv">\eu</span><span class="nb">_i</span><span class="o">=</span><span class="s">$</span> due to residual<span class="nb">}</span>;
+<span class="k">\draw</span> [decorate,decoration=<span class="nb">{</span>brace,amplitude=5pt,mirror,raise=2pt<span class="nb">}</span>,yshift=0pt]
+(4,2.6) -- (4,4) node [black,midway,xshift=2.5cm] <span class="nb">{</span><span class="k">\footnotesize</span> <span class="s">$</span><span class="nb">{</span><span class="nv">\hat</span><span class="nb">{y}_i</span><span class="o">=(</span><span class="nv">\hat</span><span class="nb">{</span><span class="nv">\Yi</span><span class="nb">}</span><span class="o">-</span><span class="nv">\bar</span><span class="nb">{Y}</span><span class="o">)</span><span class="nb">}</span><span class="o">=</span><span class="s">$</span> due to regression<span class="nb">}</span>;
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span></code></pre></div>
+
+<p>More drawing options and more powerful examples (Python’s matplotlib, Matlab, R’s ggplot2, Mathematica) see <a href="http://www.zhihu.com/question/21664179">http://www.zhihu.com/question/21664179</a></p>
+
+<blockquote>
+  <p>工科生说 Matlab 完爆其他</p>
+
+  <p>数学系的说 Mathematica 高贵冷艳</p>
+
+  <p>统计系的说 R 语言作图领域天下无敌</p>
+
+  <p>计算机系的说 Python 低调奢华有内涵</p>
+
+  <p>……</p>
+</blockquote>
+
+<h3 id="others">Others</h3>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\!</span> and <span class="k">\,</span> and <span class="k">\\</span>
+<span class="k">\Aboxed</span>
+<span class="k">\addplot</span>
+<span class="k">\big</span>, <span class="k">\bigg</span>, <span class="k">\Big</span>, <span class="k">\Bigg</span>
+<span class="k">\bottomrule</span>, <span class="k">\cmidrule</span>, <span class="k">\fbox</span>, <span class="k">\midrule</span>, <span class="k">\multicolumn</span>, <span class="k">\toprule</span>
+<span class="k">\caption</span>
+<span class="k">\cdot</span>, <span class="k">\cdots</span>, <span class="k">\dots</span>, <span class="k">\vdots</span>
+<span class="k">\centering</span>
+<span class="k">\emph</span>, <span class="k">\textbf</span>
+<span class="k">\gauss</span>
+<span class="k">\gls</span>, <span class="k">\glsaddall</span>, <span class="k">\makeglossaries</span>, <span class="k">\newglossaryentry</span>, <span class="k">\printglossaries</span>
+<span class="k">\hspace</span>
+<span class="k">\in</span>
+<span class="k">\item</span>
+<span class="k">\label</span>
+<span class="k">\legend</span>
+<span class="k">\longrightarrow</span>, <span class="k">\rightarrow</span>
+<span class="k">\mkern</span>
+<span class="k">\overline</span>
+<span class="k">\qquad</span>
+<span class="k">\SI</span>
+<span class="k">\text</span>
+<span class="k">\widefbox</span></code></pre></div>
+
+<h3 id="environments">Environments</h3>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\aligned</span>
+<span class="k">\align</span>
+<span class="k">\enumerate</span>
+<span class="k">\empheq</span>
+<span class="k">\flalign</span>
+<span class="k">\subfloat</span></code></pre></div>
+
+<p>Note that we can put <code>*</code> after the environment name to stop numbering.</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>PDFs</p>
+
+<ul>
+  <li>Beamer
+    <ul>
+      <li><a href="https://www.uncg.edu/cmp/reu/presentations/Charles%20Batts%20-%20Beamer%20Tutorial.pdf">A Beamer Tutorial in Beamer</a></li>
+    </ul>
+  </li>
+  <li>Tables
+    <ul>
+      <li><a href="http://nepsweb.co.uk/docs/tableTricks.pdf">LaTeX Table Hints and Tips</a></li>
+      <li><a href="http://texdoc.net/texmf-dist/doc/latex/booktabs/booktabs.pdf">Publication quality tables in LaTeX (booktabs Manual)</a></li>
+      <li><a href="http://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf">Small Guide to Making Nice Tables (slides)</a></li>
+    </ul>
+  </li>
+  <li>TikZ
+    <ul>
+      <li><a href="http://cremeronline.com/LaTeX/minimaltikz.pdf">A Very Minimal Introduction to TikZ</a></li>
+      <li><a href="http://www.felixl.de/commu.pdf">Commutative Diagrams using TikZ</a></li>
+      <li><a href="https://www.coga.tu-berlin.de/fileadmin/i26/download/AG_DiskAlg/FG_KombOptGraphAlg/kappmeier/talks/How_to_TikZ.pdf">How to TikZ? - An overview</a></li>
+      <li><a href="http://pgfplots.sourceforge.net/pgfplots.pdf">Manual for Package pgfplots</a></li>
+      <li>
+        <ul>
+          <li><a href="http://paws.wcu.edu/tsfoguel/tikzpgfmanual.pdf">TikZ and PGF Manual</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Maths and symbols
+    <ul>
+      <li><a href="ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf">Short Math Guide for LaTeX</a></li>
+      <li><a href="http://www.tex.ac.uk/tex-archive/info/symbols/comprehensive/symbols-a4.pdf">The Comprehensive LaTeX Symbol List</a></li>
+      <li><a href="https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf">The Great, Big List of LaTeX Symbols</a></li>
+    </ul>
+  </li>
+  <li>Others
+    <ul>
+      <li><a href="http://www.stdout.org/~winston/latex/latexsheet-a4.pdf">LaTeX 2ε Cheat Sheet by Stdout.org</a></li>
+      <li><a href="http://vaisaghvt.files.wordpress.com/2012/10/sublimelatexsheet-mac.pdf">LaTeX Sublime Papers2 Cheat Sheet (For Mac)</a></li>
+      <li><a href="http://www.amelialin.com/latex/usefullatex.pdf">Useful LaTeX</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Webpage</p>
+
+<ul>
+  <li><a href="http://en.wikibooks.org/wiki/LaTeX/Macros">LaTeX Macros by Wikibooks</a></li>
+  <li><a href="http://www.zhihu.com/topic/19568710">知乎</a></li>
+</ul>
+
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="http://localhost:4000/tags/#LaTeX" title="Pages tagged LaTeX" class="tag">LaTeX</a></span>
+        <span>Published <span class="entry-date date published updated"><time datetime="2014-07-07T00:00:00+01:00">07 July 2014</time></span></span>
+        
+        <span class="author vcard"><span class="fn">lsfalimis</span></span>
+        <div class="social-share">
+          <ul class="socialcount socialcount-small inline-list">
+            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/latex-notes/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://localhost:4000/latex-notes/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url=http://localhost:4000/latex-notes/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> Share</span></a></li>
+          </ul>
+        </div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
+        <div class="read-more-content">
+          
+          <h3><a href="http://localhost:4000/win-apps-i-use-jul-2014/" title="Win Apps I Use Jul 2014">&#8592; Win Apps I Use Jul 2014</a></h3>
+          <span>Published 15 Jul 2014</span>
+          
+          <hr>
+          
+          <h3><a href="http://localhost:4000/clean-install-mac-log-jul-2014/" title="Clean Install Mac Log Jul 2014">Clean Install Mac Log Jul 2014 &#8594;</a></h3>
+          <span>Published 06 Jul 2014</span>
+          
+        </div><!-- /.read-more-content -->
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 lsfalimis. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50494201-1', 'auto');  
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lsfalimis'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	        
+
+</body>
+</html>

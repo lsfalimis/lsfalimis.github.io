@@ -1,0 +1,91 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include head.html %}
+</head>
+
+<body id="post" {% if page.image.feature %}class="feature"{% endif %}>
+
+{% include browser-upgrade.html %}
+{% include navigation.html %}
+
+{% if page.image.feature %}
+<div class="entry-header">
+  {% if page.image.credit %}<div class="image-credit">Image source: {% if page.image.creditlink %}<a href="{{ page.image.creditlink }}">{% endif %}{{ page.image.credit }}{% if page.image.creditlink %}</a>{% endif %}</div><!-- /.image-credit -->{% endif %}
+  <div class="entry-image">
+    <img src="{{ site.url }}/images/{{ page.image.feature }}" alt="{{ page.title }}">
+  </div><!-- /.entry-image -->
+</div><!-- /.entry-header -->
+{% endif %}
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        <h1 class="entry-title"><a href="{{ site.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
+        <h2>{{ page.date | date: "%B %d, %Y" }}</h2>
+        {% if site.reading_time %}
+        <p class="entry-reading-time">
+          <i class="fa fa-clock-o"></i>
+          {% assign readtime = content | number_of_words | divided_by:site.words_per_minute%}
+          {% if readtime <= 1 %}1 min. read
+          {% elsif readtime <= 2%}2 min. read
+          {% elsif readtime <= 3%}3 min. read
+          {% elsif readtime <= 4%}4 min. read
+          {% elsif readtime <= 5%}5 min. read
+          {% elsif readtime <= 6%}6 min. read
+          {% elsif readtime <= 7%}7 min. read
+          {% elsif readtime <= 8%}8 min. read
+          {% elsif readtime <= 9%}9 min. read
+          {% elsif readtime <= 10%}10 min. read
+          {% else %}10+ min. read{% endif %}
+        </p><!-- /.entry-reading-time -->
+        {% endif %}
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      {{ content }}
+      <footer class="entry-meta">
+        <span class="entry-tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>{% unless forloop.last %}{% endunless %}{% endfor %}</span>
+        <span>Published <span class="entry-date date published updated"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time></span></span>
+        {% if page.modified %}(revised: <span class="entry-date date modified"><time datetime="{{ page.modified }}">{{ page.modified | date: "%m/%d/%Y" }}</time></span>){% endif %}
+        <span class="author vcard"><span class="fn">{{ site.owner.name }}</span></span>
+        {% if page.share %}<div class="social-share">
+          <ul class="socialcount socialcount-small inline-list">
+            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> Share</span></a></li>
+          </ul>
+        </div><!-- /.social-share -->{% endif %}
+      </footer>
+    </div><!-- /.entry-content -->
+    {% if site.disqus_shortname and page.comments %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
+    <div class="read-more">
+        <div class="read-more-content">
+          {% if page.next.url %}
+          <h3><a href="{{ site.url }}{{ page.next.url }}" title="{{ page.next.title }}">&#8592; {{ page.next.title }}</a></h3>
+          <span>Published {{ page.next.date | date: "%d %b %Y" }}</span>
+          {% endif %}
+          {% if page.next.url and page.previous.url%}<hr>{% endif %}
+          {% if page.previous.url %}
+          <h3><a href="{{ site.url }}{{ page.previous.url }}" title="{{ page.previous.title }}">{{ page.previous.title }} &#8594;</a></h3>
+          <span>Published {{ page.previous.date | date: "%d %b %Y" }}</span>
+          {% endif %}
+        </div><!-- /.read-more-content -->
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    {% include footer.html %}
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+{% include scripts.html %}	        
+
+</body>
+</html>

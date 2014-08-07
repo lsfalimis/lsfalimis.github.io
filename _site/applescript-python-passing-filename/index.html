@@ -1,0 +1,329 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>AppleScript-Python Passing Filename &#8211; lsfalimis</title>
+<meta name="description" content="Use AppleScript to Get Filename Without Extension, Set Custom Delimiters and Pass Mutiple Parameters to a Python Script">
+<meta name="keywords" content="AppleScript, Share">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/">
+<meta name="twitter:title" content="AppleScript-Python Passing Filename">
+<meta name="twitter:description" content="Use AppleScript to Get Filename Without Extension, Set Custom Delimiters and Pass Mutiple Parameters to a Python Script">
+<meta name="twitter:creator" content="@lsfalimis">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AppleScript-Python Passing Filename">
+<meta property="og:description" content="Use AppleScript to Get Filename Without Extension, Set Custom Delimiters and Pass Mutiple Parameters to a Python Script">
+<meta property="og:url" content="http://localhost:4000/applescript-python-passing-filename/">
+<meta property="og:site_name" content="lsfalimis">
+
+
+<link rel="canonical" href="http://localhost:4000/applescript-python-passing-filename/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="lsfalimis Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="http://localhost:4000">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li><a href="https://www.v2ex.com/member/qian"><i class="fa fa-coffee"></i> V2EX </a></li>
+				<li><a href="http://www.zhihu.com/people/lsfalimis"><i class="fa fa-anchor"></i> Zhihu </a></li>
+				<li><a href="http://www.weibo.com/3215266455/profile"><i class="fa fa-weibo"></i> Weibo </a></li>
+				<li><a href="http://www.douban.com/people/74771258"><i class="fa fa-book"></i> Douban </a></li>
+			</ul><!-- /.dl-submenu -->
+		</li>		
+		<li><a href="http://localhost:4000/archives/">Archives</a></li>
+		<li><a href="http://localhost:4000/categories/">Categories</a></li>
+		<li><a href="http://localhost:4000/tags/">Tags</a></li>
+		<li><a href="https://gist.github.com/lsfalimis"> Gist </a></li>
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        <h1 class="entry-title"><a href="http://localhost:4000" title="AppleScript-Python Passing Filename">AppleScript-Python Passing Filename</a></h1>
+        <h2>May 29, 2014</h2>
+        
+        <p class="entry-reading-time">
+          <i class="fa fa-clock-o"></i>
+          
+          4 min. read
+          
+        </p><!-- /.entry-reading-time -->
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#its-simple">It’s Simple</a></li>
+  <li><a href="#declare-codes-to-an-app">Declare Codes to an App</a></li>
+  <li><a href="#how-to-set-a-file-input">How to Set a File Input?</a></li>
+  <li><a href="#how-to-save-outputs-in-an-external-file">How to Save Outputs in an External File?</a></li>
+  <li><a href="#group-codes-using-">Group Codes Using <code>()</code></a></li>
+  <li><a href="#get-filename">Get Filename</a></li>
+  <li><a href="#get-rid-of-extension">Get Rid of Extension</a></li>
+  <li><a href="#how-to-check-data-type">How to Check Data Type</a></li>
+  <li><a href="#pass-a-list-to-python">Pass A List to Python</a>    <ul>
+      <li><a href="#pass-a-workable-file-path-to-a-python-script-in-as">Pass a Workable File Path to a Python Script in AS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://gist.github.com/lsfalimis/a52a6de6c7471dfb9e66" class="btn btn-success">Gist</a></p>
+
+<!--more-->
+
+<h3 id="its-simple">It’s Simple</h3>
+
+<p>It’s a note just in case I forget it.</p>
+
+<p>Firstly, I treat you or myself as a person who know nothing about AppleScript (AS thereafter) or coding.</p>
+
+<h3 id="declare-codes-to-an-app">Declare Codes to an App</h3>
+
+<p>To run an action (actually my scripting journey started from iOS with Drafts which symbolically called a trigger, some codes, a launcher as a action to my understanding, so take it easy), I need to write</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>tell application &quot;APPNAME&quot;
+    SOMECODES
+end tell
+</pre></div>
+</div>
+</div>
+
+<h3 id="how-to-set-a-file-input">How to Set a File Input?</h3>
+
+<p>In Hazel, running an AS on the target file requires a simple placeholder <code>theFile</code>. Here I’m going to write in AppleScript Editor (which is a stock app of OS X), and check the output within AppleScript Editor. So I need to know how to set a file input. We know Hazel before AS, so I let the naming rules inherit from the people’s app but not from deeply hid language or something.</p>
+
+<p>Note that AS uses HSF path. For me, simply buy a copy of Path Finder and copy HSF path in that app. XtraFinder is free, but for me, Path Finder is expensive and complex and after trying for some time I believe it’s the best alternative to Finder.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>set theFile to &quot;Macintosh SSD:Users:henry:Desktop:1.py”
+</pre></div>
+</div>
+</div>
+
+<h3 id="how-to-save-outputs-in-an-external-file">How to Save Outputs in an External File?</h3>
+
+<p>This’s useful when the outputs include special characters, such as <code>\"</code>, and maybe only in the external file, you can have confidence to say that’s the correct outputs you want.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>do shell script &quot;echo &quot; &amp; VARIABLE &amp; &quot; &gt; ~/Desktop/test.txt&quot;
+</pre></div>
+</div>
+</div>
+
+<h3 id="group-codes-using-">Group Codes Using <code>()</code></h3>
+
+<p>I can group one action with a pair of parentheses. This could be vague, just do some tests to see the grouping’s effects yourself.</p>
+
+<h3 id="get-filename">Get Filename</h3>
+
+<p><code>alias</code> needs to be used.</p>
+
+<div class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">set</span> <span class="nv">theName</span> <span class="k">to</span> <span class="na">name</span> <span class="k">of</span> <span class="p">(</span><span class="nv">theFile</span> <span class="k">as</span> <span class="nv">alias</span><span class="p">)</span></code></pre></div>
+
+<h3 id="get-rid-of-extension">Get Rid of Extension</h3>
+
+<p>Note that name and extension are devided by “.”, and for example the file is <code>1.py</code>, by <code>set AppleScript's text item delimiters to "."</code>, from left to right, the first <strong>text item</strong> is <code>1</code>, the second <strong>text item</strong> is <code>py</code>, corresponding, in AS, the value of <code>text item 1</code> is <code>1</code> and the value of <code>text item 2</code> is <code>py</code>. From right to left, the first text item is marked as <code>-1</code>. So the value of <code>text item -1</code> is <code>py</code> and the value of <code>text item -2</code> is <code>1</code>.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>set theName to name of (theFile as alias)
+set AppleScript's text item delimiters to &quot;.&quot;
+if number of text items of theName &gt; 1 then
+    set theName to text items 1 thru -2 of theName
+end if
+</pre></div>
+</div>
+</div>
+
+<p>Later I will chain the AS to a Python script and I don’t want another delimiter, so I continue to use “.” and negative text item becomes seemingly more meaningful, because, the number of parameters to pass to the Python script is uncertain.</p>
+
+<h3 id="how-to-check-data-type">How to Check Data Type</h3>
+
+<p>In coding, data type is always important. Beginner should not mistake them. Because I cannot pass a data, whose type is a list, to Python script and maintain the data as a list type data. So I do it in a hard way. Ok, before that, to check the data type is simple. Type <code>class DATA</code> in a single line, and tap Run button, the below output row will show the returned result.</p>
+
+<h3 id="pass-a-list-to-python">Pass A List to Python</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>set theItems to &quot;&quot;
+repeat with i from 1 to count of theName
+    set theItems to theItems &amp; &quot;\&quot;&quot; &amp; ((item i of theName) as text) &amp; &quot;\&quot;&quot; &amp; &quot;,&quot;
+end repeat
+set theItems to text 1 thru -2 of theItems
+</pre></div>
+</div>
+</div>
+
+<p>Here <code>"\""</code> means character <code>"</code>, and for example <code>theName</code> is <code>a.b</code>, then the final value of <code>theItems</code> is <code>"a","b"</code>. I already have curly brackets ready in the Python script, so it will finally become <code>{"a","b"}</code>, which is a list type data in Python.</p>
+
+<h4 id="pass-a-workable-file-path-to-a-python-script-in-as">Pass a Workable File Path to a Python Script in AS</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>set thePath to POSIX path of theFile
+do shell script &quot;python /PATH/TO/THE/PYTHON/SCRIPT&quot; &amp; theItems &amp; &quot; &quot; &amp; quoted form of thePath
+</pre></div>
+</div>
+</div>
+
+<p>At last, don’t forget put <code>end tell</code> at the end of the AS.</p>
+
+<p>If you have a workable and meaningful Python Script to test with the AS, that’s good, otherwise the above will be less meaningful to look at.</p>
+
+<p>The final AS is</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>tell application &quot;Finder&quot;
+    
+    set theName to name of (theFile as alias)
+    set AppleScript's text item delimiters to &quot;.&quot;
+    if number of text items of theName &gt; 1 then
+        set theName to text items 1 thru -2 of theName
+    end if
+    
+    set theItems to &quot;&quot;
+    repeat with i from 1 to count of theName
+        set theItems to theItems &amp; &quot;\&quot;&quot; &amp; ((item i of theName) as text) &amp; &quot;\&quot;&quot; &amp; &quot;,&quot;
+    end repeat
+    set theItems to text 1 thru -2 of theItems
+    
+    set thePath to POSIX path of theFile
+    
+    do shell script &quot;python /PATH/TO/THE/PYTHON/SCRIPT&quot; &amp; theItems &amp; &quot; &quot; &amp; quoted form of thePath
+    
+end tell
+</pre></div>
+</div>
+</div>
+
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="http://localhost:4000/tags/#AppleScript" title="Pages tagged AppleScript" class="tag">AppleScript</a><a href="http://localhost:4000/tags/#Share" title="Pages tagged Share" class="tag">Share</a></span>
+        <span>Published <span class="entry-date date published updated"><time datetime="2014-05-29T00:00:00+01:00">29 May 2014</time></span></span>
+        
+        <span class="author vcard"><span class="fn">lsfalimis</span></span>
+        <div class="social-share">
+          <ul class="socialcount socialcount-small inline-list">
+            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/applescript-python-passing-filename/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://localhost:4000/applescript-python-passing-filename/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url=http://localhost:4000/applescript-python-passing-filename/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> Share</span></a></li>
+          </ul>
+        </div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
+        <div class="read-more-content">
+          
+          <h3><a href="http://localhost:4000/use-hazel-to-schedule-single-file-transfer/" title="Use Hazel to Schedule Single File Transfer">&#8592; Use Hazel to Schedule Single File Transfer</a></h3>
+          <span>Published 05 Jun 2014</span>
+          
+          <hr>
+          
+          <h3><a href="http://localhost:4000/evernote-as-a-screenshot-collector/" title="Evernote as a Screenshot Collector">Evernote as a Screenshot Collector &#8594;</a></h3>
+          <span>Published 22 May 2014</span>
+          
+        </div><!-- /.read-more-content -->
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 lsfalimis. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50494201-1', 'auto');  
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lsfalimis'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	        
+
+</body>
+</html>

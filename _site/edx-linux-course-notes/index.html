@@ -1,0 +1,917 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>edX Linux Course Notes &#8211; lsfalimis</title>
+<meta name="description" content="">
+<meta name="keywords" content="Shell">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/">
+<meta name="twitter:title" content="edX Linux Course Notes">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@lsfalimis">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="edX Linux Course Notes">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://localhost:4000/edx-linux-course-notes/">
+<meta property="og:site_name" content="lsfalimis">
+
+
+<link rel="canonical" href="http://localhost:4000/edx-linux-course-notes/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="lsfalimis Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="http://localhost:4000">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li><a href="https://www.v2ex.com/member/qian"><i class="fa fa-coffee"></i> V2EX </a></li>
+				<li><a href="http://www.zhihu.com/people/lsfalimis"><i class="fa fa-anchor"></i> Zhihu </a></li>
+				<li><a href="http://www.weibo.com/3215266455/profile"><i class="fa fa-weibo"></i> Weibo </a></li>
+				<li><a href="http://www.douban.com/people/74771258"><i class="fa fa-book"></i> Douban </a></li>
+			</ul><!-- /.dl-submenu -->
+		</li>		
+		<li><a href="http://localhost:4000/archives/">Archives</a></li>
+		<li><a href="http://localhost:4000/categories/">Categories</a></li>
+		<li><a href="http://localhost:4000/tags/">Tags</a></li>
+		<li><a href="https://gist.github.com/lsfalimis"> Gist </a></li>
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        <h1 class="entry-title"><a href="http://localhost:4000" title="edX Linux Course Notes">edX Linux Course Notes</a></h1>
+        <h2>August 04, 2014</h2>
+        
+        <p class="entry-reading-time">
+          <i class="fa fa-clock-o"></i>
+          
+          10 min. read
+          
+        </p><!-- /.entry-reading-time -->
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#about">About</a></li>
+  <li><a href="#commands">Commands</a></li>
+  <li><a href="#descriptors">Descriptors</a></li>
+  <li><a href="#paths">Paths</a></li>
+  <li><a href="#ip">IP</a></li>
+  <li><a href="#variables">Variables</a></li>
+  <li><a href="#constructs">Constructs</a>    <ul>
+      <li><a href="#conditionals">Conditionals</a></li>
+      <li><a href="#looping-constructs">Looping constructs</a></li>
+      <li><a href="#tests">Tests</a>        <ul>
+          <li><a href="#file-tests">File tests</a></li>
+          <li><a href="#numerical-tests">Numerical tests</a></li>
+          <li><a href="#arithmetic-expressions">Arithmetic expressions</a></li>
+          <li><a href="#string-tests">String tests</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#debugging">Debugging</a></li>
+  <li><a href="#processes">Processes</a></li>
+  <li><a href="#terms">Terms</a></li>
+</ul>
+
+<h2 id="about">About</h2>
+
+<p>The free course is <a href="https://courses.edx.org/courses/LinuxFoundationX/LFS101x/2T2014/info">LFS101x: Introduction to Linux</a>.</p>
+
+<!--more-->
+
+<p>Some CLI utilities are not shipped with OS X, so I use <a href="http://brew.sh/">Homebrew</a> and <a href="https://www.cakebrew.com/">Cakebrew</a> to install them:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</span></code></pre></div>
+
+<p>and then open Cakebrew to check information of things I want to install before installation.</p>
+
+<h2 id="commands">Commands</h2>
+
+<table rules="groups">
+  <thead>
+    <tr>
+      <th>Something</th>
+      <th>What does it do?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Command</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>whereis</code></td>
+      <td>Locate CLI utilities</td>
+    </tr>
+    <tr>
+      <td><code>pwd</code></td>
+      <td>Print the <strong>p</strong>resent <strong>w</strong>orking <strong>d</strong>irectory</td>
+    </tr>
+    <tr>
+      <td><code>tree</code></td>
+      <td>Produce a tree-like list of files</td>
+    </tr>
+    <tr>
+      <td><code>pushd</code></td>
+      <td>Remember a path to go back</td>
+    </tr>
+    <tr>
+      <td><code>popd</code></td>
+      <td>Go back to <code>pushd</code>ed path</td>
+    </tr>
+    <tr>
+      <td><code>locate</code></td>
+      <td>Seach filename with pattern option available</td>
+    </tr>
+    <tr>
+      <td><code>find</code></td>
+      <td>Similar to <code>locate</code></td>
+    </tr>
+    <tr>
+      <td><code>cat</code></td>
+      <td>Print file</td>
+    </tr>
+    <tr>
+      <td><code>tac</code></td>
+      <td>Reverse <code>cat</code></td>
+    </tr>
+    <tr>
+      <td><code>less</code></td>
+      <td><code>cat</code> with pagination/pages</td>
+    </tr>
+    <tr>
+      <td><code>head</code></td>
+      <td><code>cat</code> first 10 lines</td>
+    </tr>
+    <tr>
+      <td><code>tail</code></td>
+      <td><code>cat</code> last 10 lines</td>
+    </tr>
+    <tr>
+      <td><code>rmdir</code></td>
+      <td>Delete an empty directory</td>
+    </tr>
+    <tr>
+      <td><code>diff3 MY-FILE COMMON-FILE YOUR-FILE</code></td>
+      <td><code>diff</code> three files</td>
+    </tr>
+    <tr>
+      <td><code>file</code></td>
+      <td>Print filetype</td>
+    </tr>
+    <tr>
+      <td><code>who</code></td>
+      <td>List users</td>
+    </tr>
+    <tr>
+      <td><code>whoami</code></td>
+      <td>List user</td>
+    </tr>
+    <tr>
+      <td><code>!!</code></td>
+      <td>Called ‘bang-bang’; redo</td>
+    </tr>
+    <tr>
+      <td><code>alias</code></td>
+      <td>List aliases</td>
+    </tr>
+    <tr>
+      <td><code>chown</code></td>
+      <td>read (r), write (w), execute (x) -&gt; rwx \</td>
+    </tr>
+    <tr>
+      <td><code>chgrp</code></td>
+      <td>user/owner (u), group (g), others (o) -&gt; ugo, so uuugggooo or rwxrwxrwx \</td>
+    </tr>
+    <tr>
+      <td><code>chmod</code></td>
+      <td>4 means read, 2 write, 1 execute, 7 rwx, 6 rw-, 5 r-x</td>
+    </tr>
+    <tr>
+      <td><code>host</code></td>
+      <td>I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>nslookup</code></td>
+      <td>I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>dig</code></td>
+      <td>I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>curl</code></td>
+      <td><code>wget</code> files and the webpage</td>
+    </tr>
+    <tr>
+      <td><code>sftp</code></td>
+      <td>I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>scp</code></td>
+      <td>I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>sed</code></td>
+      <td>Stream editor</td>
+    </tr>
+    <tr>
+      <td><code>awk</code></td>
+      <td>Works with fields (columns) and records (rows)</td>
+    </tr>
+    <tr>
+      <td><code>sort</code></td>
+      <td>Sort lines in file</td>
+    </tr>
+    <tr>
+      <td><code>uniq</code></td>
+      <td>Remove duplicate lines and need them consecutive, so <code>uniq</code> after <code>sort</code></td>
+    </tr>
+    <tr>
+      <td><code>join</code></td>
+      <td>Remove duplications then <code>paste</code></td>
+    </tr>
+    <tr>
+      <td><code>split</code></td>
+      <td>Break up a file into files with each having 1000 lines</td>
+    </tr>
+    <tr>
+      <td><code>tr</code></td>
+      <td>Replace</td>
+    </tr>
+    <tr>
+      <td><code>tee</code></td>
+      <td>Save piped output to file</td>
+    </tr>
+    <tr>
+      <td><code>wc</code></td>
+      <td>Count; or <code>wc -lcw</code> where means lines, characters and words</td>
+    </tr>
+    <tr>
+      <td><code>cut</code></td>
+      <td>Extract columns, e.g. <code>cut -d" " -f3</code></td>
+    </tr>
+    <tr>
+      <td><code>strings</code></td>
+      <td>Extract printable (?) characters then for <code>grep</code></td>
+    </tr>
+    <tr>
+      <td><code>env</code></td>
+      <td>Print environment variables</td>
+    </tr>
+    <tr>
+      <td><code>set</code></td>
+      <td>Print environment variables</td>
+    </tr>
+    <tr>
+      <td><code>printenv</code></td>
+      <td>Print environment variables</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Command syntax</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>cd</code></td>
+      <td><code>cd ~</code></td>
+    </tr>
+    <tr>
+      <td><code>cd -</code></td>
+      <td>Go back</td>
+    </tr>
+    <tr>
+      <td><code>ls -a</code></td>
+      <td>List all including hidden files</td>
+    </tr>
+    <tr>
+      <td><code>ls -l</code></td>
+      <td>List files in columns</td>
+    </tr>
+    <tr>
+      <td><code>ls -i</code></td>
+      <td>List files with unique inode numbers</td>
+    </tr>
+    <tr>
+      <td><code>locate</code> pattern</td>
+      <td>E.g., <code>[adf]</code>,<code>[!adf]</code>,<code>[a-s]</code>,<code>[!a-s]</code></td>
+    </tr>
+    <tr>
+      <td><code>cat &gt; FILE &lt;&lt; EOF ↩ ... ↩ EOF</code></td>
+      <td>Multiple lines; EOF can be replaced by any string</td>
+    </tr>
+    <tr>
+      <td><code>cat &gt; FILE ↩ ... ↩ ^D</code></td>
+      <td><code>cat &gt; FILE &lt;&lt; EOF ↩ ... ↩ EOF</code></td>
+    </tr>
+    <tr>
+      <td><code>find -name sth</code></td>
+      <td>Search by name</td>
+    </tr>
+    <tr>
+      <td><code>find -iname sth</code></td>
+      <td>Ignore case</td>
+    </tr>
+    <tr>
+      <td><code>find -type TYPE</code></td>
+      <td><code>d</code> directory, <code>l</code> symbolic link</td>
+    </tr>
+    <tr>
+      <td><code>find -exec rm {} ’;’</code></td>
+      <td>Or <code>find -exec rm {} \;</code>; I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>find -ok rm {} ’;’</code></td>
+      <td>Interactive <code>-exec</code></td>
+    </tr>
+    <tr>
+      <td><code>find -ctime N</code></td>
+      <td>Last <code>N</code>th day of inode meta-data change, in most cases, file creation; if <code>N</code> is 0, means today</td>
+    </tr>
+    <tr>
+      <td><code>find -atime +N</code></td>
+      <td>Last <code>N</code>th day of file that is <strong>a</strong>ccessed or read; <code>+</code> greater</td>
+    </tr>
+    <tr>
+      <td><code>find -mtime -N</code></td>
+      <td>Last <code>N</code>th day of file that is <strong>m</strong>odified or written; <code>-</code> less</td>
+    </tr>
+    <tr>
+      <td><code>find -size +10M</code></td>
+      <td>In size that is over 10M</td>
+    </tr>
+    <tr>
+      <td><code>touch -t 03201600 FILE</code></td>
+      <td>With timestamp of March 20 1600</td>
+    </tr>
+    <tr>
+      <td><code>touch FILE1 FILE2</code></td>
+      <td>Can be followed by multiple files</td>
+    </tr>
+    <tr>
+      <td><code>rm -rf</code></td>
+      <td>Very dangerous; do not use</td>
+    </tr>
+    <tr>
+      <td><code>rm –i</code></td>
+      <td>Delete a file interactively</td>
+    </tr>
+    <tr>
+      <td><code>rm –f</code></td>
+      <td>Delete a file directly</td>
+    </tr>
+    <tr>
+      <td><code>diff -c</code></td>
+      <td>Content of 3 lines</td>
+    </tr>
+    <tr>
+      <td><code>diff -r</code></td>
+      <td>Also subdirectories</td>
+    </tr>
+    <tr>
+      <td><code>diff -i</code></td>
+      <td>Ignore case</td>
+    </tr>
+    <tr>
+      <td><code>diff -w</code></td>
+      <td>Ignore spaces and tabs (<strong>w</strong>hite space)</td>
+    </tr>
+    <tr>
+      <td><code>diff -Nur originalfile newfile &gt; patchfile</code></td>
+      <td>I don’t know <code>-Nur</code></td>
+    </tr>
+    <tr>
+      <td><code>patch originalfile patchfile</code></td>
+      <td>Apply a patch to a file</td>
+    </tr>
+    <tr>
+      <td><code>patch -p1 &lt; patchfile</code></td>
+      <td>Apply a patch to the directory</td>
+    </tr>
+    <tr>
+      <td><code>tar xvf mydir.tar</code></td>
+      <td>Extract</td>
+    </tr>
+    <tr>
+      <td><code>tar zcvf mydir.tar.gz</code></td>
+      <td>gzip</td>
+    </tr>
+    <tr>
+      <td><code>tar jcvf mydir.tar.bz2</code></td>
+      <td>bz2</td>
+    </tr>
+    <tr>
+      <td><code>tar Jcvf mydir.tar.xz</code></td>
+      <td>xz</td>
+    </tr>
+    <tr>
+      <td><code>tar xvf mydir.tar.gz</code></td>
+      <td>gzip</td>
+    </tr>
+    <tr>
+      <td><code>cat file1 file2</code></td>
+      <td><strong>C</strong>onc<strong>at</strong>enate files</td>
+    </tr>
+    <tr>
+      <td><code>echo -e</code></td>
+      <td>I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>sed -e</code></td>
+      <td>Execute multiple rules in a line, e.g. <code>sed -e 's/01/JAN/' -e 's/02/FEB/'</code></td>
+    </tr>
+    <tr>
+      <td><code>sed -f SCRIPT FILE</code></td>
+      <td>Execute sed script on FILE</td>
+    </tr>
+    <tr>
+      <td><code>sed s/pattern/replace_string/g file &gt; file2</code></td>
+      <td><code>g</code> means the rule is effective on all occurrences</td>
+    </tr>
+    <tr>
+      <td><code>awk '{ print $0 }' /etc/passwd</code></td>
+      <td>Print entire file</td>
+    </tr>
+    <tr>
+      <td><code>awk -F: '{ print $1 }'</code> /etc/passwd</td>
+      <td>Print the first column, I don’t know <code>-F:</code></td>
+    </tr>
+    <tr>
+      <td><code>awk -F: '{ print $1 $6 }'</code></td>
+      <td>Print the first and sixth column, separated by space</td>
+    </tr>
+    <tr>
+      <td><code>cat file1 file2 | sort</code></td>
+      <td><code>cat</code> then <code>sort</code></td>
+    </tr>
+    <tr>
+      <td><code>sort -r</code></td>
+      <td>reverse <code>sort</code></td>
+    </tr>
+    <tr>
+      <td><code>sort -u</code></td>
+      <td><code>uniq</code></td>
+    </tr>
+    <tr>
+      <td><code>uniq -c</code></td>
+      <td>Count duplicate lines; I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>paste -d</code></td>
+      <td>Set delimiter, e.g., <code>paste -d ':' file1 file2</code>, <code>paste -d, file1 file2</code></td>
+    </tr>
+    <tr>
+      <td><code>paste -s</code></td>
+      <td>horizontal <code>paste</code>; I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>grep [pattern] file</code></td>
+      <td>Print matched lines</td>
+    </tr>
+    <tr>
+      <td><code>grep -v [pattern] file</code></td>
+      <td>Print unmatched lines</td>
+    </tr>
+    <tr>
+      <td><code>grep -C 3</code></td>
+      <td>Print with the context of 3 lines</td>
+    </tr>
+    <tr>
+      <td><code>cat city | tr a-z A-Z</code></td>
+      <td>Nothing needs to say</td>
+    </tr>
+    <tr>
+      <td><code>tr '{}' '()' &lt; inputfile &gt; outputfile</code></td>
+      <td>Nothing needs to say</td>
+    </tr>
+    <tr>
+      <td><code>echo "This is for testing" | tr [:space:] '\t'</code></td>
+      <td>Replace spaces with tabs</td>
+    </tr>
+    <tr>
+      <td><code>echo "This is for  testing" | tr -s [:space:]</code></td>
+      <td><code>-s</code> Squeeze spaces</td>
+    </tr>
+    <tr>
+      <td><code>tr -d</code></td>
+      <td>Delete</td>
+    </tr>
+    <tr>
+      <td><code>echo "my username is 432234" | tr -cd [:digit:]</code></td>
+      <td>To complement? I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>tr -cd [:print:] &lt; file.txt</code></td>
+      <td>Remove non-printable characters? I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>tr -s '\n' ' ' &lt; file</code></td>
+      <td>Join lines in a single line</td>
+    </tr>
+    <tr>
+      <td><code>chmod +x FILE</code></td>
+      <td>Make FILE executable for all users, then can <code>./file.sh</code></td>
+    </tr>
+    <tr>
+      <td><code>read VAR</code></td>
+      <td>Save input as VAR</td>
+    </tr>
+    <tr>
+      <td><code>TEMP=$(mktemp /tmp/tempfile.XXXXXXXX)</code></td>
+      <td><code>touch</code> a temporary file with a random filename</td>
+    </tr>
+    <tr>
+      <td><code>TEMPDIR=$(mktemp -d /tmp/tempdir.XXXXXXXX)</code></td>
+      <td><code>mkdir</code> a temporary folder with a random filename</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Something</td>
+      <td>In use</td>
+    </tr>
+    <tr>
+      <td><code>..</code></td>
+      <td><code>cd ../../usr/bin</code></td>
+    </tr>
+    <tr>
+      <td><code>2&gt;</code></td>
+      <td>Redirect stderr</td>
+    </tr>
+    <tr>
+      <td><code>2&gt;&amp;1</code></td>
+      <td>I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>&gt;&amp;</code></td>
+      <td>I don’t know</td>
+    </tr>
+    <tr>
+      <td><code>|</code></td>
+      <td>Pipe symbol</td>
+    </tr>
+    <tr>
+      <td>Shortcuts</td>
+      <td>Actions</td>
+    </tr>
+    <tr>
+      <td><code>^R</code></td>
+      <td>Search used commands</td>
+    </tr>
+    <tr>
+      <td><code>^L</code></td>
+      <td><code>clear</code></td>
+    </tr>
+    <tr>
+      <td><code>\n</code></td>
+      <td>New line</td>
+    </tr>
+    <tr>
+      <td><code>\t</code></td>
+      <td>Tab</td>
+    </tr>
+    <tr>
+      <td>For compressed files</td>
+      <td><code>zcat</code>, <code>zless</code>, <code>zdiff</code>, <code>zgrep</code>, <code>zmore</code> (?), <code>bzcat</code>, <code>bzless</code>, <code>xzcat</code>, <code>xzless</code></td>
+    </tr>
+    <tr>
+      <td><code>cmd1;cmd2</code></td>
+      <td>Ignore failure</td>
+    </tr>
+    <tr>
+      <td><code>cmd1 &amp;&amp; cmd2</code></td>
+      <td>Don’t ignore failure</td>
+    </tr>
+    <tr>
+      <td><code>cmd1 || cmd2</code></td>
+      <td>Run cmd until success</td>
+    </tr>
+    <tr>
+      <td><code>$(CMD)</code></td>
+      <td>Take output of CMD as part of another CMD, e.g., the part of path that is to <code>cd</code>; or you can enclos by back ticks</td>
+    </tr>
+    <tr>
+      <td><code>ls file &gt; /dev/null 2&gt;&amp;1</code> then check <code>$?</code></td>
+      <td>Don’t print (like <code>qui</code> in Stata) and just check if succeed; <code>/dev/null</code> is called bit bucket or black hole.</td>
+    </tr>
+    <tr>
+      <td><code>${#stringvar}</code></td>
+      <td>Length of stringvar</td>
+    </tr>
+    <tr>
+      <td><code>${string:0:1}</code></td>
+      <td><code>0</code> is the offset (the beginning position) and <code>1</code> is the number of characters to be extracted.</td>
+    </tr>
+    <tr>
+      <td><code>${string#*.}</code></td>
+      <td>Extract all characters; what’s the difference with <code>string</code>?</td>
+    </tr>
+    <tr>
+      <td><code>$RANDOM</code></td>
+      <td>An environment variable; Linux kernel’s built-in function; or can use OpenSSL library function (what’s the cmd?) that uses the FIPS140 algorithm</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="descriptors">Descriptors</h2>
+
+<p>There are three file streams (or descriptors) in shell: standard in(put) (stdin), standard out(put) (stdout) and standard error (or stderr). Open files are represented by descriptors. stdin is 0, stdout 1, stderr 2, open file 1 descriptor 3… We can realise I/O Redirection using <code>&gt;</code> (overwrite to outside command), <code>&gt;&gt;</code> (append to outside command), <code>&lt;</code> (take in as part of command), <code>&lt;&lt;</code> (take in the command by appending; I’m not so sure).</p>
+
+<h2 id="paths">Paths</h2>
+
+<table rules="groups">
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th>Files</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>/bin</code></td>
+      <td>Essential executable binaries</td>
+    </tr>
+    <tr>
+      <td><code>/usr/bin</code></td>
+      <td>Less essential</td>
+    </tr>
+    <tr>
+      <td><code>/sbin</code></td>
+      <td>Essential system administration tools</td>
+    </tr>
+    <tr>
+      <td><code>/usr/sbin</code></td>
+      <td>Less essential system administration tools</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Initiating order:</p>
+
+<ol>
+  <li><code>~/.bash_profile</code></li>
+  <li><code>~/.bash_login</code></li>
+  <li><code>~/.profile</code></li>
+</ol>
+
+<h2 id="ip">IP</h2>
+
+<p>A–E class of IP: IP = Net ID + Host ID for A–C class; D class is used for multicast (broadcast information to multiple computers simultaneously); and E class is reserved for the future. IP is divided into four octets: octet1 is Net ID for A class (1.0.0.0–127.255.255.255), 1–2 B (128.0.0.0–191.255.255.255), and 1–3 C (192.0.0.0–223.255.255.255). IPs are requested from Internet Service Provider (ISP). IP can be static or dynamical which then will use Dynamic Host Configuration Protocol (DHCP) to assign IPs.</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>Functions are also called subroutines and <code>$1</code> means the first argument. Beside, <code>$0</code> means script filename, <code>$*</code> all arguments, <code>$#</code> number of arguments.</p>
+
+<h2 id="constructs">Constructs</h2>
+
+<h3 id="conditionals">Conditionals</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">if</span> condition<span class="p">;</span> <span class="k">then</span> statement<span class="p">;</span> <span class="k">fi</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">if</span> condition
+<span class="k">then</span>
+	statement
+<span class="k">else</span>
+	statement
+<span class="k">fi</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">if</span> condition
+<span class="k">then</span>
+	statement
+<span class="k">elif</span> condition
+<span class="k">then</span>
+	statement
+<span class="k">else</span>
+	statement
+<span class="k">fi</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">case</span> <span class="s2">&quot;$VAR&quot;</span> in
+	<span class="s2">&quot;a&quot;</span><span class="p">|</span><span class="s2">&quot;A&quot;</span><span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;Vowel&quot;</span> <span class="p">;;</span>
+	<span class="s2">&quot;e&quot;</span><span class="p">|</span><span class="s2">&quot;E&quot;</span><span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;Vowel&quot;</span> <span class="p">;;</span>
+	<span class="s2">&quot;i&quot;</span><span class="p">|</span><span class="s2">&quot;I&quot;</span><span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;Vowel&quot;</span> <span class="p">;;</span>
+	<span class="s2">&quot;o&quot;</span><span class="p">|</span><span class="s2">&quot;O&quot;</span><span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;Vowel&quot;</span> <span class="p">;;</span>
+	<span class="s2">&quot;u&quot;</span><span class="p">|</span><span class="s2">&quot;U&quot;</span><span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;Vowel&quot;</span> <span class="p">;;</span>
+	*<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;Consonant&quot;</span> <span class="p">;;</span>
+<span class="k">esac</span></code></pre></div>
+
+<h3 id="looping-constructs">Looping constructs</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$sum</span><span class="o">=</span>0
+<span class="k">for</span> i in <span class="m">1</span> <span class="m">2</span> 3
+<span class="k">do</span>
+	<span class="nv">sum</span><span class="o">=</span><span class="k">$((</span><span class="nv">$sum</span><span class="o">+</span><span class="nv">$i</span><span class="k">))</span>
+<span class="k">done</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for</span> filename in <span class="k">$(</span>ls<span class="k">)</span>
+	<span class="nv">ext</span><span class="o">=</span><span class="k">${</span><span class="nv">filename</span><span class="p">##*\.</span><span class="k">}</span>
+	<span class="k">case</span> <span class="s2">&quot;$ext&quot;</span> in 
+		c<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;filename : C source file&quot;</span>
+		...
+		*<span class="o">)</span> ...
+	<span class="k">esac</span>
+<span class="k">done</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">while</span> trueCondition
+<span class="k">do</span>
+	statement
+<span class="k">done</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">until</span> falseCondition
+<span class="k">do</span>
+	statement
+<span class="k">done</span></code></pre></div>
+
+<h3 id="tests">Tests</h3>
+
+<h4 id="file-tests">File tests</h4>
+
+<ul>
+  <li>See see <code>man 1 test</code></li>
+  <li><code>-e file</code> checks if exists.</li>
+  <li><code>-d file</code> checks if is a directory.</li>
+  <li><code>-f file</code> checks if is a regular file (i.e., not a symbolic link, device node, directory, etc.)</li>
+  <li><code>-s file</code> checks if is of non-zero size.</li>
+  <li><code>-g file</code> checks if has sgid (?) set.</li>
+  <li><code>-u file</code> checks if has suid (?) set.</li>
+  <li><code>-r file</code> checks if is readable.</li>
+  <li><code>-w file</code> checks if is writable.</li>
+  <li><code>-x file</code> checks if is executable.</li>
+</ul>
+
+<h4 id="numerical-tests">Numerical tests</h4>
+
+<ul>
+  <li><code>exp1 -op exp2</code></li>
+  <li><code>-eq</code> means equal to</li>
+  <li><code>-ne</code> means not equal to</li>
+  <li><code>-gt</code> means greater than</li>
+  <li><code>-lt</code> means less than</li>
+  <li><code>-ge</code> means greater than or equal to</li>
+  <li><code>-le</code> means less than or equal to</li>
+</ul>
+
+<h4 id="arithmetic-expressions">Arithmetic expressions</h4>
+
+<p>Note the spaces: <code>expr 8 + 8</code>, <code>echo $(expr 8 + 8)</code>, <code>echo $((x+1))</code>, <code>var=$((...))</code></p>
+
+<h4 id="string-tests">String tests</h4>
+
+<p><code>[ string1 &gt; string2 ]</code> compare the sorting order; <code>[ string1 == string2 ]</code> you know, compare; <code>!</code> not.</p>
+
+<h2 id="debugging">Debugging</h2>
+
+<p><code>gdb</code> and <code>valgrind</code> and I don’t know.</p>
+
+<p><code>bash –x ./script.sh</code> turns debug mode on. Or within script.sh, use <code>set -x</code> to turn on, <code>set +x</code> off.</p>
+
+<h2 id="processes">Processes</h2>
+
+<p>There are interactive processes, batch processes, daemons, threads, and kernel threads; child process, parent process, zombie process. Process are tracked by process ID (PID) numbers, also Parent Process ID (PPID), Thread ID (TID), Real User ID (RUID), Effective User ID (EUID) of whom determines the access rights for the users, Real Group ID (RGID) about the group of users, and Effective Group ID (EGID). The lower the nice value ([-20, 19]), the higher the priority, the more time granted to use CPU, the less time to wait, aka, the less elapsed time. Besides, real-time priority is available.</p>
+
+<h2 id="terms">Terms</h2>
+
+<p>tar means ‘tape archive’. tar archive file is called tarball.</p>
+
+<p><code>gcc</code> is C and C++ compiler.</p>
+
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="http://localhost:4000/tags/#Shell" title="Pages tagged Shell" class="tag">Shell</a></span>
+        <span>Published <span class="entry-date date published updated"><time datetime="2014-08-04T00:00:00+01:00">04 August 2014</time></span></span>
+        
+        <span class="author vcard"><span class="fn">lsfalimis</span></span>
+        <div class="social-share">
+          <ul class="socialcount socialcount-small inline-list">
+            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/edx-linux-course-notes/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://localhost:4000/edx-linux-course-notes/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url=http://localhost:4000/edx-linux-course-notes/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> Share</span></a></li>
+          </ul>
+        </div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
+        <div class="read-more-content">
+          
+          <h3><a href="http://localhost:4000/change-jekyll-url-when-git-push/" title="Change Jekyll URL When Git Push">&#8592; Change Jekyll URL When Git Push</a></h3>
+          <span>Published 05 Aug 2014</span>
+          
+          <hr>
+          
+          <h3><a href="http://localhost:4000/subl-and-zsh/" title="Subl and Zsh">Subl and Zsh &#8594;</a></h3>
+          <span>Published 02 Aug 2014</span>
+          
+        </div><!-- /.read-more-content -->
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 lsfalimis. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50494201-1', 'auto');  
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lsfalimis'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	        
+
+</body>
+</html>

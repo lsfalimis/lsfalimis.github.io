@@ -1,0 +1,319 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Keyboard Maestro Tips 2 &#8211; lsfalimis</title>
+<meta name="description" content="">
+<meta name="keywords" content="Keyboard Maestro, Python, Shell">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/">
+<meta name="twitter:title" content="Keyboard Maestro Tips 2">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@lsfalimis">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keyboard Maestro Tips 2">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://localhost:4000/keyboard-maestro-tips-2/">
+<meta property="og:site_name" content="lsfalimis">
+
+
+<link rel="canonical" href="http://localhost:4000/keyboard-maestro-tips-2/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="lsfalimis Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="http://localhost:4000">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li><a href="https://www.v2ex.com/member/qian"><i class="fa fa-coffee"></i> V2EX </a></li>
+				<li><a href="http://www.zhihu.com/people/lsfalimis"><i class="fa fa-anchor"></i> Zhihu </a></li>
+				<li><a href="http://www.weibo.com/3215266455/profile"><i class="fa fa-weibo"></i> Weibo </a></li>
+				<li><a href="http://www.douban.com/people/74771258"><i class="fa fa-book"></i> Douban </a></li>
+			</ul><!-- /.dl-submenu -->
+		</li>		
+		<li><a href="http://localhost:4000/archives/">Archives</a></li>
+		<li><a href="http://localhost:4000/categories/">Categories</a></li>
+		<li><a href="http://localhost:4000/tags/">Tags</a></li>
+		<li><a href="https://gist.github.com/lsfalimis"> Gist </a></li>
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        <h1 class="entry-title"><a href="http://localhost:4000" title="Keyboard Maestro Tips 2">Keyboard Maestro Tips 2</a></h1>
+        <h2>June 23, 2014</h2>
+        
+        <p class="entry-reading-time">
+          <i class="fa fa-clock-o"></i>
+          
+          6 min. read
+          
+        </p><!-- /.entry-reading-time -->
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <figure>
+	<img src="http://i.imgur.com/cpWwfBs.png" alt="" />
+	<figcaption><a href="http://localhost:4000/keyboard-maestro-tips-2/#taxonomy" title="KM Taxonomy">KM Taxonomy</a></figcaption>
+</figure>
+
+<h2 class="no_toc" id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#example">Example</a>    <ul>
+      <li><a href="#get-words">Get words</a></li>
+      <li><a href="#append-to-a-file">Append to a file</a></li>
+      <li><a href="#sort-alphabetically">Sort alphabetically</a></li>
+    </ul>
+  </li>
+  <li><a href="#systematisation-of-good">Systematisation of good</a></li>
+  <li><a href="#taxonomy">Taxonomy</a></li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<p>I did a KM cleanup yesterday (not finish yet) and found I have stopped using many unnecessary Mac apps for some time. It’s a good thing.</p>
+
+<p>To expand the use of KM, I will have to dive into shell. Next I take an example about adding new words to Mac’s spelling records.</p>
+
+<!--more-->
+
+<p><img src="http://i.imgur.com/4uRyKjR.png" alt="alt text" title="Insert" /></p>
+
+<p>It’s mainly three python scripts. Of course I can put them in just one script, but breaking them into three will help forming a KM module management. Besides, I don’t like KM to generate extra files so I set it up in a way I can access the code within KM. So there are now shell commands.</p>
+
+<h3 id="get-words">Get words</h3>
+
+<p>The first command is to get words using regex:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>python -c 'import sys;import re;print re.findall(r&quot;\b[a-zA-Z]+\b&quot;,sys.argv[1])' &quot;$KMVAR_rein&quot;
+</pre></div>
+</div>
+</div>
+
+<p><code>-c</code> allows the following python code running direct in shell. <code>$KMVAR_</code> is followed by a name of KM macro. I import <code>re</code> and want to get a list of words returned; I can’t get a list but only one word if I use KM’s regex action. And I set KM to save the printed result as a KM variable, <code>reout</code>.</p>
+
+<h3 id="append-to-a-file">Append to a file</h3>
+
+<p>The second command is to append a list of strings to a file, creating new lines (with each item in the list in a new line):</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>(echo &quot;lst=$KMVAR_list&quot;;echo &quot;f=open('$KMVAR_file','r+')&quot;;echo &quot;f.seek(-1,2)&quot;;echo &quot;f.write('''\n''') if f.read(1) != '''\n''' else ''&quot;;echo &quot;f.close()&quot;;echo &quot;f=open('$KMVAR_file','a')&quot;;echo &quot;for e in lst: f.write('''%s\n''' % e)&quot;;echo &quot;f.close&quot;) | python
+</pre></div>
+</div>
+</div>
+
+<p>You can notice that I put <code>$KMVAR_</code> in the python code rather use it as an argument or parameter passed to python command. I think I can do this because of I use <code>echo</code> here, anyway I’m not interested to figure it out. Next I need to make sure I append the first item of list in a blank line. However puting lines as a list for example <code>linelist</code>, and the last two lines of file is <code>second last line\n</code>. <code>linelist[-1]</code> will return <code>second last line\n</code> instead of <code>\n</code>. So I use <code>read</code> to tell if the last character is <code>\n</code>. Before that <code>seek</code> will move the cursor of <code>find</code> to a location I want. <code>2</code> in <code>seek(-1,2)</code> means from the bottom of the file. After getting know if the last line is empty, I loop the line to write in the file with line break. Because <code>\n</code> is recognised as a line break in <code>echo</code> so I have to wrap it with <code>'''</code> to make the string to write continued. I tried to write using <code>with open(PATHTOFILE, MODE) as VAR:</code> but it doesn’t play well with <code>for</code> loop chunk…</p>
+
+<h3 id="sort-alphabetically">Sort alphabetically</h3>
+
+<p>The third command to alphabetise a list of lines in <code>$KMVAR_file</code> (here it’s <code>/Users/henry/Library/Spelling/LocalDictionary</code>)</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>(echo &quot;with open('$KMVAR_file','r') as f: lst = sorted(f)&quot;; echo &quot;with open('$KMVAR_file','w') as f: f.writelines(lst)&quot;) | python
+</pre></div>
+</div>
+</div>
+
+<p>Python’s sort command is very handy.</p>
+
+<h2 id="systematisation-of-good">Systematisation of good</h2>
+
+<p>Some more words about systematisation of KM macros to increase efficiency or good (善). </p>
+
+<ol>
+  <li>
+    <p>For now, I think the best trigger is the pallette that consists of hot strings. You can have a very short glance to check the name of macro and rehearse the shortcuts; and thank God, I don’t need to type like a robot that has a shortcuts cheatsheet coded inside it. If you accidently trigger a pallette, you don’t need to worry, because macros haven’t been triggered. </p>
+  </li>
+  <li>
+    <p>I try to implement timestamp on KM; however, it can be easily forgotten. By the way, the comment title is searchable and the content is not.</p>
+  </li>
+  <li>
+    <p>I normally collapse the actions (see the screenshot below), so I will not happy if there is no title for <code>execute shell script</code> action and I don’t want another <code>comment</code> action which will bloat the look. As a result, I save the shell script action as a macro and detail input/output KM variables in its macro.</p>
+
+    <p><img src="http://i.imgur.com/L9MsKHy.png" alt="alt text" title="Insert" /></p>
+
+    <p><img src="http://i.imgur.com/dXfzzgk.png" alt="alt text" title="Insert" /></p>
+  </li>
+  <li>
+    <p>I like Alfred’s visualisation of workflow (but not good for setting app launch shortcuts, slow to set up and hard to modify). But through modularisation, KM workflows is responsive and won’t look bad. Finally, about KM variable <code>pptalt</code>. It’s a trick: save the clipboard conetent as a KM variable; after 2 seconds, set this variable empty.</p>
+
+    <p><img src="http://i.imgur.com/ngppJRh.png" alt="alt text" title="Insert" /></p>
+  </li>
+</ol>
+
+<h2 id="taxonomy">Taxonomy</h2>
+
+<p>This part is about the type of KM macros, KM taxonomy, Mac action taxonomy, or simply what’s KM for. </p>
+
+<p><img src="http://i.imgur.com/cpWwfBs.png" alt="alt text" title="Insert" /></p>
+
+<ol>
+  <li><strong>Saves time.</strong> I don’t want to use my time to report bugs, send ‘feature request’ emails and wait.
+    <ul>
+      <li>For examples,
+        <ul>
+          <li>I think every 1Password user has it in iPhone as well as Mac, right? And mobile sync, if you are paranoia you must use Wi-Fi sync, is a prime daily use of 1Password. How come such important move is without a keyboard shortcut?!</li>
+          <li>Same for Evernote, another business-promoted, bloated, popularised app that lacks essential keyboard shortcuts, even menu items(! God…);</li>
+          <li>same for Tweetbot, another highly priced, bloated, popularised app that lacks menu items.</li>
+        </ul>
+      </li>
+      <li>In a word, lack of shortcuts, lack of user documentation and lack of sincerity (诚意) given differnce in price and reality. So, the story is, ⌘9 to open Wi-Fi sync window is broken on my Mac then I have KM to fix it. Another thing is, ⌘W will quit 1Password. So next time I open 1Password I have to wait for it finish loading. Come on, developers, where is your consideration?</li>
+      <li>So in KM, I set when I press <code>⌘W</code>, please press <code>⌘H</code> instead. Sometimes, it seems to be an idea difference, so get it done with KM very quick instead of seeing the reply of developers. You also saving developers’ time, as well :)</li>
+      <li>One more thing, previously I made a macro about 1Password to generate a new password, fill the website login URL in the new password item in 1Password, and fill the email or username in that website OR send to your other Apple devices (iPhone, iPad, or Mac) in another post. Another one is to log in the account in some buggy website (Sina Weibo) or desktop apps (iTunes) (see <a href="http://i.imgur.com/sFGcECA.png">here</a>). </li>
+      <li>I’d to give some more app examples.
+        <ul>
+          <li>Tweetbot doesn’t have a back shortcut, so I make one, Escape key.</li>
+          <li><a href="http://danilo.to/command-c">Command-C</a> is a tool that will be shadowed by Yosemite, though I used just one key to copy and send.</li>
+          <li><a href="http://www.obdev.at/products/littlesnitch/index.html">Little Snitch</a> is a tool to cut the network communication between Mac app and the servers, and I use just one key to click on its endless popup windows that asks for permission. </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Trigger right click menu.</strong> I hate the design of right click menu. Get rid of feeling, use KM.</p>
+  </li>
+  <li>
+    <p><strong>Concatenates past clipboards</strong> and customises the format if you like. KM is better than Alfred on this.</p>
+  </li>
+  <li>
+    <p><strong>Pastes browser information,</strong> such as, the page title and URL of Chrome and Safari, and put them in a markdown syntax.</p>
+  </li>
+  <li>
+    <p><strong>Pastes processed texts.</strong> The processing can be replacing text, capitalisation, title case, lowercase, uppercase, percent encode of URL, cutting kinds of path (file path and URL), regex filter, list split, list joining.</p>
+  </li>
+  <li><strong>Workflow expanded.</strong> You can gather and pool fragmented unconscious moves on Mac whether it happens on desktop app or browser, you make a target for the computer, you streamline the pieces and ditch irrelevant waste of attention, and you are able to make a purpose for yourself; because right now you can have the computer listening to you, thought you are not mastering the machine; you can see the machine more clear, so yourself. You free the less meaningless in exchange for the space for the more meaningful. It’s an evolution.</li>
+</ol>
+
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="http://localhost:4000/tags/#Keyboard Maestro" title="Pages tagged Keyboard Maestro" class="tag">Keyboard Maestro</a><a href="http://localhost:4000/tags/#Python" title="Pages tagged Python" class="tag">Python</a><a href="http://localhost:4000/tags/#Shell" title="Pages tagged Shell" class="tag">Shell</a></span>
+        <span>Published <span class="entry-date date published updated"><time datetime="2014-06-23T00:00:00+01:00">23 June 2014</time></span></span>
+        
+        <span class="author vcard"><span class="fn">lsfalimis</span></span>
+        <div class="social-share">
+          <ul class="socialcount socialcount-small inline-list">
+            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/keyboard-maestro-tips-2/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://localhost:4000/keyboard-maestro-tips-2/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url=http://localhost:4000/keyboard-maestro-tips-2/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> Share</span></a></li>
+          </ul>
+        </div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
+        <div class="read-more-content">
+          
+          <h3><a href="http://localhost:4000/clean-install-mac-log-jul-2014/" title="Clean Install Mac Log Jul 2014">&#8592; Clean Install Mac Log Jul 2014</a></h3>
+          <span>Published 06 Jul 2014</span>
+          
+          <hr>
+          
+          <h3><a href="http://localhost:4000/use-hazel-to-schedule-single-file-transfer/" title="Use Hazel to Schedule Single File Transfer">Use Hazel to Schedule Single File Transfer &#8594;</a></h3>
+          <span>Published 05 Jun 2014</span>
+          
+        </div><!-- /.read-more-content -->
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 lsfalimis. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50494201-1', 'auto');  
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lsfalimis'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	        
+
+</body>
+</html>
