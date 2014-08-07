@@ -13,7 +13,11 @@ I just don't get it. Why should I manually set 'url' in Jekyll's `_config.yml` t
 Luckily, I can have `sed` do this for me :)
 
 {% highlight bash %}
-cd ~/GitHub/lsfalimis.github.io && sed -i.bak 's,url: http://localhost:4000,url: http://lsfalimis.github.io,g' _config.yml && git add . -A && git commit -m "update" && git push -u origin master && sed -i.bak 's,url: http://lsfalimis.github.io,url: http://localhost:4000,g' _config.yml
+cd ~/GitHub/lsfalimis.github.io &&\
+sed -i.bak 's,url: http://localhost:4000,url: http://lsfalimis.github.io,g' _config.yml &&\
+git add . -A && git commit -m "update" &&\
+git push -u origin master &&\
+sed -i.bak 's,url: http://lsfalimis.github.io,url: http://localhost:4000,g' _config.yml
 {% endhighlight %}
 
 I declare an alias for this in `~/.zshrc`.

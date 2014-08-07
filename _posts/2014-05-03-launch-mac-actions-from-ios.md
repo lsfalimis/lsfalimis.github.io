@@ -26,7 +26,11 @@ This post will guide you to post last taken iOS screenshot to GitHub.
 	- At Chrome's address bar, input `it TextExpander↩` (where `it` is the custom search of `https://www.google.co.uk/#q=on+the+App+Store+on+iTunes+%s&btnI`) and also Dropbox, Cmd-C, Launch Center Pro (LCP) and Drafts, download them in iTunes, and install them on iOS.
 
 {% highlight bash %}
-mkdir ~/Dropbox/giti/ && mkdir ~/Dropbox/giti/Qian-iOS-Log/ && cd ~/Dropbox/giti/Qian-iOS-Log/ && touch iPod-touch.md && git init
+mkdir ~/Dropbox/giti/ &&\
+mkdir ~/Dropbox/giti/Qian-iOS-Log/ &&\
+cd ~/Dropbox/giti/Qian-iOS-Log/ &&\
+touch iPod-touch.md &&\
+git init
 {% endhighlight %}
 
 - On iOS:

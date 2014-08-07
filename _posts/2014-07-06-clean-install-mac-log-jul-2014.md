@@ -53,7 +53,22 @@ share: true
 It's hatred so I'm not ashamed.
 
 {% highlight bash %}
-defaults write com.apple.finder AnimateSnapToGrid -bool false && defaults write com.apple.finder DisableAllAnimations -bool true && defaults write com.apple.finder ZoomRects -bool false && defaults write com.apple.finder AnimateInfoPanes -bool false && defaults write com.apple.finder QLEnableSlowMotion -bool false && defaults write com.apple.finder PathBarRootAtHome -bool true && defaults write com.apple.dock springboard-show-duration -float 0.1 && defaults write com.apple.dock springboard-hide-duration -float 0 && defaults write com.apple.dock expose-animation-duration -float 0 && defaults write com.apple.dock workspaces-edge-delay -float 0 && defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 && defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false && defaults write NSGlobalDomain AppleShowAllExtensions -bool true && defaults write com.apple.dashboard mcx-disabled -boolean YES && defaults write com.apple.dock persistent-apps -array-add “{tile-data={}; tile-type=‘spacer-tile’;}” && killall Dock
+defaults write com.apple.finder AnimateSnapToGrid -bool false &&\
+defaults write com.apple.finder DisableAllAnimations -bool true &&\
+defaults write com.apple.finder ZoomRects -bool false &&\
+defaults write com.apple.finder AnimateInfoPanes -bool false &&\
+defaults write com.apple.finder QLEnableSlowMotion -bool false &&\
+defaults write com.apple.finder PathBarRootAtHome -bool true &&\
+defaults write com.apple.dock springboard-show-duration -float 0.1 &&\
+defaults write com.apple.dock springboard-hide-duration -float 0 &&\
+defaults write com.apple.dock expose-animation-duration -float 0 &&\
+defaults write com.apple.dock workspaces-edge-delay -float 0 &&\
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 &&\
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false &&\
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true &&\
+defaults write com.apple.dashboard mcx-disabled -boolean YES &&\
+defaults write com.apple.dock persistent-apps -array-add “{tile-data={}; tile-type=‘spacer-tile’;}” &&\
+killall Dock
 {% endhighlight %}
 
 **For first-time users:** meanings see [Appendix 1](#Fuck_Animation_Commands), the last third one is to disable dashboard and the last second one is to add a spacer to divide "kept in Dock" apps and non-"kept in Dock" apps.
@@ -349,7 +364,12 @@ Some process takes time so we can put them before others:
 		- tab 1 > v `Launch Engine at Login`
 	- 终端，见 <http://www.keyboardmaestro.com/documentation/6/preferences.html#preferences_other>
 
-    defaults write com.stairways.keyboardmaestro.engine InterActionDelay -float 0.2 && defaults write com.stairways.keyboardmaestro.editor DisableAnimation -bool YES && defaults write com.stairways.keyboardmaestro.engine DisableAnimation -bool YES && defaults write com.stairways.keyboardmaestro.engine RecordingCountDown -int 3
+{% highlight bash %}
+defaults write com.stairways.keyboardmaestro.engine InterActionDelay -float 0.2 &&\
+defaults write com.stairways.keyboardmaestro.editor DisableAnimation -bool YES &&\
+defaults write com.stairways.keyboardmaestro.engine DisableAnimation -bool YES &&\
+defaults write com.stairways.keyboardmaestro.engine RecordingCountDown -int 3
+{% endhighlight %}
 
 4. [Adobe Digital Editions](http://www.adobe.com/uk/products/digital-editions.html) 看 DRM 保护的电子书或放置将要被破解 DRM 保护的电子书；破解用 Kevin Pan 开发的 eBook DRM Removal，注意在一些国家破解 DRM 保护是违法行为
 	- log in

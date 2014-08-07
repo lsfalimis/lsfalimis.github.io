@@ -200,7 +200,22 @@
 
 <p>It’s hatred so I’m not ashamed.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.finder AnimateSnapToGrid -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder DisableAllAnimations -bool <span class="nb">true</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder ZoomRects -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder AnimateInfoPanes -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder QLEnableSlowMotion -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write com.apple.finder PathBarRootAtHome -bool <span class="nb">true</span> <span class="o">&amp;&amp;</span> defaults write com.apple.dock springboard-show-duration -float 0.1 <span class="o">&amp;&amp;</span> defaults write com.apple.dock springboard-hide-duration -float <span class="m">0</span> <span class="o">&amp;&amp;</span> defaults write com.apple.dock expose-animation-duration -float <span class="m">0</span> <span class="o">&amp;&amp;</span> defaults write com.apple.dock workspaces-edge-delay -float <span class="m">0</span> <span class="o">&amp;&amp;</span> defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 <span class="o">&amp;&amp;</span> defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span> defaults write NSGlobalDomain AppleShowAllExtensions -bool <span class="nb">true</span> <span class="o">&amp;&amp;</span> defaults write com.apple.dashboard mcx-disabled -boolean YES <span class="o">&amp;&amp;</span> defaults write com.apple.dock persistent-apps -array-add “<span class="o">{</span>tile-data<span class="o">={}</span><span class="p">;</span> tile-type<span class="o">=</span>‘spacer-tile’<span class="p">;</span><span class="o">}</span>” <span class="o">&amp;&amp;</span> killall Dock</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.finder AnimateSnapToGrid -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.finder DisableAllAnimations -bool <span class="nb">true</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.finder ZoomRects -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.finder AnimateInfoPanes -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.finder QLEnableSlowMotion -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.finder PathBarRootAtHome -bool <span class="nb">true</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.dock springboard-show-duration -float 0.1 <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.dock springboard-hide-duration -float <span class="m">0</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.dock expose-animation-duration -float <span class="m">0</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.dock workspaces-edge-delay -float <span class="m">0</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool <span class="nb">false</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write NSGlobalDomain AppleShowAllExtensions -bool <span class="nb">true</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.dashboard mcx-disabled -boolean YES <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.apple.dock persistent-apps -array-add “<span class="o">{</span>tile-data<span class="o">={}</span><span class="p">;</span> tile-type<span class="o">=</span>‘spacer-tile’<span class="p">;</span><span class="o">}</span>” <span class="o">&amp;&amp;</span><span class="se">\</span>
+killall Dock</code></pre></div>
 
 <p><strong>For first-time users:</strong> meanings see <a href="#Fuck_Animation_Commands">Appendix 1</a>, the last third one is to disable dashboard and the last second one is to add a spacer to divide “kept in Dock” apps and non-“kept in Dock” apps.</p>
 
@@ -659,9 +674,15 @@
       </li>
       <li>终端，见 <a href="http://www.keyboardmaestro.com/documentation/6/preferences.html#preferences_other">http://www.keyboardmaestro.com/documentation/6/preferences.html#preferences_other</a></li>
     </ul>
-
-    <p>defaults write com.stairways.keyboardmaestro.engine InterActionDelay -float 0.2 &amp;&amp; defaults write com.stairways.keyboardmaestro.editor DisableAnimation -bool YES &amp;&amp; defaults write com.stairways.keyboardmaestro.engine DisableAnimation -bool YES &amp;&amp; defaults write com.stairways.keyboardmaestro.engine RecordingCountDown -int 3</p>
   </li>
+</ol>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.stairways.keyboardmaestro.engine InterActionDelay -float 0.2 <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.stairways.keyboardmaestro.editor DisableAnimation -bool YES <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.stairways.keyboardmaestro.engine DisableAnimation -bool YES <span class="o">&amp;&amp;</span><span class="se">\</span>
+defaults write com.stairways.keyboardmaestro.engine RecordingCountDown -int 3</code></pre></div>
+
+<ol>
   <li><a href="http://www.adobe.com/uk/products/digital-editions.html">Adobe Digital Editions</a> 看 DRM 保护的电子书或放置将要被破解 DRM 保护的电子书；破解用 Kevin Pan 开发的 eBook DRM Removal，注意在一些国家破解 DRM 保护是违法行为
     <ul>
       <li>log in</li>

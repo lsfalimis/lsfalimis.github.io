@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-08-07T02:30:37+01:00</updated>
+<updated>2014-08-07T13:21:22+01:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>lsfalimis</name>
@@ -24,11 +24,15 @@
     <uri>http://localhost:4000</uri>
     <email></email>
   </author>
-  <content type="html">&lt;p&gt;I just don’t get it. What should I supposed to set ‘url’ in Jekyll’s &lt;code&gt;_config.yml&lt;/code&gt; to &lt;code&gt;http://localhost:4000&lt;/code&gt; when I’m coding and previewing locally (&lt;code&gt;jekyll serve --watch&lt;/code&gt;) for the first place?&lt;/p&gt;
+  <content type="html">&lt;p&gt;I just don’t get it. Why should I manually set ‘url’ in Jekyll’s &lt;code&gt;_config.yml&lt;/code&gt; to &lt;code&gt;http://localhost:4000&lt;/code&gt; when I’m coding and previewing locally (&lt;code&gt;jekyll serve --watch&lt;/code&gt;) for the first place?&lt;/p&gt;
 
 &lt;p&gt;Luckily, I can have &lt;code&gt;sed&lt;/code&gt; do this for me :)&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/GitHub/lsfalimis.github.io &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sed -i.bak &lt;span class=&quot;s1&quot;&gt;&amp;#39;s,url: http://localhost:4000,url: http://lsfalimis.github.io,g&amp;#39;&lt;/span&gt; _config.yml &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git add . -A &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;update&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git push -u origin master &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sed -i.bak &lt;span class=&quot;s1&quot;&gt;&amp;#39;s,url: http://lsfalimis.github.io,url: http://localhost:4000,g&amp;#39;&lt;/span&gt; _config.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/GitHub/lsfalimis.github.io &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+sed -i.bak &lt;span class=&quot;s1&quot;&gt;&amp;#39;s,url: http://localhost:4000,url: http://lsfalimis.github.io,g&amp;#39;&lt;/span&gt; _config.yml &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+git add . -A &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;update&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+git push -u origin master &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+sed -i.bak &lt;span class=&quot;s1&quot;&gt;&amp;#39;s,url: http://lsfalimis.github.io,url: http://localhost:4000,g&amp;#39;&lt;/span&gt; _config.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;I declare an alias for this in &lt;code&gt;~/.zshrc&lt;/code&gt;.&lt;/p&gt;
 
@@ -2075,7 +2079,22 @@ enlargelimits=upper] &lt;span class=&quot;c&quot;&gt;% extend the axes a bit to 
 
 &lt;p&gt;It’s hatred so I’m not ashamed.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.finder AnimateSnapToGrid -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder DisableAllAnimations -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder ZoomRects -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder AnimateInfoPanes -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder QLEnableSlowMotion -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.finder PathBarRootAtHome -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock springboard-show-duration -float 0.1 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock springboard-hide-duration -float &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock expose-animation-duration -float &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock workspaces-edge-delay -float &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write NSGlobalDomain AppleShowAllExtensions -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dashboard mcx-disabled -boolean YES &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; defaults write com.apple.dock persistent-apps -array-add “&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;tile-data&lt;span class=&quot;o&quot;&gt;={}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; tile-type&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;‘spacer-tile’&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;” &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; killall Dock&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.apple.finder AnimateSnapToGrid -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.finder DisableAllAnimations -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.finder ZoomRects -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.finder AnimateInfoPanes -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.finder QLEnableSlowMotion -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.finder PathBarRootAtHome -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.dock springboard-show-duration -float 0.1 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.dock springboard-hide-duration -float &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.dock expose-animation-duration -float &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.dock workspaces-edge-delay -float &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write NSGlobalDomain AppleShowAllExtensions -bool &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.dashboard mcx-disabled -boolean YES &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.apple.dock persistent-apps -array-add “&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;tile-data&lt;span class=&quot;o&quot;&gt;={}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; tile-type&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;‘spacer-tile’&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;” &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+killall Dock&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;For first-time users:&lt;/strong&gt; meanings see &lt;a href=&quot;#Fuck_Animation_Commands&quot;&gt;Appendix 1&lt;/a&gt;, the last third one is to disable dashboard and the last second one is to add a spacer to divide “kept in Dock” apps and non-“kept in Dock” apps.&lt;/p&gt;
 
@@ -2534,9 +2553,15 @@ enlargelimits=upper] &lt;span class=&quot;c&quot;&gt;% extend the axes a bit to 
       &lt;/li&gt;
       &lt;li&gt;终端，见 &lt;a href=&quot;http://www.keyboardmaestro.com/documentation/6/preferences.html#preferences_other&quot;&gt;http://www.keyboardmaestro.com/documentation/6/preferences.html#preferences_other&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
-
-    &lt;p&gt;defaults write com.stairways.keyboardmaestro.engine InterActionDelay -float 0.2 &amp;amp;&amp;amp; defaults write com.stairways.keyboardmaestro.editor DisableAnimation -bool YES &amp;amp;&amp;amp; defaults write com.stairways.keyboardmaestro.engine DisableAnimation -bool YES &amp;amp;&amp;amp; defaults write com.stairways.keyboardmaestro.engine RecordingCountDown -int 3&lt;/p&gt;
   &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;defaults write com.stairways.keyboardmaestro.engine InterActionDelay -float 0.2 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.stairways.keyboardmaestro.editor DisableAnimation -bool YES &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.stairways.keyboardmaestro.engine DisableAnimation -bool YES &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+defaults write com.stairways.keyboardmaestro.engine RecordingCountDown -int 3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.adobe.com/uk/products/digital-editions.html&quot;&gt;Adobe Digital Editions&lt;/a&gt; 看 DRM 保护的电子书或放置将要被破解 DRM 保护的电子书；破解用 Kevin Pan 开发的 eBook DRM Removal，注意在一些国家破解 DRM 保护是违法行为
     &lt;ul&gt;
       &lt;li&gt;log in&lt;/li&gt;
@@ -3819,7 +3844,11 @@ tail: &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;: No such file or directory&
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir ~/Dropbox/giti/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mkdir ~/Dropbox/giti/Qian-iOS-Log/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Dropbox/giti/Qian-iOS-Log/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; touch iPod-touch.md &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir ~/Dropbox/giti/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+mkdir ~/Dropbox/giti/Qian-iOS-Log/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Dropbox/giti/Qian-iOS-Log/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+touch iPod-touch.md &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+git init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;On iOS:

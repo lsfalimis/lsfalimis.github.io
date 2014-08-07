@@ -20,7 +20,17 @@ The solution is as follows:
 - The blog should be able to be opened on <http://GITHUBID.github.io/> after running the code [^2]
 
 {% highlight bash %}
-mv jekyll-bootstrap-master.zip /path// && cd /path/ && unzip jekyll-bootstrap-master.zip && mv jekyll-bootstrap-master GITHUBID.github.io && cd GITHUBID.github.io && git init && jekyll build && git add . && git commit -m "first commit" && git remote add origin https://github.com/GITHUBID/GITHUBID.github.io.git && git push -u origin master
+mv jekyll-bootstrap-master.zip /path// &&\
+cd /path/ &&\
+unzip jekyll-bootstrap-master.zip &&\
+mv jekyll-bootstrap-master GITHUBID.github.io &&\
+cd GITHUBID.github.io &&\
+git init &&\
+jekyll build &&\
+git add . &&\
+git commit -m "first commit" &&\
+git remote add origin https://github.com/GITHUBID/GITHUBID.github.io.git &&\
+git push -u origin master
 {% endhighlight %}
 
 - Create a Google Analytics account by clicking **Access Google Analytics** button

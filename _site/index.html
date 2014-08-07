@@ -90,12 +90,12 @@
   
   
     <div class="entry-image">
-      <img src="http://localhost:4000/images/Unsplash_Sonja-Langford.jpg" alt="">
+      <img src="http://localhost:4000/images/Unsplash_Sonja-Langford.jpg" alt="lsfalimis">
     </div><!-- /.entry-image -->
   
   <div class="header-title">
     <div class="header-title-wrap">
-      <h1><a href="http://localhost:4000"></a></h1>
+      <h1><a href="http://localhost:4000">lsfalimis</a></h1>
     </div><!-- /.header-title-wrap -->
   </div><!-- /.header-title -->
 </div><!-- /.entry-header -->
@@ -123,11 +123,15 @@
   </header>
   <div class="entry-content">
     
-      <p>I just don’t get it. What should I supposed to set ‘url’ in Jekyll’s <code>_config.yml</code> to <code>http://localhost:4000</code> when I’m coding and previewing locally (<code>jekyll serve --watch</code>) for the first place?</p>
+      <p>I just don’t get it. Why should I manually set ‘url’ in Jekyll’s <code>_config.yml</code> to <code>http://localhost:4000</code> when I’m coding and previewing locally (<code>jekyll serve --watch</code>) for the first place?</p>
 
 <p>Luckily, I can have <code>sed</code> do this for me :)</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/GitHub/lsfalimis.github.io <span class="o">&amp;&amp;</span> sed -i.bak <span class="s1">&#39;s,url: http://localhost:4000,url: http://lsfalimis.github.io,g&#39;</span> _config.yml <span class="o">&amp;&amp;</span> git add . -A <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;update&quot;</span> <span class="o">&amp;&amp;</span> git push -u origin master <span class="o">&amp;&amp;</span> sed -i.bak <span class="s1">&#39;s,url: http://lsfalimis.github.io,url: http://localhost:4000,g&#39;</span> _config.yml</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/GitHub/lsfalimis.github.io <span class="o">&amp;&amp;</span><span class="se">\</span>
+sed -i.bak <span class="s1">&#39;s,url: http://localhost:4000,url: http://lsfalimis.github.io,g&#39;</span> _config.yml <span class="o">&amp;&amp;</span><span class="se">\</span>
+git add . -A <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;update&quot;</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+git push -u origin master <span class="o">&amp;&amp;</span><span class="se">\</span>
+sed -i.bak <span class="s1">&#39;s,url: http://lsfalimis.github.io,url: http://localhost:4000,g&#39;</span> _config.yml</code></pre></div>
 
 <p>I declare an alias for this in <code>~/.zshrc</code>.</p>
 
