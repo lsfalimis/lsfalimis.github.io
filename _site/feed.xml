@@ -4,13 +4,310 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-08-07T13:21:22+01:00</updated>
+<updated>2014-08-08T01:36:24+01:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>lsfalimis</name>
   <uri>http://localhost:4000/</uri>
   <email></email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Customise HPSTR Jekyll Theme]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/customise-hpstr-jekyll-theme/" />
+  <id>http://localhost:4000/customise-hpstr-jekyll-theme</id>
+  <published>2014-08-07T00:00:00+01:00</published>
+  <updated>2014-08-07T00:00:00+01:00</updated>
+  <author>
+    <name>lsfalimis</name>
+    <uri>http://localhost:4000</uri>
+    <email></email>
+  </author>
+  <content type="html">&lt;h2 id=&quot;about&quot;&gt;About&lt;/h2&gt;
+
+&lt;p&gt;Based on unchanged &lt;code&gt;hpstr-jekyll-theme-master.zip&lt;/code&gt; from &lt;a href=&quot;https://github.com/mmistakes/hpstr-jekyll-theme/archive/master.zip&quot;&gt;GitHub&lt;/a&gt; at &lt;code&gt;2014-08-07 16:44:14&lt;/code&gt; whose features include animated navigation, images, table rules and buttons. Jekyll use Liquid markup language so you will see many &lt;code&gt;{% something %}&lt;/code&gt;. Besides, I just discovered MathJax is easy to set up and renders LaTeX nicely. &lt;/p&gt;
+
+&lt;h2 id=&quot;highlights&quot;&gt;Highlights&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#disqus&quot;&gt;Disqus&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#chinese&quot;&gt;With Chinese characteristics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#nocateg&quot;&gt;I don’t like the category in permalinks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#nolate&quot;&gt;I don’t like ‘Latest Posts’ title&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#decimal&quot;&gt;Reading time in decimals&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#whatrelate&quot;&gt;Clean post tails&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#showtag&quot;&gt;Display post tags&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#postpreview&quot;&gt;Display post preview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#monthsort&quot;&gt;Sort by months in archives&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#rightcase&quot;&gt;Correct case for categories&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#nolead&quot;&gt;The first paragraph shouldn’t have a bigger font size&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#codecolor&quot;&gt;Highlight code in colour&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#autotoc&quot;&gt;Old: Generate Table of Contents&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#config&quot;&gt;Configuration files&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#writing&quot;&gt;Writing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#liquid&quot;&gt;Appendix: Highlight Liquid codes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;tree&quot;&gt;Tree&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;├── _config.yml
+├── _includes
+│   ├── head.html
+│   ├── navigation.html
+│   └── ...
+├── _layouts
+│   ├── page.html
+│   ├── post.html
+│   └── ...
+├── index.html
+├── archives.html
+├── categories.html
+├── assets
+│   ├── less
+│   │   ├── variables.less
+│   │   └── ...
+│   └── ...
+└── ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;a-nameconfiga-configyml&quot;&gt;&lt;a name=&quot;config&quot;&gt;&lt;/a&gt; _config.yml&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Blog info:&lt;/strong&gt; Change &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;description&lt;/code&gt;, &lt;code&gt;owner&lt;/code&gt;’s &lt;code&gt;name&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a name=&quot;disqus&quot;&gt;&lt;/a&gt; &lt;strong&gt;Disqus (comment system):&lt;/strong&gt; Input your &lt;code&gt;disqus_shortname&lt;/code&gt; which can be found on &lt;a href=&quot;https://disqus.com/&quot;&gt;https://disqus.com/&lt;/a&gt;. Input correctly will get you out of some ‘troubles’ related to Disqus.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a name=&quot;chinese&quot;&gt;&lt;/a&gt;&lt;strong&gt;Chinese SNS links (in navigation):&lt;/strong&gt; Input your SNS ID at &lt;code&gt;twitter&lt;/code&gt;, &lt;code&gt;github&lt;/code&gt;, etc. I added Chinese SNS: &lt;code&gt;zhihu&lt;/code&gt;, &lt;code&gt;v2ex&lt;/code&gt;, &lt;code&gt;weibo&lt;/code&gt;, &lt;code&gt;renren&lt;/code&gt;, &lt;code&gt;douban&lt;/code&gt;. → Don’t worry about using URL or ID, because you will set up icons and icon links later.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Google Analytics (count blog view; track readers’ locations):&lt;/strong&gt; Input your Google Analytics ID at &lt;code&gt;google_analytics&lt;/code&gt; which can be found at &lt;a href=&quot;http://www.google.com/analytics/&quot;&gt;http://www.google.com/analytics/&lt;/a&gt; &amp;gt; &lt;code&gt;Admin&lt;/code&gt; tab &amp;gt; &lt;code&gt;PROPERTY&lt;/code&gt; column &amp;gt; &lt;code&gt;Tracking Info&lt;/code&gt; &amp;gt; &lt;code&gt;Tracking Code&lt;/code&gt; &amp;gt; find the alphameric starts that &lt;code&gt;UA-&lt;/code&gt;. By the way, &lt;a href=&quot;https://itunes.apple.com/cn/app/quicklytics-google-analytics/id354890919?l=en&amp;amp;mt=8&quot;&gt;Quicklytics&lt;/a&gt; and &lt;a href=&quot;https://itunes.apple.com/cn/app/analytiks-google-analytics/id427268553?l=en&amp;amp;mt=8&quot;&gt;Analytiks&lt;/a&gt; let you view statistics at iOS. I use Analytiks but don’t recommend it, because it is way too basic compared to Quicklytics.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Navigation cleanup:&lt;/strong&gt; You can use and customise &lt;code&gt;links&lt;/code&gt; or delete &lt;code&gt;links&lt;/code&gt; part.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Misc.:&lt;/strong&gt; Change &lt;code&gt;timezone&lt;/code&gt; to yours which can be found on &lt;code&gt;http://en.wikipedia.org/wiki/List_of_tz_database_time_zones&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a name=&quot;nocateg&quot;&gt;&lt;/a&gt;&lt;strong&gt;Post links:&lt;/strong&gt; I don’t like the &lt;code&gt;/:categories/:title/&lt;/code&gt; format of permalinks. Categories are susceptible to changes, and post titles are less susceptible to the problem. For now I change &lt;code&gt;permalink&lt;/code&gt; to &lt;code&gt;/:title/&lt;/code&gt;. However, one issue can be arisen, if the post title is too long and broken into ugly multiple lines on your blog, and you want to change the post title. As a result, the old link for the post will be broken. But for now, I have no solution to the problem.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Number of posts per page:&lt;/strong&gt; You may want to raise &lt;code&gt;5&lt;/code&gt; &lt;code&gt;paginate&lt;/code&gt; if you truncate your post list/index page, afterwards, &lt;code&gt;index.html&lt;/code&gt;, (because you will edit the file instead of others,) that is, display post preview instead of full post content. My current &lt;code&gt;paginate&lt;/code&gt; is set to &lt;code&gt;10&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Remarks:&lt;/strong&gt; Note that the markdown engine in use is kramdown, and kramdown use coderay to highlight code blocks, I guess. Given the current code highlighter is pygments, you can ignore coderay settings, I guess. Besides, I have a question. &lt;code&gt;node_modules&lt;/code&gt; is in &lt;code&gt;exclude&lt;/code&gt; list, why it’s still pushed to GitHub?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;headhtml&quot;&gt;head.html&lt;/h3&gt;
+
+&lt;p&gt;&lt;a name=&quot;nolate&quot;&gt;&lt;/a&gt;&lt;strong&gt;Home Title:&lt;/strong&gt; I don’t like &lt;code&gt;Latest Posts - lsfalimis&lt;/code&gt;, so I change line 2’s (L2) &lt;code&gt;{% if page.title %}&lt;/code&gt; to &lt;code&gt;{% if page.title and page.title != site.title %}&lt;/code&gt;. Why can’t I leave &lt;code&gt;title&lt;/code&gt; in &lt;code&gt;index.html&lt;/code&gt; blank? Give it a try. By the way, I know nothing about coding. If there are simpler codes, please leave the comments, thank you!&lt;/p&gt;
+
+&lt;h3 id=&quot;navigationhtml&quot;&gt;navigation.html&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Use SNS icons:&lt;/strong&gt; Choose icons at &lt;a href=&quot;http://fortawesome.github.io/Font-Awesome/icons/&quot;&gt;here&lt;/a&gt;. Wish I could make icons of V2EX, Zhihu and Douban…&lt;/p&gt;
+
+&lt;h3 id=&quot;pagehtml&quot;&gt;page.html&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a name=&quot;decimal&quot;&gt;&lt;/a&gt;&lt;strong&gt;Reading time in decimals:&lt;/strong&gt; The default display of reading time is fraction. It’s quite unpleasing. Given the lesser reading times occur more frequently for my blog, I set up conditionals as follows. Messy code…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% assign readtime = content | number_of_words | divided_by:site.words_per_minute%}
+{% if readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 1 %}1 min. read
+{% elsif readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 2%}2 min. read
+{% elsif readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 3%}3 min. read
+{% elsif readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 4%}4 min. read
+{% elsif readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 5%}5 min. read
+{% elsif readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 6%}6 min. read
+{% elsif readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 7%}7 min. read
+{% elsif readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 8%}8 min. read
+{% elsif readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 9%}9 min. read
+{% elsif readtime &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;= 10%}10 min. read
+{% else %}10+ min. read{% endif %}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Misleading Google Plus ‘+1’ sign:&lt;/strong&gt; It seems that the post has already gotten a ‘+1’ on Google Plus. No… So I change &lt;code&gt;+1&lt;/code&gt; to &lt;code&gt;Share&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;posthtml&quot;&gt;post.html&lt;/h3&gt;
+
+&lt;p&gt;&lt;a name=&quot;whatrelate&quot;&gt;&lt;/a&gt;Redo the steps in &lt;code&gt;page.html&lt;/code&gt; here. Next I will talk about &lt;strong&gt;&lt;code&gt;Read More&lt;/code&gt;&lt;/strong&gt;. I have no idea how &lt;code&gt;site.related_posts&lt;/code&gt; are chosen, so I replace this part with ‘next post’ and ‘previous post’. From &lt;code&gt;{% if site.related_posts.size %}&lt;/code&gt; to &lt;code&gt;&amp;lt;/div&amp;gt;&amp;lt;!-- /.read-more --&amp;gt;&lt;/code&gt; are replaced by the code as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;read-more&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;read-more-content&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {% if page.next.url %}
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ site.url }}{{ page.next.url }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ page.next.title }}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;ni&quot;&gt;&amp;amp;#8592;&lt;/span&gt; {{ page.next.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;Published {{ page.next.date | date: }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+      {% endif %}
+      {% if page.next.url and page.previous.url%}&lt;span class=&quot;nt&quot;&gt;&amp;lt;hr&amp;gt;&lt;/span&gt;{% endif %}
+      {% if page.previous.url %}
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ site.url }}{{ page.previous.url }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ page.previous.title }}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ page.previous.title }} &lt;span class=&quot;ni&quot;&gt;&amp;amp;#8594;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;Published {{ page.previous.date | date: }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+      {% endif %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.read-more-content --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.read-more --&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;indexhtml&quot;&gt;index.html&lt;/h3&gt;
+
+&lt;p&gt;Firstly, redo ‘reading time’ step.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Head image:&lt;/strong&gt; Change &lt;code&gt;image&lt;/code&gt;’s &lt;code&gt;feature&lt;/code&gt;. The one I use comes from &lt;a href=&quot;http://unsplash.com/&quot;&gt;Unsplash&lt;/a&gt; at which you can find Public Domain images that possess No Copyright.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a name=&quot;showtag&quot;&gt;&lt;/a&gt;&lt;strong&gt;Post tags:&lt;/strong&gt; After post date and before comment hyperlink, I’d like to display tags and the code is:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% for tag in post.tags %}&lt;span class=&quot;ni&quot;&gt;&amp;amp;nbsp;&lt;/span&gt; &lt;span class=&quot;ni&quot;&gt;&amp;amp;bull;&lt;/span&gt; &lt;span class=&quot;ni&quot;&gt;&amp;amp;nbsp;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ site.url }}/tags/#{{ tag }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Pages tagged {{ tag }}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ tag }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;{% unless forloop.last %}{% endunless %}{% endfor %}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a name=&quot;postpreview&quot;&gt;&lt;/a&gt;&lt;strong&gt;Post preview:&lt;/strong&gt; Replace &lt;code&gt;{{ post.content }}&lt;/code&gt; to the the following code, and when you are writing, if need, add &lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt; in your post markdown file. The part before the tag will be displayed in post preview.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% if post.content contains &amp;#39;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--more--&amp;gt;&lt;/span&gt;&amp;#39; %}
+  {{ post.content | split:&amp;#39;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--more--&amp;gt;&lt;/span&gt;&amp;#39; | first %}}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;btn btn-info&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ post.url }}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Read more&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+{% else %}
+  {{ post.content }}
+{% endif %}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;archiveshtml&quot;&gt;archives.html&lt;/h3&gt;
+
+&lt;p&gt;I rename posts.html to archives.html.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;monthsort&quot;&gt;&lt;/a&gt;&lt;strong&gt;Sort by months:&lt;/strong&gt; To do it, another loop to repeat month is needed. Firstly, I capture or declare &lt;code&gt;this_month&lt;/code&gt; and &lt;code&gt;next_month&lt;/code&gt;; in liquid loop, &lt;code&gt;this_something&lt;/code&gt; is like x and another variable is declare to compare with x in conditional in order to realise a loop. &lt;code&gt;forloop.first&lt;/code&gt; denote the first loop, and I put a h3 title of &lt;code&gt;this_month&lt;/code&gt; here. &lt;code&gt;forloop.last&lt;/code&gt; denote the loops except the first loop, and I add a conditional here to produce all other h3 month title that doesn’t include the month in the first loop. The code is as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% for post in site.posts %}
+    {% capture this_year %}{{ post.date | date: }}{% endcapture %}
+    {% capture next_year %}{{ post.previous.date | date: }}{% endcapture %}
+    {% capture this_month %}{{ post.date | date: }}{% endcapture %}
+    {% capture next_month %}{{ post.previous.date | date: }}{% endcapture %}
+
+    {% if forloop.first %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;article&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ this_year }}-ref&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ this_year }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ this_month }}-ref&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ this_month }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+    {% endif %}
+
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;entry-title&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ site.url }}{{ post.url }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ post.title }}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      
+    {% if forloop.last %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+    {% else %}
+        {% if this_month != next_month %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ next_month }}-ref&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ next_month }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+        {% endif %}
+        {% if this_year != next_year %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;article&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ next_year }}-ref&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{next_year}}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ next_month }}-ref&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{next_month}}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+        {% endif %}
+    {% endif %}
+{% endfor %}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;categorieshtml&quot;&gt;categories.html&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;cat tags.html &amp;gt; categories.html&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With Sublime Text replacing’s case sensitive on, replace &lt;code&gt;tags&lt;/code&gt; with &lt;code&gt;categories&lt;/code&gt;, replace &lt;code&gt;Tags&lt;/code&gt; with &lt;code&gt;Categories&lt;/code&gt;, then replace &lt;code&gt;tag&lt;/code&gt; with &lt;code&gt;category&lt;/code&gt;, and then replace &lt;code&gt;class=&quot;category&quot;&lt;/code&gt; with &lt;code&gt;class=&quot;tag&quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;rightcase&quot;&gt;&lt;/a&gt;&lt;strong&gt;Category case:&lt;/strong&gt; By default, categories are changed by Jekyll to lowercase for better processing. We can capitalise categories, but some special terms are exceptions, such as, ‘iOS’ and ‘LaTeX’. Therefore, I replace &lt;code&gt;&amp;lt;h2 id=&quot;{{ this_word }}&quot;&amp;gt;{{ this_word }}&amp;lt;/h2&amp;gt;&lt;/code&gt; with a conditional:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% if this_word == &amp;#39;ios&amp;#39; %}&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ this_word }}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;iOS&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+{% else %}&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ this_word }}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ this_word | capitalize }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;{% endif %}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;variablesless&quot;&gt;variables.less&lt;/h3&gt;
+
+&lt;p&gt;It’s the first time I saw the code of node.js and less, wow! You can have Grunt generate css from less for you. Download node.pkg from &lt;a href=&quot;http://nodejs.org/download/&quot;&gt;here&lt;/a&gt;. Install the pkg and run &lt;code&gt;sudo npm install -g grunt-cli&lt;/code&gt;. I prefer Menlo among monospace fonts, so I edit the variables.less, and then given package.json is already written by the theme author, run &lt;code&gt;grunt&lt;/code&gt; at the &lt;code&gt;lsfalimis.github.io&lt;/code&gt; directory. New CSS files are generated.&lt;/p&gt;
+
+&lt;h2 id=&quot;writing&quot;&gt;Writing&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a name=&quot;nolead&quot;&gt;&lt;/a&gt;&lt;strong&gt;Disable lead paragraph effect:&lt;/strong&gt; Use Inspect Element and find that the keyword &lt;code&gt;first-child&lt;/code&gt;, then search it using Finder, and edit &lt;code&gt;main.css&lt;/code&gt; that is not under &lt;code&gt;_site&lt;/code&gt;: change &lt;code&gt;font-size&lt;/code&gt; to &lt;code&gt;1rem&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a name=&quot;codecolor&quot;&gt;&lt;/a&gt;&lt;strong&gt;Code highlighting:&lt;/strong&gt; I don’t get how kramdown code highlighting works, and by wrapping the code block with &lt;code&gt;~~~&lt;/code&gt;, I can’t produce coloured highlighting. So I use pygments by the syntax where you can replace bash with languages in the &lt;a href=&quot;http://pygments.org/languages/&quot;&gt;list&lt;/a&gt;. I don’t know why LaTeX is actually supported but not in the list.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% highlight bash %}
+code
+{% endhighlight %}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;LaTeX rendering:&lt;/strong&gt; For now, I use the simplest method. Include the code in post markdown file. Example see the &lt;a href=&quot;http://lsfalimis.github.io/latex-notes/&quot;&gt;post&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Display images in columns and rows:&lt;/strong&gt; You can set the class to &lt;code&gt;half&lt;/code&gt; if there are two images in a row, or &lt;code&gt;third&lt;/code&gt; if three; it has feature like hyperlinks and caption.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;half&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;bigger_jpg1&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;jpg1&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;jpg2&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;jpg3&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;jpg4&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;This is a caption.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Displays rules in tables:&lt;/strong&gt; Append &lt;code&gt;{: rules=&quot;groups&quot;}&lt;/code&gt; as a new line to a table.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Display buttons, mostly, download buttons&lt;/strong&gt;, like    &lt;a href=&quot;https://github.com/lsfalimis/Qian-KM-Macros&quot; class=&quot;btn btn-info&quot;&gt;KM Macros&lt;/a&gt;    using the following code where by default &lt;code&gt;btn btn-info&lt;/code&gt; class is blue and &lt;code&gt;btn&lt;/code&gt; class is black. You can change the colours in &lt;code&gt;variables.less&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://github.com/lsfalimis/Qian-KM-Macros&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;btn btn-info&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;KM Macros&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a name=&quot;autotoc&quot;&gt;&lt;/a&gt;&lt;strong&gt;Generate Table of Contents (ToC):&lt;/strong&gt; It’s a review about kramdown’s feature. Simple include this to let kramdown generate ToC for you:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;## Contents
+{:.no_toc}
+
+* 
+{:toc}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;a-nameliquida-appendix-highlight-liquid-codes&quot;&gt;&lt;a name=&quot;liquid&quot;&gt;&lt;/a&gt; Appendix: Highlight Liquid codes&lt;/h2&gt;
+
+&lt;p&gt;We need to look at &lt;code&gt;{% something %}&lt;/code&gt; (in my markdown, &lt;code&gt;{{&quot;{% something &quot;}}%}&lt;/code&gt;) and &lt;code&gt;{{ something }}&lt;/code&gt; (in my markdown, &lt;code&gt;{{&quot;{{ something &quot;}}}}&lt;/code&gt;). Note that if we want to display &lt;code&gt;{% something %}&lt;/code&gt; and &lt;code&gt;{{ something }}&lt;/code&gt;, we we don’t need to escape &lt;code&gt;%}&lt;/code&gt; and &lt;code&gt;}}&lt;/code&gt;. What we need to escape are &lt;code&gt;{%&lt;/code&gt; and &lt;code&gt;{{&lt;/code&gt;, because if we put &lt;code&gt;%}&lt;/code&gt; or &lt;code&gt;}}&lt;/code&gt; in inline code or in a code block in markdown file, Jekyll will not report error. However, if we replace any of them with &lt;code&gt;{%&lt;/code&gt; or &lt;code&gt;{{&lt;/code&gt; in markdown file, Jekyll will report error. Therefore we have to wrap &lt;code&gt;{%&lt;/code&gt; or &lt;code&gt;{{&lt;/code&gt; with &lt;code&gt;{{&quot;&lt;/code&gt; and &lt;code&gt;}}&lt;/code&gt;. Let &lt;code&gt;x&lt;/code&gt; denote special symbols to escape in Liquid, then in order to highlight them in html, we have to write &lt;code&gt;{{&quot;x&quot;}}&lt;/code&gt; in markdown file.&lt;/p&gt;
+
+&lt;p&gt;What if I copied and pasted Liquid code from Jekyll configuration files to markdown file? If you haven’t wrapped code blocks, use kramdown’s &lt;code&gt;~~~ language&lt;/code&gt; syntax first, and at the end replace &lt;code&gt;~~~&lt;/code&gt; with &lt;code&gt;{% highlight language %}&lt;/code&gt; and &lt;code&gt;{% endhighlight %}&lt;/code&gt;. If you have already wrapped code blocks with &lt;code&gt;{% highlight language %}&lt;/code&gt; and &lt;code&gt;{% endhighlight %}&lt;/code&gt;, the case I have today, do these:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Replace &lt;code&gt;{{&lt;/code&gt; with &lt;code&gt;{{&quot;{{&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Replace &lt;code&gt;}}&lt;/code&gt; with &lt;code&gt;&quot;}}}}&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Replace &lt;code&gt;{%&lt;/code&gt; with &lt;code&gt;{{&quot;{%&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Replace &lt;code&gt;%}&lt;/code&gt; with &lt;code&gt;&quot;}}%}&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Replace &lt;code&gt;{{&quot;{% endhighlight &quot;}}%}&lt;/code&gt; with &lt;code&gt;{% endhighlight %}&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Replace &lt;code&gt;{{&quot;{% highlight language &quot;}}%}&lt;/code&gt; with &lt;code&gt;{% highlight language %}&lt;/code&gt;. If there are many languages highlighted in your markdown file, do this step for each of them.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/customise-hpstr-jekyll-theme/&quot;&gt;Customise HPSTR Jekyll Theme&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on August 07, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -3892,115 +4189,6 @@ git init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ul&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/launch-mac-actions-from-ios/&quot;&gt;Launch Mac Actions From iOS&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 03, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Jekyll Bootstrap Clean Setup on Mac]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/jekyll-bootstrap-clean-setup-on-mac/" />
-  <id>http://localhost:4000/jekyll-bootstrap-clean-setup-on-mac</id>
-  <published>2014-05-03T00:00:00+01:00</published>
-  <updated>2014-05-03T00:00:00+01:00</updated>
-  <author>
-    <name>lsfalimis</name>
-    <uri>http://localhost:4000</uri>
-    <email></email>
-  </author>
-  <content type="html">&lt;!--more--&gt;
-
-&lt;p&gt;It’s easy to set up new stuff on computers and to forget how to reproduce the same settings in a new one. CRY (Can Reproduce Yourself), for me, is more important than DRY (Don’t Repeat Yourself).&lt;/p&gt;
-
-&lt;p&gt;The following combines two old posts (I will reposted the delted post about setting up Jekyll): &lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Well, Jekyll Bootstrap is more convenient than Jekyll, though you need to delete a lot of things. However, the amount of things you need to delete for Jekyll Bootstrap may be less than the amount of things you need to add for Jekyll.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;First of all, I have never study Computer Science, so I treat myself as dummy ass. I might well treat others as dummy asses, so they can reproduce the same things I was talking about.&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;Anyway, university seems to ask us to write courseworks in a way that treats readers as dummy asses.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Grab a free iTerm2 at &lt;code&gt;http://www.iterm2.com/#/section/home&lt;/code&gt; and use iTerm2 instead of stock Terminal.app&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;I noted it as &lt;code&gt;xcode-select –install&lt;/code&gt;, but some say &lt;code&gt;sudo xcode-select –install&lt;/code&gt;, anyway, just type &lt;code&gt;git&lt;/code&gt; and choose Install. I mean for a new Mac.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Install command line developer tools&lt;/span&gt;
-git
-&lt;span class=&quot;c&quot;&gt;# choose Install&lt;/span&gt;
-    
-&lt;span class=&quot;c&quot;&gt;# Install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh&lt;/span&gt;
-curl -L http://install.ohmyz.sh &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; sh
-
-&lt;span class=&quot;c&quot;&gt;# Install Homebrew http://brew.sh/#install&lt;/span&gt;
-ruby -e &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot;&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# You need Homebrew to solve &amp;#39;Requirements installation failed with status:&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  1&amp;#39; error when installing rvm, and you will need rvm to solve some error&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  about ruby (I didn&amp;#39;t jot it down at that time) when installing Jekyll&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Install rvm http://rvm.io/rvm/install&lt;/span&gt;
-
-&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;url -sSL https://get.rvm.io &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; bash -s stable --ruby
-
-&lt;span class=&quot;c&quot;&gt;# error&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# /Users/henry/.zshrc:57:export PATH=&amp;quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# * WARNING: Above files contains `PATH=` with no `$PATH` inside, this can break RVM,&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# for details check&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# https://github.com/wayneeseguin/rvm/issues/1351#issuecomment-10939525&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# to avoid this warning append #PATH.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# I should simply edit line 57 of .zshrc; before that, add subl to $PATH;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  vim is too hard for a dummy ass.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Create a symbolic link (instead of a hard link) by using ln -s&lt;/span&gt;
-
-ln -s &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;quot;&lt;/span&gt; ~/bin/subl
-vim .zshrc
-
-&lt;span class=&quot;c&quot;&gt;# Press i and go to the edit mode, and then paste:&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  export PATH=$PATH:$HOME/bin&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# And it sets up subl&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Press : and type in wq↩ which will save and quit vim.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Ok, I will not touch vim again.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# However to save time, I can choose replace line 57&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#   export PATH=&amp;quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  with:&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#   export PATH=&amp;quot;$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/.rvm/bin&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Actually, &amp;#39;export PATH=&amp;quot;$PATH:$HOME/.rvm/bin&amp;quot; # Add RVM to PATH for scripting&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  has been added in the last line. We can choose to delete the last line.&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Install jekyll&lt;/span&gt;
-sudo gem install jekyll
-
-&lt;span class=&quot;c&quot;&gt;# I cannot figure out git clone in CLI so I wisely choose GitHub GUI Mac app&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  to clone my git to the new OS X.&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# cd to the path and type in&lt;/span&gt;
-rake post &lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;POST TITLE&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Happy Blogging!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Update:
-I remember…&lt;/p&gt;
-
-&lt;p&gt;iTerm: Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;So should open Xcode and agree in the GUI&lt;/p&gt;
-
-&lt;p&gt;So should run &lt;code&gt;sudo xcode-select –install&lt;/code&gt; but when I was redoing this, &lt;code&gt;-install&lt;/code&gt; and &lt;code&gt;--install&lt;/code&gt; returned error… Never mind, will check this when I re-clean-install OS X someday.&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/jekyll-bootstrap-clean-setup-on-mac/&quot;&gt;Jekyll Bootstrap Clean Setup on Mac&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 03, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>

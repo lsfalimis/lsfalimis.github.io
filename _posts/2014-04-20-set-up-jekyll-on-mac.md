@@ -3,7 +3,7 @@ layout: post
 title:  "Set Up Jekyll on Mac"
 description: ""
 category: Web
-tags: []
+tags: [Jekyll]
 comments: true
 share: true
 ---

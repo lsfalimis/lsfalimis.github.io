@@ -3,7 +3,7 @@ layout: post
 title: "Jekyll Bootstrap Clean Setup on Mac"
 description: ""
 category: Web
-tags: []
+tags: [Jekyll]
 comments: true
 share: true
 ---

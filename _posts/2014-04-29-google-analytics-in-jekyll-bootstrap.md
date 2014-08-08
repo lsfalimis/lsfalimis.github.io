@@ -4,7 +4,7 @@ title: "Google Analytics in Jekyll Bootstrap"
 description: ""
 modified: 2014-04-29
 category: Web
-tags: []
+tags: [Jekyll]
 comments: true
 share: true
 ---

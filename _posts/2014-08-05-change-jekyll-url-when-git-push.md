@@ -3,7 +3,7 @@ layout: post
 title: "Change Jekyll URL When Git Push"
 description: "OMG..."
 category: Web
-tags: [Shell]
+tags: [Shell, Jekyll]
 comments: true
 share: true
 ---
