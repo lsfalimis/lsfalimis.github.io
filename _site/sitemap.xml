@@ -44,6 +44,10 @@
 
     
     <url>
+        <loc>http://localhost:4000/link--install-rmysql-on-mavericks/</loc>
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/customise-hpstr-jekyll-theme/</loc>
     </url>
     

@@ -105,6 +105,90 @@
 <article class="hentry">
   <header>
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2014-08-14T00:00:00+01:00"><a href="http://localhost:4000/link--install-rmysql-on-mavericks/">14 Aug 2014</a></time></span>
+      &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#R" title="Pages tagged R">R</a>
+      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/link--install-rmysql-on-mavericks/#disqus_thread">Comment</a></span>
+      
+      <span class="entry-reading-time pull-right">
+        <i class="fa fa-clock-o"></i>
+        
+        1 min. read
+        
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://localhost:4000/link--install-rmysql-on-mavericks/" rel="bookmark" title="Install RMySQL on Mavericks"><i class="fa fa-angle-double-right"></i></a> <a href="http://andorian.blogspot.co.uk/2013/10/rmysql-on-osx.html">Install RMySQL on Mavericks</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    
+      <ul>
+  <li>MySQL: <a href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a></li>
+  <li>R: <a href="http://cran.r-project.org/mirrors.html">http://cran.r-project.org/mirrors.html</a></li>
+  <li>RStudio: <a href="http://www.rstudio.com/products/rstudio/download/">http://www.rstudio.com/products/rstudio/download/</a></li>
+</ul>
+
+<div class="highlight"><pre><code class="language-mysql" data-lang="mysql"><span class="n">install</span><span class="p">.</span><span class="nf">packages</span><span class="p">(</span><span class="s2">&quot;RMySQL&quot;</span><span class="p">)</span>
+<span class="c1"># package ‘RMySQL’ is available as a source package but not as a binary</span>
+<span class="o">&gt;</span> <span class="n">install</span><span class="p">.</span><span class="nf">packages</span><span class="p">(</span><span class="s1">&#39;RMySQL&#39;</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">)</span>
+<span class="cm">/*</span>
+<span class="cm">...</span>
+<span class="cm">Configuration error:</span>
+<span class="cm">  could not find the MySQL installation include and/or library</span>
+<span class="cm">  directories.  Manually specify the location of the MySQL</span>
+<span class="cm">  libraries and the header files and re-run R CMD INSTALL.</span>
+
+<span class="cm">INSTRUCTIONS:</span>
+
+<span class="cm">1. Define and export the 2 shell variables PKG_CPPFLAGS and</span>
+<span class="cm">   PKG_LIBS to include the directory for header files (*.h)</span>
+<span class="cm">   and libraries, for example (using Bourne shell syntax):</span>
+
+<span class="cm">      export PKG_CPPFLAGS=&quot;-I&lt;MySQL-include-dir&gt;&quot;</span>
+<span class="cm">      export PKG_LIBS=&quot;-L&lt;MySQL-lib-dir&gt; -lmysqlclient&quot;</span>
+
+<span class="cm">   Re-run the R INSTALL command:</span>
+
+<span class="cm">      R CMD INSTALL RMySQL_&lt;version&gt;.tar.gz</span>
+<span class="cm">...</span>
+<span class="cm">*/</span>
+<span class="n">Sys</span><span class="p">.</span><span class="nf">setenv</span><span class="p">(</span><span class="n">PKG_CPPFLAGS</span> <span class="o">=</span> <span class="s2">&quot;-I/usr/local/mysql-5.6.20-osx10.8-x86_64/include/&quot;</span><span class="p">)</span>
+<span class="n">Sys</span><span class="p">.</span><span class="nf">setenv</span><span class="p">(</span><span class="n">PKG_LIBS</span> <span class="o">=</span> <span class="s2">&quot;-L/usr/local/mysql-5.6.20-osx10.8-x86_64/lib -lmysqlclient&quot;</span><span class="p">)</span>
+<span class="n">install</span><span class="p">.</span><span class="nf">packages</span><span class="p">(</span><span class="s2">&quot;RMySQL&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;source&quot;</span><span class="p">)</span>
+<span class="cm">/*</span>
+<span class="cm">...</span>
+<span class="cm">Error : .onLoad failed in loadNamespace() for &#39;RMySQL&#39;, details:</span>
+<span class="cm">  call: dyn.load(file, DLLpath = DLLpath, ...)</span>
+<span class="cm">  error: unable to load shared object &#39;/Library/Frameworks/R.framework/Versions/3.1/Resources/library/RMySQL/libs/RMySQL.so&#39;:</span>
+<span class="cm">  dlopen(/Library/Frameworks/R.framework/Versions/3.1/Resources/library/RMySQL/libs/RMySQL.so, 6): Library not loaded: libmysqlclient.18.dylib</span>
+<span class="cm">...</span>
+<span class="cm">*/</span></code></pre></div>
+
+<p>Now in iTerm 2,</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&quot;R.home()&quot;</span> <span class="p">|</span> Rscript  /dev/stdin
+<span class="c"># [1] &quot;/Library/Frameworks/R.framework/Resources&quot;</span>
+fgrep MYSQL_HOME /Library/Frameworks/R.framework/Versions/3.1/Resources/etc/Renviron
+<span class="c"># nothing return</span>
+<span class="nb">echo</span> <span class="s1">&#39;MYSQL_HOME=&quot;/usr/local/mysql-5.6.20-osx10.8-x86_64&quot;&#39;</span> &gt;&gt; /Library/Frameworks/R.framework/Versions/3.1/Resources/etc/Renviron
+ln -s /usr/local/mysql-5.6.20-osx10.8-x86_64/lib/libmysqlclient.18.dylib /Library/Frameworks/R.framework/Resources/lib</code></pre></div>
+
+<p>Next in RStudio,</p>
+
+<div class="highlight"><pre><code class="language-mysql" data-lang="mysql"><span class="o">&gt;</span> <span class="n">install</span><span class="p">.</span><span class="nf">packages</span><span class="p">(</span><span class="s2">&quot;RMySQL&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;source&quot;</span><span class="p">)</span>
+<span class="c1"># ...</span>
+<span class="c1"># * DONE (RMySQL)</span>
+<span class="c1"># ...</span></code></pre></div>
+
+
+    
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2014-08-07T00:00:00+01:00"><a href="http://localhost:4000/customise-hpstr-jekyll-theme/">07 Aug 2014</a></time></span>
       &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#Jekyll" title="Pages tagged Jekyll">Jekyll</a>
       &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/customise-hpstr-jekyll-theme/#disqus_thread">Comment</a></span>
@@ -595,39 +679,6 @@ vim ~/.zshrc</code></pre></div>
 
 
       <p><a class="btn btn-info" href="/keyboard-maestro-tips-2/">Read more</a></p>
-    
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2014-06-05T00:00:00+01:00"><a href="http://localhost:4000/use-hazel-to-schedule-single-file-transfer/">05 Jun 2014</a></time></span>
-      &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#Hazel" title="Pages tagged Hazel">Hazel</a>&nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#Shell" title="Pages tagged Shell">Shell</a>
-      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/use-hazel-to-schedule-single-file-transfer/#disqus_thread">Comment</a></span>
-      
-      <span class="entry-reading-time pull-right">
-        <i class="fa fa-clock-o"></i>
-        
-        1 min. read
-        
-      </span><!-- /.entry-reading-time -->
-      
-    </div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://localhost:4000/use-hazel-to-schedule-single-file-transfer/" rel="bookmark" title="Use Hazel to Schedule Single File Transfer" itemprop="url">Use Hazel to Schedule Single File Transfer</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    
-      <figure>
-	<img src="http://i.imgur.com/zcp81lu.png" alt="" />
-</figure>
-
-<p>Here what I want to do is to move the oldest file from folder A to folder B at a specified time every day.</p>
-
-
-      <p><a class="btn btn-info" href="/use-hazel-to-schedule-single-file-transfer/">Read more</a></p>
     
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->

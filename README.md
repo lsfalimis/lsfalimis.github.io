@@ -2,6 +2,10 @@
 
 Based on [HPSTR Jekyll Theme](https://github.com/mmistakes/hpstr-jekyll-theme); [demo](http://mmistakes.github.io/hpstr-jekyll-theme/).
 
+## Howto
+
+<http://lsfalimis.github.io/customise-hpstr-jekyll-theme/>
+
 ## Done
 
 - navigation

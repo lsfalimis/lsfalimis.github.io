@@ -4,13 +4,87 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-08-08T01:36:24+01:00</updated>
+<updated>2014-08-14T00:13:52+01:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>lsfalimis</name>
   <uri>http://localhost:4000/</uri>
   <email></email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Install RMySQL on Mavericks]]></title>
+ <link rel="alternate" type="text/html" href="http://andorian.blogspot.co.uk/2013/10/rmysql-on-osx.html" />
+  <id>http://localhost:4000/link--install-rmysql-on-mavericks</id>
+  <published>2014-08-14T00:00:00+01:00</published>
+  <updated>2014-08-14T00:00:00+01:00</updated>
+  <author>
+    <name>lsfalimis</name>
+    <uri>http://localhost:4000</uri>
+    <email></email>
+  </author>
+  <content type="html">&lt;ul&gt;
+  &lt;li&gt;MySQL: &lt;a href=&quot;http://dev.mysql.com/downloads/mysql/&quot;&gt;http://dev.mysql.com/downloads/mysql/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;R: &lt;a href=&quot;http://cran.r-project.org/mirrors.html&quot;&gt;http://cran.r-project.org/mirrors.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;RStudio: &lt;a href=&quot;http://www.rstudio.com/products/rstudio/download/&quot;&gt;http://www.rstudio.com/products/rstudio/download/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-mysql&quot; data-lang=&quot;mysql&quot;&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;RMySQL&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# package ‘RMySQL’ is available as a source package but not as a binary&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;RMySQL&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;source&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;Configuration error:&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  could not find the MySQL installation include and/or library&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  directories.  Manually specify the location of the MySQL&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  libraries and the header files and re-run R CMD INSTALL.&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;INSTRUCTIONS:&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;1. Define and export the 2 shell variables PKG_CPPFLAGS and&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;   PKG_LIBS to include the directory for header files (*.h)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;   and libraries, for example (using Bourne shell syntax):&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;      export PKG_CPPFLAGS=&amp;quot;-I&amp;lt;MySQL-include-dir&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      export PKG_LIBS=&amp;quot;-L&amp;lt;MySQL-lib-dir&amp;gt; -lmysqlclient&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;   Re-run the R INSTALL command:&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;      R CMD INSTALL RMySQL_&amp;lt;version&amp;gt;.tar.gz&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setenv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PKG_CPPFLAGS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;-I/usr/local/mysql-5.6.20-osx10.8-x86_64/include/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setenv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PKG_LIBS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;-L/usr/local/mysql-5.6.20-osx10.8-x86_64/lib -lmysqlclient&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;RMySQL&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;Error : .onLoad failed in loadNamespace() for &amp;#39;RMySQL&amp;#39;, details:&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  call: dyn.load(file, DLLpath = DLLpath, ...)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  error: unable to load shared object &amp;#39;/Library/Frameworks/R.framework/Versions/3.1/Resources/library/RMySQL/libs/RMySQL.so&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  dlopen(/Library/Frameworks/R.framework/Versions/3.1/Resources/library/RMySQL/libs/RMySQL.so, 6): Library not loaded: libmysqlclient.18.dylib&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now in iTerm 2,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;R.home()&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; Rscript  /dev/stdin
+&lt;span class=&quot;c&quot;&gt;# [1] &amp;quot;/Library/Frameworks/R.framework/Resources&amp;quot;&lt;/span&gt;
+fgrep MYSQL_HOME /Library/Frameworks/R.framework/Versions/3.1/Resources/etc/Renviron
+&lt;span class=&quot;c&quot;&gt;# nothing return&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;MYSQL_HOME=&amp;quot;/usr/local/mysql-5.6.20-osx10.8-x86_64&amp;quot;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /Library/Frameworks/R.framework/Versions/3.1/Resources/etc/Renviron
+ln -s /usr/local/mysql-5.6.20-osx10.8-x86_64/lib/libmysqlclient.18.dylib /Library/Frameworks/R.framework/Resources/lib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next in RStudio,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-mysql&quot; data-lang=&quot;mysql&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;RMySQL&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# ...&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# * DONE (RMySQL)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# ...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/link--install-rmysql-on-mavericks/&quot;&gt;Install RMySQL on Mavericks&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on August 14, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -4099,96 +4173,6 @@ tail: &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;: No such file or directory&
 &lt;p&gt;Enjoy!&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/use-1password-like-a-pro/&quot;&gt;Use 1Password Like a Pro&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 04, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Launch Mac Actions From iOS]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/launch-mac-actions-from-ios/" />
-  <id>http://localhost:4000/launch-mac-actions-from-ios</id>
-  <published>2014-05-03T00:00:00+01:00</published>
-  <updated>2014-05-03T00:00:00+01:00</updated>
-  <author>
-    <name>lsfalimis</name>
-    <uri>http://localhost:4000</uri>
-    <email></email>
-  </author>
-  <content type="html">&lt;p&gt;This post will guide you to post last taken iOS screenshot to GitHub.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;On OS X:
-    &lt;ul&gt;
-      &lt;li&gt;Download and install &lt;a href=&quot;https://www.dropbox.com/&quot;&gt;Dropbox&lt;/a&gt;, &lt;a href=&quot;https://smilesoftware.com/TextExpander/&quot;&gt;TextExpander (TE)&lt;/a&gt;, &lt;a href=&quot;http://www.noodlesoft.com/hazel.php&quot;&gt;Hazel&lt;/a&gt;.&lt;/li&gt;
-      &lt;li&gt;Sign in Dropbox and keep it running in the background.&lt;/li&gt;
-      &lt;li&gt;Open TE &lt;code&gt;⌘,&lt;/code&gt; 4th tab, v &lt;code&gt;Dropbox&lt;/code&gt;, &lt;code&gt;⌥⌘N&lt;/code&gt; fill in &lt;code&gt;iOS&lt;/code&gt;, &lt;code&gt;⌘N&lt;/code&gt; fill in &lt;code&gt;Logss&lt;/code&gt; and &lt;code&gt;###%Y-%m-%d %H:%M:%S↩↩![alt text](%clipboard &quot;%e %b %Y %H:%M&quot;)↩↩↩&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Install &lt;a href=&quot;http://www.commandc.com/&quot;&gt;Command-C (Cmd-C)&lt;/a&gt; at Mac App Store.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;On iOS:
-    &lt;ul&gt;
-      &lt;li&gt;Set up Cmd-C on iOS and move Cmd-C app to the first position in the ‘Notification Centre’ of iOS.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;On OS X:
-    &lt;ul&gt;
-      &lt;li&gt;Open iTerm2, &lt;code&gt;git&lt;/code&gt; and choose Install.&lt;/li&gt;
-      &lt;li&gt;Create a new GitHub repo &lt;a href=&quot;https://github.com/new&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
-      &lt;li&gt;Open iTerm2, create a git locally under Dropbox folder. See the code below.&lt;/li&gt;
-      &lt;li&gt;At Chrome’s address bar, input &lt;code&gt;it TextExpander↩&lt;/code&gt; (where &lt;code&gt;it&lt;/code&gt; is the custom search of &lt;code&gt;https://www.google.co.uk/#q=on+the+App+Store+on+iTunes+%s&amp;amp;btnI&lt;/code&gt;) and also Dropbox, Cmd-C, Launch Center Pro (LCP) and Drafts, download them in iTunes, and install them on iOS.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir ~/Dropbox/giti/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-mkdir ~/Dropbox/giti/Qian-iOS-Log/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Dropbox/giti/Qian-iOS-Log/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-touch iPod-touch.md &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-git init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;On iOS:
-    &lt;ul&gt;
-      &lt;li&gt;Sign in Dropbox.&lt;/li&gt;
-      &lt;li&gt;Open TE. At BL(Bottom Left), turn on &lt;code&gt;Use Dropbox&lt;/code&gt;; you can disable the snippet folders which you don’t want to use on iOS.&lt;/li&gt;
-      &lt;li&gt;Open Drafts. Tap Share.B(button), &lt;strong&gt;Setting&lt;/strong&gt;, turn on &lt;strong&gt;Refresh TextExpander Snippets&lt;/strong&gt; and &lt;strong&gt;Expand when typing&lt;/strong&gt;; slide to button, turn on &lt;strong&gt;Allow URLs to trigger actions&lt;/strong&gt;.&lt;/li&gt;
-      &lt;li&gt;Sign in ClouDrop.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;On OS X:
-    &lt;ul&gt;
-      &lt;li&gt;Install &lt;code&gt;⌘C.kmmacros&lt;/code&gt; from &lt;a href=&quot;https://github.com/lsfalimis/Qian-KM-Macros&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Select and &lt;code&gt;⌃⇧1&lt;/code&gt; (Send to iOS clipboard via Cmd-C on OS X) &lt;code&gt;launchpro://import?url=cloudrop%3A%2F%2FuploadLatest&amp;amp;title=&amp;amp;description=&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;On iOS:
-    &lt;ul&gt;
-      &lt;li&gt;Set up the pasted code in LCP, then set up the second code in LCP: &lt;code&gt;cloudrop://uploadLatest&lt;/code&gt; &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;On OS X:
-    &lt;ul&gt;
-      &lt;li&gt;Select and &lt;code&gt;⌃⇧1&lt;/code&gt;. See the code below&lt;/li&gt;
-      &lt;li&gt;Go to Hazel.prefPane (use &lt;a href=&quot;http://www.alfredapp.com/&quot;&gt;Alfred&lt;/a&gt;), add folder &lt;code&gt;~/Dropbox/giti/Qian-iOS-Log/&lt;/code&gt;, then add rule: If &lt;code&gt;Date Last Modified&lt;/code&gt; &lt;code&gt;is in the last&lt;/code&gt; &lt;code&gt;1&lt;/code&gt; &lt;code&gt;hour&lt;/code&gt; Do &lt;code&gt;Run shell script&lt;/code&gt;, then tap &lt;code&gt;i&lt;/code&gt; and paste this &lt;code&gt;git add . &amp;amp;&amp;amp; git commit -m &quot;upload&quot; &amp;amp;&amp;amp; git push -u origin master&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;drafts://x-callback-url/import_action?type=dropbox&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;name=logss&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;path=%2Fgiti%2FQian-iOS-Log%2F&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;filenametype=2&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;filename=iPod-touch&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;ext=md&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;writetype=2&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;template=%5B%5Bdraft%5D%5D&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;On iOS:
-    &lt;ul&gt;
-      &lt;li&gt;Set up the pasted code in LCP.&lt;/li&gt;
-      &lt;li&gt;Snap a screenshot on iOS&lt;/li&gt;
-      &lt;li&gt;Open LCP on iOS, &lt;strong&gt;ClouDrop&lt;/strong&gt;, wait for upload, tap just uploaded photo, &lt;strong&gt;Copy Link&lt;/strong&gt;, &lt;strong&gt;Copy Direct Link&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;Open Drafts on iOS, type &lt;code&gt;Logss&lt;/code&gt;, &lt;strong&gt;Share&lt;/strong&gt;, tap &lt;code&gt;logss&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/launch-mac-actions-from-ios/&quot;&gt;Launch Mac Actions From iOS&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 03, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
