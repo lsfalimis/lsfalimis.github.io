@@ -110,7 +110,7 @@
   <li>RStudio: <a href="http://www.rstudio.com/products/rstudio/download/">http://www.rstudio.com/products/rstudio/download/</a></li>
 </ul>
 
-<div class="highlight"><pre><code class="language-mysql" data-lang="mysql"><span class="n">install</span><span class="p">.</span><span class="nf">packages</span><span class="p">(</span><span class="s2">&quot;RMySQL&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-mysql" data-lang="mysql"><span class="o">&gt;</span> <span class="n">install</span><span class="p">.</span><span class="nf">packages</span><span class="p">(</span><span class="s2">&quot;RMySQL&quot;</span><span class="p">)</span>
 <span class="c1"># package ‘RMySQL’ is available as a source package but not as a binary</span>
 <span class="o">&gt;</span> <span class="n">install</span><span class="p">.</span><span class="nf">packages</span><span class="p">(</span><span class="s1">&#39;RMySQL&#39;</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">)</span>
 <span class="cm">/*</span>
@@ -134,9 +134,9 @@
 <span class="cm">      R CMD INSTALL RMySQL_&lt;version&gt;.tar.gz</span>
 <span class="cm">...</span>
 <span class="cm">*/</span>
-<span class="n">Sys</span><span class="p">.</span><span class="nf">setenv</span><span class="p">(</span><span class="n">PKG_CPPFLAGS</span> <span class="o">=</span> <span class="s2">&quot;-I/usr/local/mysql-5.6.20-osx10.8-x86_64/include/&quot;</span><span class="p">)</span>
-<span class="n">Sys</span><span class="p">.</span><span class="nf">setenv</span><span class="p">(</span><span class="n">PKG_LIBS</span> <span class="o">=</span> <span class="s2">&quot;-L/usr/local/mysql-5.6.20-osx10.8-x86_64/lib -lmysqlclient&quot;</span><span class="p">)</span>
-<span class="n">install</span><span class="p">.</span><span class="nf">packages</span><span class="p">(</span><span class="s2">&quot;RMySQL&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;source&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">Sys</span><span class="p">.</span><span class="nf">setenv</span><span class="p">(</span><span class="n">PKG_CPPFLAGS</span> <span class="o">=</span> <span class="s2">&quot;-I/usr/local/mysql-5.6.20-osx10.8-x86_64/include/&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">Sys</span><span class="p">.</span><span class="nf">setenv</span><span class="p">(</span><span class="n">PKG_LIBS</span> <span class="o">=</span> <span class="s2">&quot;-L/usr/local/mysql-5.6.20-osx10.8-x86_64/lib -lmysqlclient&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">install</span><span class="p">.</span><span class="nf">packages</span><span class="p">(</span><span class="s2">&quot;RMySQL&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;source&quot;</span><span class="p">)</span>
 <span class="cm">/*</span>
 <span class="cm">...</span>
 <span class="cm">Error : .onLoad failed in loadNamespace() for &#39;RMySQL&#39;, details:</span>

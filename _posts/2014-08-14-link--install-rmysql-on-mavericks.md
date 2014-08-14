@@ -14,7 +14,7 @@ link: http://andorian.blogspot.co.uk/2013/10/rmysql-on-osx.html
 - RStudio: <http://www.rstudio.com/products/rstudio/download/>
 
 {% highlight mysql %}
-install.packages("RMySQL")
+> install.packages("RMySQL")
 # package ‘RMySQL’ is available as a source package but not as a binary
 > install.packages('RMySQL', type='source')
 /*
@@ -38,9 +38,9 @@ INSTRUCTIONS:
       R CMD INSTALL RMySQL_<version>.tar.gz
 ...
 */
-Sys.setenv(PKG_CPPFLAGS = "-I/usr/local/mysql-5.6.20-osx10.8-x86_64/include/")
-Sys.setenv(PKG_LIBS = "-L/usr/local/mysql-5.6.20-osx10.8-x86_64/lib -lmysqlclient")
-install.packages("RMySQL", type = "source")
+> Sys.setenv(PKG_CPPFLAGS = "-I/usr/local/mysql-5.6.20-osx10.8-x86_64/include/")
+> Sys.setenv(PKG_LIBS = "-L/usr/local/mysql-5.6.20-osx10.8-x86_64/lib -lmysqlclient")
+> install.packages("RMySQL", type = "source")
 /*
 ...
 Error : .onLoad failed in loadNamespace() for 'RMySQL', details:
