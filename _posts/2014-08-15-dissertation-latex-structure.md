@@ -8,6 +8,8 @@ comments: true
 share: true
 ---
 
+<!--more-->
+
 This is my LaTeX working directory. Because `Draft` is so messy, it always take a long time for me to find `tex` file and `pdf` file so I spilt a `tex` file into many. Because I'm a bad student as welll as a bad writer, I choose not to divide the chapters at the beginning. I will divide them when I'm writing the dissertation.
 
 {% highlight bash %}

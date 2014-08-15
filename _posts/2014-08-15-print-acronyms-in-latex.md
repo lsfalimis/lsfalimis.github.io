@@ -8,6 +8,8 @@ comments: true
 share: true
 ---
 
+<!--more-->
+
 ## Building
 
 I remember printing a list of acronyms in LaTeX was troublesome a few years ago when I attempted to build the PDF file. This time `makeglossaries DOCNAME` will be enough. I has been relied on ST3's LaTeXTools plugin for a long time. However, I can't figure out how to edit LaTeX.sublime-build (according to [this](https://github.com/SublimeText/LaTeXTools/issues/20)), so I give up using LaTeXTools if I'm writing a LaTeX that need printing acronyms or glossaries. Note that when `pdflatex thesis.tex`, `.tex` can be neglected, so just `pdflatex thesis`.
