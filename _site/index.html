@@ -105,6 +105,267 @@
 <article class="hentry">
   <header>
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2014-08-15T00:00:00+01:00"><a href="http://localhost:4000/print-acronyms-in-latex/">15 Aug 2014</a></time></span>
+      &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#LaTeX" title="Pages tagged LaTeX">LaTeX</a>
+      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/print-acronyms-in-latex/#disqus_thread">Comment</a></span>
+      
+      <span class="entry-reading-time pull-right">
+        <i class="fa fa-clock-o"></i>
+        
+        2 min. read
+        
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://localhost:4000/print-acronyms-in-latex/" rel="bookmark" title="Print Acronyms in LaTeX" itemprop="url">Print Acronyms in LaTeX</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    
+      <h2 id="building">Building</h2>
+
+<p>I remember printing a list of acronyms in LaTeX was troublesome a few years ago when I attempted to build the PDF file. This time <code>makeglossaries DOCNAME</code> will be enough. I has been relied on ST3’s LaTeXTools plugin for a long time. However, I can’t figure out how to edit LaTeX.sublime-build (according to <a href="https://github.com/SublimeText/LaTeXTools/issues/20">this</a>), so I give up using LaTeXTools if I’m writing a LaTeX that need printing acronyms or glossaries. Note that when <code>pdflatex thesis.tex</code>, <code>.tex</code> can be neglected, so just <code>pdflatex thesis</code>.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">➜  Draft  pdflatex thesis
+zsh: <span class="nb">command </span>not found: pdflatex
+➜  Draft  zshconfig
+<span class="c"># add &#39;/usr/texbin&#39; to $PATH, so</span>
+<span class="c"># export PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:/usr/texbin&quot;</span>
+➜  Draft  pdflatex thesis
+<span class="c"># should be working</span>
+➜  Draft  zshconfig
+<span class="c"># add the following</span>
+<span class="c"># alias gls=&quot;cd PATH &amp;&amp; pdflatex thesis &gt; /dev/null 2&gt;&amp;1 &amp;&amp; makeglossaries thesis &gt; /dev/null 2&gt;&amp;1 &amp;&amp; pdflatex thesis &gt; /dev/null 2&gt;&amp;1 &amp;&amp; open thesis.pdf&quot;</span></code></pre></div>
+
+<h2 id="writing">Writing</h2>
+
+<p>You can see the LaTeX file structure of my dissertation at <a href="http://lsfalimis.github.io/dissertation-latex-structure/">here</a>. Three places need to be noted. Firstly, when <code>\printglossary</code>, notice that it has the effect of <code>\newpage</code>, so don’t add <code>\newpage</code> otherwise you will see an extra blank page. Secondly, if you want to produce a list of acronyms not glossaries, and use <code>\usepackage[acronym]{glossaries}</code> in the preamble and the commands such as <code>\newacronym</code>, <code>\gls</code>, <code>\acrshort</code> instead of other commands from <code>glossaries</code> package, then <code>\printglossaries</code> will print a list of acronyms for you, <code>\printglossary</code> will not. If you are sensible about the meaning of acronyms, and know ‘acronyms’ and ‘abbreviations’ are different, and you should title the list ‘Abbreviations’ not ‘Acronyms’, then you have to use <code>\printglossary</code>. So here I need to add options to let <code>\printglossary</code> print a list of acronyms for me, add ‘type=\acronymtype’ to make it work, and add <code>title=Abbreviations</code> to change title (see below).</p>
+
+<h3 id="frontmattertex">frontmatter.tex</h3>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\pagestyle</span><span class="nb">{</span>empty<span class="nb">}</span>
+<span class="k">\input</span><span class="nb">{</span>../Inputs/titlepage<span class="nb">}</span>
+
+<span class="k">\newpage</span>
+<span class="k">\pagenumbering</span><span class="nb">{</span>roman<span class="nb">}</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Acknowledgements<span class="nb">}</span>
+
+<span class="k">\newpage</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abstract<span class="nb">}</span>
+
+<span class="k">\newpage</span>
+<span class="k">\tableofcontents</span>
+
+<span class="k">\newpage</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>List of Figures<span class="nb">}</span>
+<span class="k">\listoffigures</span>
+
+<span class="k">\newpage</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>List of Tables<span class="nb">}</span>
+<span class="k">\listoftables</span>
+
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abbreviations<span class="nb">}</span>
+<span class="k">\printglossary</span><span class="na">[type=\acronymtype, title=Abbreviations]</span></code></pre></div>
+
+<p>Next I will make a note about <code>\newacronym</code>, <code>\gls</code> and <code>\acrshort</code></p>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="c">% create API term in the list of acronyms (LOA).</span>
+<span class="k">\newacronym</span><span class="nb">{</span>api<span class="nb">}{</span>API<span class="nb">}{</span>Application Programming Interface<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="c">% produce LOA</span>
+<span class="k">\printglossary</span><span class="na">[type=\acronymtype, title=Abbreviations]</span>
+<span class="c">% Assume this is page 1.</span>
+<span class="k">\newpage</span>
+<span class="c">% This is page 2.</span>
+<span class="k">\gls</span><span class="nb">{</span>api<span class="nb">}</span> will be shown as &#39;Application Programming Interface (API)&#39;
+(within the quotation marks)
+which is linked to the API term in LOA
+and will add a linked page number &#39;2&#39; after the API term.
+<span class="k">\newpage</span>
+<span class="c">% This is page 3.</span>
+<span class="k">\acrshort</span> will be shown as &#39;API&#39;
+(within the quotation marks)
+which is linked to the API term in LOA
+and will add a linked page number &#39;3&#39; after &#39;2&#39; and a comma.</code></pre></div>
+
+
+    
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2014-08-15T00:00:00+01:00"><a href="http://localhost:4000/dissertation-latex-structure/">15 Aug 2014</a></time></span>
+      &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#LaTeX" title="Pages tagged LaTeX">LaTeX</a>
+      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/dissertation-latex-structure/#disqus_thread">Comment</a></span>
+      
+      <span class="entry-reading-time pull-right">
+        <i class="fa fa-clock-o"></i>
+        
+        2 min. read
+        
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://localhost:4000/dissertation-latex-structure/" rel="bookmark" title="Dissertation LaTeX Structure" itemprop="url">Dissertation LaTeX Structure</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    
+      <p>This is my LaTeX working directory. Because <code>Draft</code> is so messy, it always take a long time for me to find <code>tex</code> file and <code>pdf</code> file so I spilt a <code>tex</code> file into many. Because I’m a bad student as welll as a bad writer, I choose not to divide the chapters at the beginning. I will divide them when I’m writing the dissertation.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">├── Chapters
+│   ├── concl.tex
+│   ├── draft.tex
+│   └── intro.tex
+├── Draft
+│   ├── after.tex
+│   ├── before.tex
+│   ├── thesis.acn
+│   ├── thesis.acr
+│   ├── thesis.alg
+│   ├── thesis.aux
+│   ├── thesis.bbl
+│   ├── thesis.bcf
+│   ├── thesis.blg
+│   ├── thesis.fdb_latexmk
+│   ├── thesis.glg
+│   ├── thesis.glo
+│   ├── thesis.gls
+│   ├── thesis.ist
+│   ├── thesis.lof
+│   ├── thesis.log
+│   ├── thesis.lot
+│   ├── thesis.out
+│   ├── thesis.pdf
+│   ├── thesis.run.xml
+│   ├── thesis.tex
+│   └── thesis.toc
+├── Inputs
+│   ├── acronyms.tex
+│   ├── backmatter.tex
+│   ├── expanders.tex
+│   ├── frontmatter.tex
+│   ├── info.tex
+│   ├── mainmatter.tex
+│   ├── settings.tex
+│   └── titlepage.tex
+└── bib.bib</code></pre></div>
+
+<h2 id="thesistex">thesis.tex</h2>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\input</span><span class="nb">{</span>before<span class="nb">}</span>
+
+I write here.
+
+<span class="k">\input</span><span class="nb">{</span>after<span class="nb">}</span></code></pre></div>
+
+<h2 id="beforetex">before.tex</h2>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="na">[a4paper,12pt]</span><span class="nb">{</span>report<span class="nb">}</span>
+
+<span class="k">\input</span><span class="nb">{</span>../Inputs/settings<span class="nb">}</span>
+
+<span class="k">\input</span><span class="nb">{</span>../Inputs/expanders<span class="nb">}</span>
+
+<span class="k">\input</span><span class="nb">{</span>../Inputs/acronyms<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="k">\input</span><span class="nb">{</span>../Inputs/info<span class="nb">}</span>
+
+<span class="k">\input</span><span class="nb">{</span>../Inputs/frontmatter<span class="nb">}</span>
+
+<span class="k">\chapter</span><span class="nb">{</span>Introduction<span class="nb">}</span>
+
+<span class="k">\pagenumbering</span><span class="nb">{</span>arabic<span class="nb">}</span>
+
+<span class="k">\chapter</span><span class="nb">{</span>Draft<span class="nb">}</span></code></pre></div>
+
+<h2 id="aftertex">after.tex</h2>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\chapter</span><span class="nb">{</span>Conclusion<span class="nb">}</span>
+
+<span class="k">\input</span><span class="nb">{</span>../Inputs/backmatter<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></code></pre></div>
+
+<h2 id="infotex">info.tex</h2>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\title</span><span class="nb">}{</span>something<span class="nb">}</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\subtitle</span><span class="nb">}{</span>something<span class="nb">}</span>
+
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\author</span><span class="nb">}{</span>somebody<span class="nb">}</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\supervisor</span><span class="nb">}{</span>somebody<span class="nb">}</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\studentID</span><span class="nb">}{</span>something<span class="nb">}</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\dept</span><span class="nb">}{</span>something<span class="nb">}</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\university</span><span class="nb">}{</span>something<span class="nb">}</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\submissiontext</span><span class="nb">}{</span><span class="k">\textbf</span><span class="nb">{</span>Declaration:<span class="nb">}</span> This dissertation is submitted in part fulfilment of the requirements for <span class="k">\degree</span>. something<span class="nb">}</span>
+
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\degree</span><span class="nb">}{</span>something<span class="nb">}</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\degreedate</span><span class="nb">}{</span>something<span class="nb">}</span> <span class="c">% It&#39;s a shame I don&#39;t know how to get the word of the month.</span></code></pre></div>
+
+<h2 id="frontmattertex">frontmatter.tex</h2>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\pagestyle</span><span class="nb">{</span>empty<span class="nb">}</span>
+<span class="k">\input</span><span class="nb">{</span>../Inputs/titlepage<span class="nb">}</span>
+
+<span class="k">\newpage</span>
+<span class="k">\pagenumbering</span><span class="nb">{</span>roman<span class="nb">}</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Acknowledgements<span class="nb">}</span>
+
+<span class="k">\newpage</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abstract<span class="nb">}</span>
+
+<span class="k">\newpage</span>
+<span class="k">\tableofcontents</span>
+
+<span class="k">\newpage</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>List of Figures<span class="nb">}</span>
+<span class="k">\listoffigures</span>
+
+<span class="k">\newpage</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>List of Tables<span class="nb">}</span>
+<span class="k">\listoftables</span>
+
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abbreviations<span class="nb">}</span>
+<span class="k">\printglossary</span><span class="na">[type=\acronymtype, title=Abbreviations]</span></code></pre></div>
+
+<h2 id="mainmattertex">mainmatter.tex</h2>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\newpage</span>
+<span class="k">\pagenumbering</span><span class="nb">{</span>arabic<span class="nb">}</span>
+
+<span class="k">\input</span><span class="nb">{</span>../Chapters/something1<span class="nb">}</span>
+
+<span class="k">\input</span><span class="nb">{</span>../Chapters/something2<span class="nb">}</span>
+
+<span class="k">\input</span><span class="nb">{</span>../Chapters/somethingN<span class="nb">}</span></code></pre></div>
+
+<h2 id="backmattertex">backmatter.tex</h2>
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\newpage</span>
+<span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>References<span class="nb">}</span>
+<span class="k">\chapter*</span><span class="nb">{</span>References<span class="nb">}</span>
+<span class="k">\printbibliography</span></code></pre></div>
+
+    
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2014-08-14T00:00:00+01:00"><a href="http://localhost:4000/link--install-rmysql-on-mavericks/">14 Aug 2014</a></time></span>
       &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#R" title="Pages tagged R">R</a>
       &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/link--install-rmysql-on-mavericks/#disqus_thread">Comment</a></span>
@@ -554,135 +815,6 @@ vim ~/.zshrc</code></pre></div>
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 
-<article class="hentry">
-  <header>
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2014-07-06T00:00:00+01:00"><a href="http://localhost:4000/clean-install-mac-log-jul-2014/">06 Jul 2014</a></time></span>
-      &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#App" title="Pages tagged App">App</a>
-      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/clean-install-mac-log-jul-2014/#disqus_thread">Comment</a></span>
-      
-      <span class="entry-reading-time pull-right">
-        <i class="fa fa-clock-o"></i>
-        
-        10+ min. read
-      </span><!-- /.entry-reading-time -->
-      
-    </div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://localhost:4000/clean-install-mac-log-jul-2014/" rel="bookmark" title="Clean Install Mac Log Jul 2014" itemprop="url">Clean Install Mac Log Jul 2014</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    
-      <h2 class="no_toc" id="contents">Contents</h2>
-
-<ul id="markdown-toc">
-  <li><a href="#notes">Notes</a></li>
-  <li><a href="#steps">Steps</a>    <ul>
-      <li><a href="#install-and-update-system">Install and Update System</a></li>
-      <li><a href="#fuck-animation">Fuck Animation</a></li>
-      <li><a href="#system-preferences">System Preferences</a>        <ul>
-          <li><a href="#line-1">Line 1</a></li>
-          <li><a href="#line-2">Line 2</a></li>
-          <li><a href="#line-4">Line 4</a></li>
-        </ul>
-      </li>
-      <li><a href="#finder">Finder</a></li>
-      <li><a href="#browser">Browser</a></li>
-      <li><a href="#apps-from-mas">Apps From MAS</a>        <ul>
-          <li><a href="#install-mas-apps">Install MAS Apps</a>            <ul>
-              <li><a href="#i">I</a></li>
-              <li><a href="#ii">II</a></li>
-            </ul>
-          </li>
-          <li><a href="#essential-mas-apps">Essential MAS Apps</a></li>
-          <li><a href="#non-essential-mas-apps">Non-Essential MAS Apps</a></li>
-        </ul>
-      </li>
-      <li><a href="#apps-from-official-websites">Apps From Official Websites</a>        <ul>
-          <li><a href="#install-other-apps">Install Other Apps</a>            <ul>
-              <li><a href="#i-1">I</a></li>
-              <li><a href="#ii-1">II</a></li>
-            </ul>
-          </li>
-          <li><a href="#license-the-apps">License the Apps</a></li>
-          <li><a href="#other-essential-apps">Other Essential Apps</a></li>
-          <li><a href="#other-non-essential-apps">Other Non-Essential Apps</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#os-x-keyboard-shortcuts">OS X Keyboard Shortcuts</a>    <ul>
-      <li><a href="#stock-keyboard-shortcuts">Stock Keyboard Shortcuts</a>        <ul>
-          <li><a href="#global">Global</a></li>
-          <li><a href="#within-apps">Within Apps</a></li>
-        </ul>
-      </li>
-      <li><a href="#custom-keyboard-shortcuts">Custom Keyboard Shortcuts</a></li>
-    </ul>
-  </li>
-  <li><a href="#appendix-1-fuck-animation-commands">Appendix 1 Fuck Animation Commands</a></li>
-  <li><a href="#appendix-2-custom-search-urls">Appendix 2 Custom Search URLs</a></li>
-  <li><a href="#appendix-3-additional-mas-apps">Appendix 3 Additional MAS Apps</a></li>
-</ul>
-
-
-      <p><a class="btn btn-info" href="/clean-install-mac-log-jul-2014/">Read more</a></p>
-    
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2014-06-23T00:00:00+01:00"><a href="http://localhost:4000/keyboard-maestro-tips-2/">23 Jun 2014</a></time></span>
-      &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#Keyboard Maestro" title="Pages tagged Keyboard Maestro">Keyboard Maestro</a>&nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#Python" title="Pages tagged Python">Python</a>&nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#Shell" title="Pages tagged Shell">Shell</a>
-      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/keyboard-maestro-tips-2/#disqus_thread">Comment</a></span>
-      
-      <span class="entry-reading-time pull-right">
-        <i class="fa fa-clock-o"></i>
-        
-        6 min. read
-        
-      </span><!-- /.entry-reading-time -->
-      
-    </div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://localhost:4000/keyboard-maestro-tips-2/" rel="bookmark" title="Keyboard Maestro Tips 2" itemprop="url">Keyboard Maestro Tips 2</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    
-      <figure>
-	<img src="http://i.imgur.com/cpWwfBs.png" alt="" />
-	<figcaption><a href="http://localhost:4000/keyboard-maestro-tips-2/#taxonomy" title="KM Taxonomy">KM Taxonomy</a></figcaption>
-</figure>
-
-<h2 class="no_toc" id="contents">Contents</h2>
-
-<ul id="markdown-toc">
-  <li><a href="#example">Example</a>    <ul>
-      <li><a href="#get-words">Get words</a></li>
-      <li><a href="#append-to-a-file">Append to a file</a></li>
-      <li><a href="#sort-alphabetically">Sort alphabetically</a></li>
-    </ul>
-  </li>
-  <li><a href="#systematisation-of-good">Systematisation of good</a></li>
-  <li><a href="#taxonomy">Taxonomy</a></li>
-</ul>
-
-<h2 id="example">Example</h2>
-
-<p>I did a KM cleanup yesterday (not finish yet) and found I have stopped using many unnecessary Mac apps for some time. It’s a good thing.</p>
-
-<p>To expand the use of KM, I will have to dive into shell. Next I take an example about adding new words to Mac’s spelling records.</p>
-
-
-      <p><a class="btn btn-info" href="/keyboard-maestro-tips-2/">Read more</a></p>
-    
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
 
 <div class="pagination">
   
@@ -704,6 +836,12 @@ vim ~/.zshrc</code></pre></div>
       <li>
         
           <a href="http://localhost:4000/page3">3</a>
+        
+      </li>
+    
+      <li>
+        
+          <a href="http://localhost:4000/page4">4</a>
         
       </li>
     

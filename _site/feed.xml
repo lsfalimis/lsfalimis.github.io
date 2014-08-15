@@ -4,13 +4,254 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-08-14T01:59:48+01:00</updated>
+<updated>2014-08-16T00:10:19+01:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>lsfalimis</name>
   <uri>http://localhost:4000/</uri>
   <email></email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Print Acronyms in LaTeX]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/print-acronyms-in-latex/" />
+  <id>http://localhost:4000/print-acronyms-in-latex</id>
+  <published>2014-08-15T00:00:00+01:00</published>
+  <updated>2014-08-15T00:00:00+01:00</updated>
+  <author>
+    <name>lsfalimis</name>
+    <uri>http://localhost:4000</uri>
+    <email></email>
+  </author>
+  <content type="html">&lt;h2 id=&quot;building&quot;&gt;Building&lt;/h2&gt;
+
+&lt;p&gt;I remember printing a list of acronyms in LaTeX was troublesome a few years ago when I attempted to build the PDF file. This time &lt;code&gt;makeglossaries DOCNAME&lt;/code&gt; will be enough. I has been relied on ST3’s LaTeXTools plugin for a long time. However, I can’t figure out how to edit LaTeX.sublime-build (according to &lt;a href=&quot;https://github.com/SublimeText/LaTeXTools/issues/20&quot;&gt;this&lt;/a&gt;), so I give up using LaTeXTools if I’m writing a LaTeX that need printing acronyms or glossaries. Note that when &lt;code&gt;pdflatex thesis.tex&lt;/code&gt;, &lt;code&gt;.tex&lt;/code&gt; can be neglected, so just &lt;code&gt;pdflatex thesis&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;➜  Draft  pdflatex thesis
+zsh: &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;not found: pdflatex
+➜  Draft  zshconfig
+&lt;span class=&quot;c&quot;&gt;# add &amp;#39;/usr/texbin&amp;#39; to $PATH, so&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# export PATH=&amp;quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:/usr/texbin&amp;quot;&lt;/span&gt;
+➜  Draft  pdflatex thesis
+&lt;span class=&quot;c&quot;&gt;# should be working&lt;/span&gt;
+➜  Draft  zshconfig
+&lt;span class=&quot;c&quot;&gt;# add the following&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# alias gls=&amp;quot;cd PATH &amp;amp;&amp;amp; pdflatex thesis &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; makeglossaries thesis &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; pdflatex thesis &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; open thesis.pdf&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;writing&quot;&gt;Writing&lt;/h2&gt;
+
+&lt;p&gt;You can see the LaTeX file structure of my dissertation at &lt;a href=&quot;http://lsfalimis.github.io/dissertation-latex-structure/&quot;&gt;here&lt;/a&gt;. Three places need to be noted. Firstly, when &lt;code&gt;\printglossary&lt;/code&gt;, notice that it has the effect of &lt;code&gt;\newpage&lt;/code&gt;, so don’t add &lt;code&gt;\newpage&lt;/code&gt; otherwise you will see an extra blank page. Secondly, if you want to produce a list of acronyms not glossaries, and use &lt;code&gt;\usepackage[acronym]{glossaries}&lt;/code&gt; in the preamble and the commands such as &lt;code&gt;\newacronym&lt;/code&gt;, &lt;code&gt;\gls&lt;/code&gt;, &lt;code&gt;\acrshort&lt;/code&gt; instead of other commands from &lt;code&gt;glossaries&lt;/code&gt; package, then &lt;code&gt;\printglossaries&lt;/code&gt; will print a list of acronyms for you, &lt;code&gt;\printglossary&lt;/code&gt; will not. If you are sensible about the meaning of acronyms, and know ‘acronyms’ and ‘abbreviations’ are different, and you should title the list ‘Abbreviations’ not ‘Acronyms’, then you have to use &lt;code&gt;\printglossary&lt;/code&gt;. So here I need to add options to let &lt;code&gt;\printglossary&lt;/code&gt; print a list of acronyms for me, add ‘type=\acronymtype’ to make it work, and add &lt;code&gt;title=Abbreviations&lt;/code&gt; to change title (see below).&lt;/p&gt;
+
+&lt;h3 id=&quot;frontmattertex&quot;&gt;frontmatter.tex&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\pagestyle&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;empty&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Inputs/titlepage&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\pagenumbering&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;roman&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Acknowledgements&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Abstract&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\tableofcontents&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;List of Figures&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\listoffigures&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;List of Tables&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\listoftables&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Abbreviations&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\printglossary&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[type=\acronymtype, title=Abbreviations]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next I will make a note about &lt;code&gt;\newacronym&lt;/code&gt;, &lt;code&gt;\gls&lt;/code&gt; and &lt;code&gt;\acrshort&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;c&quot;&gt;% create API term in the list of acronyms (LOA).&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newacronym&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;api&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;API&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Application Programming Interface&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\begin&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;% produce LOA&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\printglossary&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[type=\acronymtype, title=Abbreviations]&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;% Assume this is page 1.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;% This is page 2.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\gls&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;api&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt; will be shown as &amp;#39;Application Programming Interface (API)&amp;#39;
+(within the quotation marks)
+which is linked to the API term in LOA
+and will add a linked page number &amp;#39;2&amp;#39; after the API term.
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;% This is page 3.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\acrshort&lt;/span&gt; will be shown as &amp;#39;API&amp;#39;
+(within the quotation marks)
+which is linked to the API term in LOA
+and will add a linked page number &amp;#39;3&amp;#39; after &amp;#39;2&amp;#39; and a comma.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/print-acronyms-in-latex/&quot;&gt;Print Acronyms in LaTeX&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on August 15, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Dissertation LaTeX Structure]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/dissertation-latex-structure/" />
+  <id>http://localhost:4000/dissertation-latex-structure</id>
+  <published>2014-08-15T00:00:00+01:00</published>
+  <updated>2014-08-15T00:00:00+01:00</updated>
+  <author>
+    <name>lsfalimis</name>
+    <uri>http://localhost:4000</uri>
+    <email></email>
+  </author>
+  <content type="html">&lt;p&gt;This is my LaTeX working directory. Because &lt;code&gt;Draft&lt;/code&gt; is so messy, it always take a long time for me to find &lt;code&gt;tex&lt;/code&gt; file and &lt;code&gt;pdf&lt;/code&gt; file so I spilt a &lt;code&gt;tex&lt;/code&gt; file into many. Because I’m a bad student as welll as a bad writer, I choose not to divide the chapters at the beginning. I will divide them when I’m writing the dissertation.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;├── Chapters
+│   ├── concl.tex
+│   ├── draft.tex
+│   └── intro.tex
+├── Draft
+│   ├── after.tex
+│   ├── before.tex
+│   ├── thesis.acn
+│   ├── thesis.acr
+│   ├── thesis.alg
+│   ├── thesis.aux
+│   ├── thesis.bbl
+│   ├── thesis.bcf
+│   ├── thesis.blg
+│   ├── thesis.fdb_latexmk
+│   ├── thesis.glg
+│   ├── thesis.glo
+│   ├── thesis.gls
+│   ├── thesis.ist
+│   ├── thesis.lof
+│   ├── thesis.log
+│   ├── thesis.lot
+│   ├── thesis.out
+│   ├── thesis.pdf
+│   ├── thesis.run.xml
+│   ├── thesis.tex
+│   └── thesis.toc
+├── Inputs
+│   ├── acronyms.tex
+│   ├── backmatter.tex
+│   ├── expanders.tex
+│   ├── frontmatter.tex
+│   ├── info.tex
+│   ├── mainmatter.tex
+│   ├── settings.tex
+│   └── titlepage.tex
+└── bib.bib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;thesistex&quot;&gt;thesis.tex&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;before&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+I write here.
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;after&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;beforetex&quot;&gt;before.tex&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[a4paper,12pt]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;report&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Inputs/settings&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Inputs/expanders&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Inputs/acronyms&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\begin&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Inputs/info&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Inputs/frontmatter&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\chapter&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Introduction&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\pagenumbering&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;arabic&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\chapter&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Draft&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;aftertex&quot;&gt;after.tex&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\chapter&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Conclusion&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Inputs/backmatter&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\end&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;infotex&quot;&gt;info.tex&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\title&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;something&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\subtitle&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;something&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\author&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;somebody&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\supervisor&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;somebody&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\studentID&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;something&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\dept&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;something&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\university&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;something&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\submissiontext&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\textbf&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Declaration:&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt; This dissertation is submitted in part fulfilment of the requirements for &lt;span class=&quot;k&quot;&gt;\degree&lt;/span&gt;. something&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\degree&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;something&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\degreedate&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;something&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;% It&amp;#39;s a shame I don&amp;#39;t know how to get the word of the month.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;frontmattertex&quot;&gt;frontmatter.tex&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\pagestyle&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;empty&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Inputs/titlepage&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\pagenumbering&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;roman&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Acknowledgements&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Abstract&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\tableofcontents&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;List of Figures&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\listoffigures&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;List of Tables&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\listoftables&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Abbreviations&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\printglossary&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[type=\acronymtype, title=Abbreviations]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;mainmattertex&quot;&gt;mainmatter.tex&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\pagenumbering&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;arabic&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Chapters/something1&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Chapters/something2&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;../Chapters/somethingN&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;backmattertex&quot;&gt;backmatter.tex&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\addcontentsline&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;toc&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;chapter&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;References&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\chapter*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;References&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\printbibliography&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/dissertation-latex-structure/&quot;&gt;Dissertation LaTeX Structure&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on August 15, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -3932,247 +4173,6 @@ tail: &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;: No such file or directory&
 &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Iuaak6k.png&quot; alt=&quot;alt text&quot; title=&quot;Insert&quot; /&gt;&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/keyboard-maestro-tips/&quot;&gt;Keyboard Maestro Tips&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 12, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Mac Shortcut Setup]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/mac-shortcut-setup/" />
-  <id>http://localhost:4000/mac-shortcut-setup</id>
-  <published>2014-05-08T00:00:00+01:00</published>
-  <updated>2014-05-08T00:00:00+01:00</updated>
-  <author>
-    <name>lsfalimis</name>
-    <uri>http://localhost:4000</uri>
-    <email></email>
-  </author>
-  <content type="html">&lt;figure&gt;
-	&lt;a href=&quot;http://i.imgur.com/FcxaTeV.png&quot;&gt;&lt;img src=&quot;http://i.imgur.com/FcxaTeV.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;figcaption&gt;Mac Shortcut Mindmap&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 class=&quot;no_toc&quot; id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#notes&quot;&gt;Notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#bettersnaptool&quot;&gt;BetterSnapTool&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#remapping-keys&quot;&gt;Remapping keys&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#pckeyboardhack&quot;&gt;PCKeyboardHack&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#mouse-keys&quot;&gt;Mouse keys&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#more-apps&quot;&gt;More apps&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#notes-1&quot;&gt;Notes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!--more--&gt;
-
-&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;KM cannot move a window and the mouse to the other display.&lt;/li&gt;
-  &lt;li&gt;Moom moves windows in a way better than other apps but it’s slow and you change how the snapping area looks like (I actually don’t like the one of Moom). So windows snapping is handed over to BetterSnapTool.&lt;/li&gt;
-  &lt;li&gt;I also also tried Amethyst (&lt;a href=&quot;http://ianyh.com/amethyst/&quot;&gt;website&lt;/a&gt;, &lt;a href=&quot;https://github.com/ianyh/Amethyst&quot;&gt;GitHub&lt;/a&gt;) which is similar to &lt;a href=&quot;http://xmonad.org/&quot;&gt;xmonad&lt;/a&gt; and &lt;a href=&quot;https://github.com/fjolnir/xnomad&quot;&gt;xnomad&lt;/a&gt; but written in pure Objective-C. However given the fact many OS apps has set minimum window size and you can minimise them further, so if work on big screens I will definitely try this again but now I have a 15” retina MacBook Pro and a 24” Dell U2412M before me, so it’s not hard to stay away from tiling window managers.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;bettersnaptool&quot;&gt;BetterSnapTool&lt;/h3&gt;
-
-&lt;table rules=&quot;groups&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Oneside Modifier Key&lt;/th&gt;
-      &lt;th&gt;Other Key&lt;/th&gt;
-      &lt;th&gt;Function&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⌘r&lt;/td&gt;
-      &lt;td&gt;/&lt;/td&gt;
-      &lt;td&gt;Full Screen&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;↑&lt;/td&gt;
-      &lt;td&gt;Top Half&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;↓&lt;/td&gt;
-      &lt;td&gt;Bottom Half&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;←&lt;/td&gt;
-      &lt;td&gt;Left Half&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;→&lt;/td&gt;
-      &lt;td&gt;Right Half&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⇧r&lt;/td&gt;
-      &lt;td&gt;/&lt;/td&gt;
-      &lt;td&gt;Center&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;↑&lt;/td&gt;
-      &lt;td&gt;Top Left Quarter&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;→&lt;/td&gt;
-      &lt;td&gt;Top Right Quarter&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;←&lt;/td&gt;
-      &lt;td&gt;Bottom Left Quarter&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;←&lt;/td&gt;
-      &lt;td&gt;Bottom Right Quarter&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⌥l&lt;/td&gt;
-      &lt;td&gt;-&lt;/td&gt;
-      &lt;td&gt;Move to Top Left Without Resizing&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;=&lt;/td&gt;
-      &lt;td&gt;Move to Top Right Without Resizing&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⌃l&lt;/td&gt;
-      &lt;td&gt;`&lt;/td&gt;
-      &lt;td&gt;Move to Next Monitor&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;remapping-keys&quot;&gt;Remapping keys&lt;/h3&gt;
-
-&lt;p&gt;Left &lt;code&gt;⇧&lt;/code&gt;, &lt;code&gt;⌥&lt;/code&gt;, &lt;code&gt;⌘&lt;/code&gt; are all given a key value by PCKeyboardHack (see the table as follows) and mapped to a new key combo of right modifier key (that is &lt;code&gt;⇧l&lt;/code&gt;, &lt;code&gt;⌃l&lt;/code&gt;, &lt;code&gt;⌥l&lt;/code&gt; and &lt;code&gt;⌘l&lt;/code&gt;) by KeyRemap4MacBook (&lt;a href=&quot;https://gist.github.com/lsfalimis/55b776c1f69d678b22fa&quot;&gt;gist&lt;/a&gt; I use two &lt;strong&gt;new&lt;/strong&gt; keys, Caps Lock as Hyper Key which equals to &lt;code&gt;⌃⌥⇧⌘&lt;/code&gt;, and &lt;code&gt;⌥r&lt;/code&gt; as the key of &lt;code&gt;Fn&lt;/code&gt; combos; some people set Hyper Key in Alfred… I did it within KM :) ). When single left modifier key is pressed, it will act as the new key; when a combo of a left modifier key and another other key are pressed, it will act as the key combo. By the way, under &lt;code&gt;System Preferences&lt;/code&gt; &amp;gt; &lt;code&gt;Keyboard&lt;/code&gt; &amp;gt; &lt;code&gt;Shortcuts&lt;/code&gt; tab &amp;gt; &lt;code&gt;Input Sources&lt;/code&gt;, I set &lt;code&gt;Select the previous input source&lt;/code&gt; to &lt;code&gt;F18&lt;/code&gt; i.e. &lt;code&gt;⇧R&lt;/code&gt;; I open Eudic, then &lt;code&gt;⌘,&lt;/code&gt; at &lt;code&gt;快捷键&lt;/code&gt; tab, set &lt;code&gt;激活 Light Peek&lt;/code&gt; to &lt;code&gt;⌘r&lt;/code&gt; i.e. &lt;code&gt;F17&lt;/code&gt;. At last, other key shortcuts are in Alfred 2.app, the majority are in Keyboard Maestro.app, and I also take notes about the shortcuts under &lt;code&gt;System Preferences&lt;/code&gt; &amp;gt; &lt;code&gt;Keyboard&lt;/code&gt; &amp;gt; &lt;code&gt;Shortcuts&lt;/code&gt; tab; I need to memorise the shortcuts from time to time in case of forgetting them. A tip is mapping &lt;code&gt;⇧r&lt;/code&gt; to &lt;code&gt;⌃⌥⇧&lt;/code&gt; is easy to memorise because the last key of the modifier combo is &lt;code&gt;⇧&lt;/code&gt;; same for &lt;code&gt;⌘r&lt;/code&gt; to &lt;code&gt;⌃⌥⌘&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;pckeyboardhack&quot;&gt;PCKeyboardHack&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Change Caps Lock Key to &lt;code&gt;No Action in &lt;/code&gt;System Preferences&lt;code&gt; &amp;gt; &lt;/code&gt;Keyboard&lt;code&gt; &amp;gt; &lt;/code&gt;Keyboard&lt;code&gt; tab &amp;gt; &lt;/code&gt;Modifier Keys…` button before mapping Caps Lock.&lt;/p&gt;
-
-&lt;table rules=&quot;groups&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Key Name&lt;/th&gt;
-      &lt;th&gt;New Key Value&lt;/th&gt;
-      &lt;th&gt;New Key Name&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Caps Lock&lt;/td&gt;
-      &lt;td&gt;80&lt;/td&gt;
-      &lt;td&gt;F19&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Command_R (in &lt;code&gt;Other Keys&lt;/code&gt;)&lt;/td&gt;
-      &lt;td&gt;64&lt;/td&gt;
-      &lt;td&gt;F17&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Option_R&lt;/td&gt;
-      &lt;td&gt;106&lt;/td&gt;
-      &lt;td&gt;F16&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Shift_R&lt;/td&gt;
-      &lt;td&gt;79&lt;/td&gt;
-      &lt;td&gt;F18&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;mouse-keys&quot;&gt;Mouse keys&lt;/h4&gt;
-
-&lt;p&gt;I also do some tricks on mouse thru &lt;a href=&quot;http://manytricks.com/keymo/&quot;&gt;Keymo&lt;/a&gt; (&lt;a href=&quot;https://itunes.apple.com/gb/app/keymo/id449863619?mt=12&quot;&gt;MAS&lt;/a&gt;). Also I set press &lt;code&gt;Fn&lt;/code&gt; to moving a window like in Linux thru the free &lt;a href=&quot;http://www.boastr.net/&quot;&gt;BetterTouchTool&lt;/a&gt; &lt;code&gt;⌘,&lt;/code&gt; &amp;gt; &lt;code&gt;Advanced&lt;/code&gt; &amp;gt; &lt;code&gt;Action Settings tab&lt;/code&gt; &amp;gt; &lt;code&gt;Window Moving &amp;amp; Resizing&lt;/code&gt; &amp;gt; &lt;code&gt;Move windows&lt;/code&gt; OR BetterSnapTool &lt;code&gt;⌘,&lt;/code&gt; &amp;gt; &lt;code&gt;Extras&lt;/code&gt; tab &amp;gt; &lt;code&gt;Move windows&lt;/code&gt; (they are developed by the same developer and function the same; I have them both but got BetterTouchTool earlier).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Fo1JPkC.png&quot; alt=&quot;alt text&quot; title=&quot;Keymo&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;more-apps&quot;&gt;More apps&lt;/h4&gt;
-
-&lt;p&gt;I also have a keyboard/mouse toolkit including Chrome’s extension &lt;strong&gt;Vimium&lt;/strong&gt;; Firefox’s extensions, &lt;strong&gt;Pentadactyl&lt;/strong&gt; and &lt;strong&gt;Vimperator&lt;/strong&gt;; MAS apps, &lt;strong&gt;MenuMate&lt;/strong&gt;, &lt;strong&gt;Yoink&lt;/strong&gt; or &lt;strong&gt;Dropshelf&lt;/strong&gt;, and &lt;strong&gt;RapidClick&lt;/strong&gt;, or maybe &lt;strong&gt;Simplify for Spotify&lt;/strong&gt; (Alfred’s Spotify workflow is not good for me); MAS apps that work with their iOS apps, &lt;strong&gt;Command-C&lt;/strong&gt; and &lt;strong&gt;1Keyboard&lt;/strong&gt;; and direct sale/beta/free apps, &lt;a href=&quot;http://shortcatapp.com/&quot;&gt;&lt;strong&gt;Shortcat&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&quot;http://www.mediaatelier.com/CheatSheet/&quot;&gt;&lt;strong&gt;CheatSheet&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;notes-1&quot;&gt;Notes&lt;/h3&gt;
-
-&lt;p&gt;A mindmap will be clearer, so I made one.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://cl.ly/1T0x0Y2u2H27&quot; class=&quot;btn btn-info&quot;&gt;CloudApp&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can do whatever you like but it’s only for personal use.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: I forgot to mention TextExpander, though it’s an snippet expander, it have fill-in fields which is quite cool! Also PopClip which performs macros on selected text. I set a shortcut to let the PopClip menu appear: use Automator to create a service which activated PopClip, save and then set a shortcut to the service under &lt;code&gt;System Preferences&lt;/code&gt; &amp;gt; &lt;code&gt;Keyboard&lt;/code&gt; &amp;gt; &lt;code&gt;Shortcuts&lt;/code&gt; tab &amp;gt; &lt;code&gt;Services&lt;/code&gt;.&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/mac-shortcut-setup/&quot;&gt;Mac Shortcut Setup&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 08, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Use 1Password Like a Pro]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/use-1password-like-a-pro/" />
-  <id>http://localhost:4000/use-1password-like-a-pro</id>
-  <published>2014-05-04T00:00:00+01:00</published>
-  <updated>2014-05-04T00:00:00+01:00</updated>
-  <author>
-    <name>lsfalimis</name>
-    <uri>http://localhost:4000</uri>
-    <email></email>
-  </author>
-  <content type="html">&lt;p&gt;There are two different outputs you can choose: to auto fill new passwords or send new passwords to iOS.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lsfalimis/Qian-KM-Macros&quot; class=&quot;btn&quot;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;auto-fill-new-passwords&quot;&gt;Auto fill new passwords&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;To use the first macro, you need to open two tabs in Chrome, the first tab would be registration page and another be login page. Place cursor at the input area for username or Email, and then select text in the login page.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The macro copies the selected text and pastes into 1Password as the title of the new login password. Then username will be filled in with predefined &lt;code&gt;USERNAME&lt;/code&gt;. You may have multiple usernames for different purposes; for me, I have one for paid account, another for testing purposes. I can set &lt;code&gt;⌃0&lt;/code&gt; for another identity.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Then, the macro will perform mouse clicking to create a new password. 1Password can be slow, so here I tested many times, the minimum pause for me is one second. (Normally 0.3 second for menu action; for some mouse action, 0.5 is required; one second is needed for webpage loading; anyway, it depends on the network speed and your Mac’s speed.) So here the macro fills in the login page’s URL.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;On the next step, the macro &lt;code&gt;⌘S&lt;/code&gt; the new password, &lt;code&gt;⌘W&lt;/code&gt; the login page, &lt;code&gt;⌘V&lt;/code&gt; &lt;code&gt;USERNAME&lt;/code&gt; (you can append, for example, &lt;code&gt;@gmail.com&lt;/code&gt; for another macro with an additional modiﬁer key; otherwise, using TextExpander, in my case, to expand &lt;code&gt;@g&lt;/code&gt; to &lt;code&gt;@gmail.com&lt;/code&gt; is also handy), and then &lt;code&gt;⇥&lt;/code&gt;, &lt;code&gt;⌘V&lt;/code&gt; the newly created password.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/y7jPhm3.png&quot; alt=&quot;alt text&quot; title=&quot;To auto fill&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;send-new-passwords-to-ios&quot;&gt;Send new passwords to iOS&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;The second macro only requires a selected text for input, I prefer &lt;code&gt;iOS-&lt;/code&gt; prefix for app password’s name, and will not save URL.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;If you want to save URL, it will be quite easy. Paste the app name, and use shortcut to launch PopClip service, then choose Lucky Link from popup. It will replace the app name as its official website’s URL. Sometimes it might not work.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Lastly it will press &lt;code&gt;⇧⌘X&lt;/code&gt; to activate Command-C, and use it to send to the first device. You can tweak it to send to the second device or the third device. For individual cases, you can reduce the time period if your Mac is fast, or increase in the other case.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/UGXPgg4.png&quot; alt=&quot;alt text&quot; title=&quot;Send to iOS&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Enjoy!&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/use-1password-like-a-pro/&quot;&gt;Use 1Password Like a Pro&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 04, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
