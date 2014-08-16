@@ -104,7 +104,9 @@
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <p>This is my LaTeX working directory. Because <code>Draft</code> is so messy, it always take a long time for me to find <code>tex</code> file and <code>pdf</code> file so I spilt a <code>tex</code> file into many. Because I’m a bad student as welll as a bad writer, I choose not to divide the chapters at the beginning. I will divide them when I’m writing the dissertation.</p>
+      <!--more-->
+
+<p>This is my LaTeX working directory. Because <code>Draft</code> is so messy, it always take a long time for me to find <code>tex</code> file and <code>pdf</code> file so I spilt a <code>tex</code> file into many. Because I’m a bad student as welll as a bad writer, I choose not to divide the chapters at the beginning. I will divide them when I’m writing the dissertation.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">├── Chapters
 │   ├── concl.tex
@@ -206,7 +208,7 @@ I write here.
 
 <h2 id="frontmattertex">frontmatter.tex</h2>
 
-<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\pagestyle</span><span class="nb">{</span>empty<span class="nb">}</span>
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="c">%\pagestyle{empty}</span>
 <span class="k">\input</span><span class="nb">{</span>../Inputs/titlepage<span class="nb">}</span>
 
 <span class="k">\newpage</span>
@@ -230,6 +232,8 @@ I write here.
 <span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abbreviations<span class="nb">}</span>
 <span class="k">\printglossary</span><span class="na">[type=\acronymtype, title=Abbreviations]</span></code></pre></div>
 
+<p>Note that in <code>report</code> document class, <code>\pagestyle{empty}</code> will result in only the first page of every chapter to display page number. To solve the problem, use <code>titlepage</code> environment in the title page, that is, use <code>\begin{titlepage}</code> and <code>\end{titlepage}</code>.</p>
+
 <h2 id="mainmattertex">mainmatter.tex</h2>
 
 <div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\newpage</span>
@@ -250,9 +254,8 @@ I write here.
 
       <footer class="entry-meta">
         <span class="entry-tags"><a href="http://localhost:4000/tags/#LaTeX" title="Pages tagged LaTeX" class="tag">LaTeX</a></span>
-        <span>Published <span class="entry-date date published updated"><time datetime="2014-08-15T00:00:00+01:00">15 August 2014</time></span></span>
-        
-        <span class="author vcard"><span class="fn">lsfalimis</span></span>
+        <span><span class="entry-date date published updated"><time datetime="2014-08-15T00:00:00+01:00">15 Aug 2014</time></span></span>
+        (revised: <span class="entry-date date modified"><time datetime="2014-08-16">16 Aug 2014</time></span>)
         <div class="social-share">
           <ul class="socialcount socialcount-small inline-list">
             <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/dissertation-latex-structure/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
