@@ -6,6 +6,7 @@ category: Mac
 tags: [LaTeX]
 comments: true
 share: true
+modified: 2014-08-16
 ---
 
 <!--more-->
@@ -121,7 +122,7 @@ I write here.
 ## frontmatter.tex
 
 {% highlight latex %}
-\pagestyle{empty}
+%\pagestyle{empty}
 \input{../Inputs/titlepage}
 
 \newpage
@@ -145,6 +146,8 @@ I write here.
 \addcontentsline{toc}{chapter}{Abbreviations}
 \printglossary[type=\acronymtype, title=Abbreviations]
 {% endhighlight %}
+
+Note that in `report` document class, `\pagestyle{empty}` will result in only the first page of every chapter to display page number. To solve the problem, use `titlepage` environment in the title page, that is, use `\begin{titlepage}` and `\end{titlepage}`.
 
 ## mainmatter.tex
 
