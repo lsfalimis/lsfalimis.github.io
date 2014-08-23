@@ -105,6 +105,102 @@
 <article class="hentry">
   <header>
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2014-04-29T00:00:00+01:00"><a href="http://localhost:4000/command-c-actions-and-bookmarklets/">29 Apr 2014</a></time></span>
+      
+      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/command-c-actions-and-bookmarklets/#disqus_thread">Comment</a></span>
+      
+      <span class="entry-reading-time pull-right">
+        <i class="fa fa-clock-o"></i>
+        
+        1 min. read
+        
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://localhost:4000/command-c-actions-and-bookmarklets/" rel="bookmark" title="Command C Actions and Bookmarklets" itemprop="url">Command C Actions and Bookmarklets</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    
+      <h3 id="drafts">Drafts</h3>
+
+<p>⌘c</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copyText?text=[[selection]]<span class="err">&amp;</span>deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
+
+<p>⌘c.o</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copyAndOpenURL?url=[[clipboard]]<span class="err">&amp;</span>deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
+
+<h3 id="launch">Launch</h3>
+
+<p>(untitled)</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copy?deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
+
+<p>open</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">command-c://x-callback-url/copyAndOpenURL?url=[clipboard]<span class="err">&amp;</span>deviceIndex=0<span class="err">&amp;</span>x-success=</code></pre></div>
+
+<h3 id="bookmarklets">Bookmarklets</h3>
+
+<p>o.chrome</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="o">:</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=%</span><span class="mi">22</span><span class="nx">googlechrome</span><span class="o">%</span><span class="mi">22</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span></code></pre></div>
+
+<p>o.clipboard</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">javascript</span><span class="o">:</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="o">=</span><span class="s1">&#39;command-c://x-callback-url/copy?x-success=&#39;</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;&amp;deviceIndex=0&#39;</span></code></pre></div>
+
+
+    
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2014-04-29T00:00:00+01:00"><a href="http://localhost:4000/clickable-urls-in-sublime%20text/">29 Apr 2014</a></time></span>
+      &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#Sublime Text" title="Pages tagged Sublime Text">Sublime Text</a>
+      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/clickable-urls-in-sublime%20text/#disqus_thread">Comment</a></span>
+      
+      <span class="entry-reading-time pull-right">
+        <i class="fa fa-clock-o"></i>
+        
+        1 min. read
+        
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://localhost:4000/clickable-urls-in-sublime%20text/" rel="bookmark" title="Clickable URLs in Sublime Text" itemprop="url">Clickable URLs in Sublime Text</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    
+      <ul>
+  <li>
+    <p>Install Package Control: ⌃` and copy &amp; paste the code in <a href="https://sublime.wbond.net/installation">https://sublime.wbond.net/installation</a></p>
+  </li>
+  <li>
+    <p>Install Clickable Urls package: ⌘⇧P, type in ‘install’ and press ↩, wait for some seconds and a menu will show up, input ‘Clickable Urls’ and press ↩</p>
+  </li>
+  <li>
+    <p>Bind ⌃ left click as the way to click and open URLs in ST3. You can change <code>control</code> in the code to any modifier key you like.</p>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;[{ &quot;button&quot;: &quot;button1&quot;, &quot;modifiers&quot;: [&quot;control&quot;], &quot;press_command&quot;: &quot;open_url&quot; }]&#39;</span><span class="se">\</span>
+&gt; ~/Library/Application<span class="se">\ </span>Support/Sublime<span class="se">\ </span>Text<span class="se">\ </span>3/Packages/User/Default<span class="se">\ \(</span>OSX<span class="se">\)</span>.sublime-mousemap</code></pre></div>
+
+    
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2014-04-20T20:00:00+01:00"><a href="http://localhost:4000/mac-apps-i-use-apr-2014/">20 Apr 2014</a></time></span>
       &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#App" title="Pages tagged App">App</a>
       &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/mac-apps-i-use-apr-2014/#disqus_thread">Comment</a></span>

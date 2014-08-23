@@ -48,6 +48,14 @@
 
     
     <url>
+        <loc>http://localhost:4000/updates-of-dt-with-latex/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/install-mysql-python-on-mavericks/</loc>
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/print-acronyms-in-latex/</loc>
     </url>
     

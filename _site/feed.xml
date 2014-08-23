@@ -4,13 +4,147 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-08-16T12:11:11+01:00</updated>
+<updated>2014-08-23T02:25:40+01:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>lsfalimis</name>
   <uri>http://localhost:4000/</uri>
   <email></email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Updates of Dissertation With LaTeX]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/updates-of-dt-with-latex/" />
+  <id>http://localhost:4000/updates-of-dt-with-latex</id>
+  <published>2014-08-23T00:00:00+01:00</published>
+  <updated>2014-08-23T00:00:00+01:00</updated>
+  <author>
+    <name>lsfalimis</name>
+    <uri>http://localhost:4000</uri>
+    <email></email>
+  </author>
+  <content type="html">&lt;p&gt;The deadline is coming closer but I’m so tired struggling with semiotic concepts…&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#use-book-for-twoside&quot;&gt;Use ‘book’ for ‘twoside’&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#normal-abbreviations&quot;&gt;Normal Abbreviations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#divide-references-into-parts&quot;&gt;Divide References into parts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#use-fancyhdr-in-book&quot;&gt;Use ‘fancyhdr’ in ‘book’&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#header-i-like&quot;&gt;Header I like&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#with-normal-blank-pages&quot;&gt;With normal blank pages&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#display-correct-chapter-title&quot;&gt;Display correct chapter title&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;use-book-for-twoside&quot;&gt;Use ‘book’ for ‘twoside’&lt;/h2&gt;
+
+&lt;p&gt;I was convinced to use the &lt;code&gt;report&lt;/code&gt; &lt;code&gt;documentclass&lt;/code&gt;, but I just knew that my dissertation shall be bound, so I have to use &lt;code&gt;book&lt;/code&gt; &lt;code&gt;documentclass&lt;/code&gt;. But during writing, I still reply on using &lt;code&gt;report&lt;/code&gt; for preview. Note that &lt;code&gt;openright&lt;/code&gt; will allow every chapter to start on right-sided page. It’s default for &lt;code&gt;book&lt;/code&gt;, not default for &lt;code&gt;report&lt;/code&gt; and here it’s just a reminder.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[a4paper,12pt,openright]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;book&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;normal-abbreviations&quot;&gt;Normal Abbreviations&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[acronym,nonumberlist,nopostdot]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;glossaries&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Page numbers and the period should be omitted by default…&lt;/p&gt;
+
+&lt;h2 id=&quot;divide-references-into-parts&quot;&gt;Divide References into parts&lt;/h2&gt;
+
+&lt;p&gt;I was required to separate ‘non-academic sources’ (magazine, blog articles, etc.) from ‘academic sources’. Besides, I want the title &lt;code&gt;Bibliography&lt;/code&gt; changed to &lt;code&gt;References&lt;/code&gt;. For me, bibliography is what I think may be useful for readers for further reading so put here, and references are what I have in-text citations (if I use Harvard style; or strict ‘footnotes’ if I use Oxford style) in my main texts. Thus, readers may expect &lt;code&gt;References&lt;/code&gt; with in-text citations (or strict ‘footnotes’) with page number quoted. As for &lt;code&gt;Bibliography&lt;/code&gt;, readers do not even expect the corresponding in-text citation (or strict ‘footnote’) exist! The final point is that Oxford style always get you MUCH closer to the word count. Although I’m not a good student who love to read more and write more, I don’t like Oxford style.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\defbibheading&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;aca&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;\chapter&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;References&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;\subsection*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Academic Source&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\defbibheading&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;nonaca&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\subsection*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Non-academic Source&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\defbibheading&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;data&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\subsection*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;Data Source&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then before &lt;code&gt;\end{document}&lt;/code&gt;, add this,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;c&quot;&gt;%\nocite{*}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\printbibliography&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[heading=aca,notkeyword=not,notkeyword=nonaca,notkeyword=data]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\printbibliography&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[heading=nonaca,notkeyword=not,keyword=nonaca,notkeyword=data]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\printbibliography&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[heading=data,notkeyword=not,keyword=data]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To explain, I have a lot reading materials in BibDesk and some of them are not that meaningful for my dissertation. So I simply mark them with keyword &lt;code&gt;not&lt;/code&gt; and in LaTeX file, add &lt;code&gt;notkeyword=not&lt;/code&gt; option in the above code. You may use &lt;code&gt;type=book&lt;/code&gt;, &lt;code&gt;nottype=article&lt;/code&gt;, etc., but this is not appropriate for me to do so in my dissertation (I have asked).&lt;/p&gt;
+
+&lt;p&gt;Note: &lt;code&gt;\nocite{*}&lt;/code&gt; include all items from &lt;code&gt;.bib&lt;/code&gt; file in the list produced by &lt;code&gt;\printbibliography&lt;/code&gt;, which helps you to do a test. Besides, I will explain in the next part that use &lt;code&gt;\chapter&lt;/code&gt; in stead of &lt;code&gt;\chapter*&lt;/code&gt; is to let &lt;code&gt;fancyhdr&lt;/code&gt; to correctly display chapter title in the header. Because &lt;code&gt;fancyhdr&lt;/code&gt; dependes on &lt;code&gt;secnumdepth&lt;/code&gt; to decide chapter title (&lt;a href=&quot;http://tex.stackexchange.com/questions/160758/fancyhdr-messes-up-with-backmatter&quot;&gt;ref&lt;/a&gt;) and &lt;code&gt;\chapter*&lt;/code&gt; seemingly does not produce &lt;code&gt;secnumdepth&lt;/code&gt;, then I use &lt;code&gt;\chapter&lt;/code&gt; that surely produce &lt;code&gt;secnumdepth&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;use-fancyhdr-in-book&quot;&gt;Use ‘fancyhdr’ in ‘book’&lt;/h2&gt;
+
+&lt;h3 id=&quot;header-i-like&quot;&gt;Header I like&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\fancyhf&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\headrulewidth&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;0pt&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\fancyhead&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[LE,RO]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\thepage&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\fancyhead&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[RE,LO]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\nouppercase&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\leftmark&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;First, &lt;code&gt;\fancyhf{}&lt;/code&gt; removes all headers. Then, the second line removes the rule. Next, L is top-left, R is top-right, O is the page with odd page number, E is the page with even page number, &lt;code&gt;\thepage&lt;/code&gt; is the page number to display, &lt;code&gt;\nouppercase&lt;/code&gt; will produce capitalised ‘“chapter” + chapter number + chapter title’ or section if section is available and &lt;code&gt;\leftmark&lt;/code&gt; is to let chapter is always shown.&lt;/p&gt;
+
+&lt;h3 id=&quot;with-normal-blank-pages&quot;&gt;With normal blank pages&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;openright&lt;/code&gt; may produce a left-sided blank page to make right-sided the first page of a chapter. This blank page shouldn’t have a header. Add this (from &lt;code&gt;fancyhdr&lt;/code&gt; doc) to the preamble,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\makeatletter&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\def\cleardoublepage&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\clearpage\if&lt;/span&gt;@twoside &lt;span class=&quot;k&quot;&gt;\ifodd\c&lt;/span&gt;@page&lt;span class=&quot;k&quot;&gt;\else&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;\hbox&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;\thispagestyle&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;empty&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newpage&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;\if&lt;/span&gt;@twocolumn&lt;span class=&quot;k&quot;&gt;\hbox&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\newpage\fi\fi\fi&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\makeatother&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;will automatically remove the header.&lt;/p&gt;
+
+&lt;h3 id=&quot;display-correct-chapter-title&quot;&gt;Display correct chapter title&lt;/h3&gt;
+
+&lt;p&gt;Before I did the following steps, the headers of the references pages were &lt;code&gt;Abbreviations&lt;/code&gt;, which was quite annoying. I have mentioned a little in ‘Divide References into parts’, and I don’t want display chapter number in the table of contents, what should I do? Use &lt;code&gt;book&lt;/code&gt; &lt;code&gt;documentclass&lt;/code&gt;, add &lt;code&gt;\backmatter&lt;/code&gt; before the command blocks of &lt;code&gt;\printglossary&lt;/code&gt; and &lt;code&gt;\printbibliography&lt;/code&gt;, and add the following in the preamble,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span class=&quot;k&quot;&gt;\makeatletter&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\renewcommand\chaptermark&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[1]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\markboth&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\MakeUppercase&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;\ifnum\c&lt;/span&gt;@secnumdepth&amp;gt;&lt;span class=&quot;k&quot;&gt;\m&lt;/span&gt;@ne&lt;span class=&quot;k&quot;&gt;\if&lt;/span&gt;@mainmatter
+         &lt;span class=&quot;k&quot;&gt;\@&lt;/span&gt;chapapp&lt;span class=&quot;k&quot;&gt;\ \thechapter&lt;/span&gt;. &lt;span class=&quot;k&quot;&gt;\ \fi\fi&lt;/span&gt; #1&lt;span class=&quot;nb&quot;&gt;}}{}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\makeatother&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/updates-of-dt-with-latex/&quot;&gt;Updates of Dissertation With LaTeX&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on August 23, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Install mysql-python on Mavericks]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/install-mysql-python-on-mavericks/" />
+  <id>http://localhost:4000/install-mysql-python-on-mavericks</id>
+  <published>2014-08-22T00:00:00+01:00</published>
+  <updated>2014-08-22T00:00:00+01:00</updated>
+  <author>
+    <name>lsfalimis</name>
+    <uri>http://localhost:4000</uri>
+    <email></email>
+  </author>
+  <content type="html">
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo pip install mysql-python
+&lt;span class=&quot;c&quot;&gt;# EnvironmentError: mysql_config not found&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I need to add &lt;code&gt;/usr/local/mysql/bin&lt;/code&gt; to &lt;code&gt;$PATH&lt;/code&gt;, so in terminal I &lt;code&gt;zshconfig&lt;/code&gt;, find &lt;code&gt;export PATH=&quot;&lt;/code&gt; and add &lt;code&gt;/usr/local/mysql/bin&lt;/code&gt;. Now it becomes this,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:/usr/texbin:/usr/local/mysql/bin&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and &lt;code&gt;sudo pip install mysql-python&lt;/code&gt; works.&lt;/p&gt;
+
+&lt;p&gt;Then, when I try to use &lt;code&gt;MySQLdb&lt;/code&gt; to connect MySQL, in terminal I get &lt;code&gt;Library not loaded: libmysqlclient.18.dylib&lt;/code&gt;. To solve this, run the following in terminal,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/install-mysql-python-on-mavericks/&quot;&gt;Install mysql-python on Mavericks&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on August 22, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -4105,81 +4239,6 @@ tail: &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;: No such file or directory&
 &lt;p&gt;Given I’m ignorant of any programming knowledge, the defects of the solution is the vocabulary note’s title has to be unique, which means there allows only one note with this title in your Evernote account.&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/evernote-as-a-wordbook/&quot;&gt;Evernote as a Wordbook&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 13, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Mac Remote Control]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/mac-remote-control/" />
-  <id>http://localhost:4000/mac-remote-control</id>
-  <published>2014-05-12T00:00:00+01:00</published>
-  <updated>2014-05-12T00:00:00+01:00</updated>
-  <author>
-    <name>lsfalimis</name>
-    <uri>http://localhost:4000</uri>
-    <email></email>
-  </author>
-  <content type="html">&lt;figure&gt;
-	&lt;img src=&quot;http://i.imgur.com/x97Dauj.png&quot; alt=&quot;&quot; /&gt;
-	&lt;figcaption&gt;BetterTouchTool&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;I have been wishing to get an Apple Remote because I like the design of every Apple gadgets. However, there is no IR Sensor in retina Macbook Pro and so the function Apple Remote will bring.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.boastr.net/&quot;&gt;BetterTouchTool&lt;/a&gt; has an iOS companion and I haven’t checked the app till today. To add a remote control for an app is quite easy.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Though its iOS app &lt;a href=&quot;https://itunes.apple.com/us/app/btt-remote/id561676304?mt=8&quot;&gt;BTT Remote&lt;/a&gt; is an paid app, I will say it grants much possibilities to remote Mac workflows.&lt;/p&gt;
-
-&lt;p&gt;I have been using Air Video HD (Mac &amp;amp; iOS) for a while, when I need some entertainment during dinner. A few days ago, yet Air Video HD couldn’t connect to the Air Video HD server on my Mac. So BTT Remote will be a backup if Air Video HD gets into trouble.&lt;/p&gt;
-
-&lt;p&gt;On iOS, tap an app will launch the app on Mac (quite convenient!)&lt;/p&gt;
-
-&lt;figure class=&quot;third&quot;&gt;
-	&lt;img src=&quot;http://cl.ly/image/3v2Q0C3E0H2g/ClouDrop%2012%20May%202014%2020%3A23%3A28.png&quot; alt=&quot;&quot; /&gt;
-	&lt;img src=&quot;http://cl.ly/image/1F0I1T1V3P0w/ClouDrop%2012%20May%202014%2020%3A23%3A58.png&quot; alt=&quot;&quot; /&gt;
-	&lt;img src=&quot;http://cl.ly/image/0c2I2a213O06/ClouDrop%2012%20May%202014%2020%3A24%3A14.png&quot; alt=&quot;&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Then, I will access the commands I set up on Mac. It also have a mini Trackpad which automatically enlarges the mouse on my 24” external monitor. From the app list screen, I can go to my sidebar, which acts like a playlist.&lt;/p&gt;
-
-&lt;p&gt;Swipe left and I can control the light (I need to dim the screen when watching TV plays) and volumes. And swipe right and I can perform double click which can’t been done within individual app control.&lt;/p&gt;
-
-&lt;figure class=&quot;third&quot;&gt;
-	&lt;img src=&quot;http://cl.ly/image/2A3F2r1h2538/ClouDrop%2012%20May%202014%2020%3A49%3A40.png&quot; alt=&quot;&quot; /&gt;
-	&lt;img src=&quot;http://cl.ly/image/0d2l3n0G0920/ClouDrop%2012%20May%202014%2020%3A49%3A57.png&quot; alt=&quot;&quot; /&gt;
-&lt;/figure&gt;
-
-
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/mac-remote-control/&quot;&gt;Mac Remote Control&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 12, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Keyboard Maestro Tips]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/keyboard-maestro-tips/" />
-  <id>http://localhost:4000/keyboard-maestro-tips</id>
-  <published>2014-05-12T00:00:00+01:00</published>
-  <updated>2014-05-12T00:00:00+01:00</updated>
-  <author>
-    <name>lsfalimis</name>
-    <uri>http://localhost:4000</uri>
-    <email></email>
-  </author>
-  <content type="html">&lt;p&gt;Two features of KM are quite handy: app trigger and GUI Element trigger.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Hider 2 can automatically hide all your chosen files when it quits. However, it does offer a option to automatically unhide all when it launches. Here is a workaround.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/ZW4mbfo.png&quot; alt=&quot;alt text&quot; title=&quot;Insert&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Another example is about pause until login. If I add Thunder tasks before login, the tasks will not have exclusively high download speed. This KM macro does a trick.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Iuaak6k.png&quot; alt=&quot;alt text&quot; title=&quot;Insert&quot; /&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/keyboard-maestro-tips/&quot;&gt;Keyboard Maestro Tips&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 12, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
