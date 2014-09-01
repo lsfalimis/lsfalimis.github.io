@@ -68,7 +68,10 @@
 <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
 	<button class="dl-trigger">Open Menu</button>
 	<ul class="dl-menu">
+		<li><a href="http://localhost:4000/tags/">Tags</a></li>
 		<li><a href="http://localhost:4000">Home</a></li>
+		<li><a href="http://localhost:4000/archives/">Archives</a></li>
+		<li><a href="http://localhost:4000/categories/">Categories</a></li>
 		<li>
 			<a href="#">About</a>
 			<ul class="dl-submenu">
@@ -77,10 +80,7 @@
 				<li><a href="http://www.weibo.com/3215266455/profile"><i class="fa fa-weibo"></i> Weibo </a></li>
 				<li><a href="http://www.douban.com/people/74771258"><i class="fa fa-book"></i> Douban </a></li>
 			</ul><!-- /.dl-submenu -->
-		</li>		
-		<li><a href="http://localhost:4000/archives/">Archives</a></li>
-		<li><a href="http://localhost:4000/categories/">Categories</a></li>
-		<li><a href="http://localhost:4000/tags/">Tags</a></li>
+		</li>
 		<li><a href="https://gist.github.com/lsfalimis"> Gist </a></li>
 	</ul><!-- /.dl-menu -->
 </nav><!-- /.dl-menuwrapper -->
@@ -102,6 +102,40 @@
 
 <div id="main" role="main">
   
+<article class="hentry">
+  <header>
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2014-09-01T00:00:00+01:00"><a href="http://localhost:4000/latex-q-a/">01 Sep 2014</a></time></span>
+      &nbsp; &bull; &nbsp; <a href="http://localhost:4000/tags/#LaTeX" title="Pages tagged LaTeX">LaTeX</a>
+      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/latex-q-a/#disqus_thread">Comment</a></span>
+      
+      <span class="entry-reading-time pull-right">
+        <i class="fa fa-clock-o"></i>
+        
+        1 min. read
+        
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://localhost:4000/latex-q-a/" rel="bookmark" title="LaTeX Q&A" itemprop="url">LaTeX Q&A</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    
+      <h2 id="os-apps-purposes">OS, Apps, Purposes</h2>
+
+<h3 id="mac">Mac</h3>
+
+<ul>
+  <li>Get TeX: Install <a href="https://tug.org/mactex/">MacTeX</a></li>
+  <li>Editor: <a href="http://www.sublimetext.com/">Sublime Text</a> and (optional) plugin LaTeXTools (<a href="http://lsfalimis.github.io/clean-install-mac-log-jul-2014/#other-essential-apps">Install Guide</a>, see 11th))</li>
+</ul>
+
+    
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
 <article class="hentry">
   <header>
     <div class="entry-meta">
@@ -502,61 +536,6 @@ ln -s <span class="s2">&quot;/Applications/Sublime Text.app/Contents/SharedSuppo
 vim ~/.zshrc</code></pre></div>
 
 <p>耐心拉到底，到<code>export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"</code>这行，在最后括号前加<code>:$HOME/bin</code>，然后<code>:wq</code>。</p>
-
-    
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2014-08-02T00:00:00+01:00"><a href="http://localhost:4000/install-mysql-on-mac/">02 Aug 2014</a></time></span>
-      
-      &nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/install-mysql-on-mac/#disqus_thread">Comment</a></span>
-      
-      <span class="entry-reading-time pull-right">
-        <i class="fa fa-clock-o"></i>
-        
-        1 min. read
-        
-      </span><!-- /.entry-reading-time -->
-      
-    </div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://localhost:4000/install-mysql-on-mac/" rel="bookmark" title="Install MySQL on Mac" itemprop="url">Install MySQL on Mac</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    
-      <ul>
-  <li>
-    <p>Download from MySQL official <a href="http://dev.mysql.com/downloads/mysql/">website</a>. Some bugs has been reported by people that use Homebrew to install MySQL.</p>
-  </li>
-  <li>
-    <p>Open and install it. There is only one file to install now, not three!</p>
-  </li>
-  <li>
-    <p>Edit <code>~/.zshrc</code> and add the following lines:</p>
-  </li>
-</ul>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">mysql</span><span class="o">=</span><span class="s2">&quot;/usr/local/mysql/bin/mysql&quot;</span>
-<span class="nb">alias </span><span class="nv">mysqladmin</span><span class="o">=</span><span class="s2">&quot;/usr/local/mysql/bin/mysqladmin&quot;</span></code></pre></div>
-
-<ul>
-  <li>
-    <p>Run <code>mysqladmin -u root password "yourpassword"</code> in iTerm2.</p>
-  </li>
-  <li>
-    <p>Go to MySQL in System Preference and turn it on.</p>
-  </li>
-  <li>
-    <p>Download, install and open <a href="http://www.sequelpro.com/">Sequel Pro</a>. In Host, fill in <code>127.0.0.1</code>, username <code>root</code> and then password, tap Connect. By the way, the default port is 3306.</p>
-  </li>
-  <li>
-    <p>File &gt; Import your .sql file.</p>
-  </li>
-</ul>
 
     
   </div><!-- /.entry-content -->

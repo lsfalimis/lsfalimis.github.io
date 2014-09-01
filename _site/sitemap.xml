@@ -48,6 +48,10 @@
 
     
     <url>
+        <loc>http://localhost:4000/latex-q-a/</loc>
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/updates-of-dt-with-latex/</loc>
     </url>
     

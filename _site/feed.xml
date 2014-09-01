@@ -4,13 +4,37 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-08-23T02:25:40+01:00</updated>
+<updated>2014-09-01T18:45:06+01:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>lsfalimis</name>
   <uri>http://localhost:4000/</uri>
   <email></email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[LaTeX Q&A]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/latex-q-a/" />
+  <id>http://localhost:4000/latex-q-a</id>
+  <published>2014-09-01T00:00:00+01:00</published>
+  <updated>2014-09-01T00:00:00+01:00</updated>
+  <author>
+    <name>lsfalimis</name>
+    <uri>http://localhost:4000</uri>
+    <email></email>
+  </author>
+  <content type="html">&lt;h2 id=&quot;os-apps-purposes&quot;&gt;OS, Apps, Purposes&lt;/h2&gt;
+
+&lt;h3 id=&quot;mac&quot;&gt;Mac&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get TeX: Install &lt;a href=&quot;https://tug.org/mactex/&quot;&gt;MacTeX&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Editor: &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text&lt;/a&gt; and (optional) plugin LaTeXTools (&lt;a href=&quot;http://lsfalimis.github.io/clean-install-mac-log-jul-2014/#other-essential-apps&quot;&gt;Install Guide&lt;/a&gt;, see 11th))&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/latex-q-a/&quot;&gt;LaTeX Q&A&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on September 01, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -4183,62 +4207,6 @@ tail: &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;: No such file or directory&
 &lt;p&gt;&lt;strong&gt;Save time, save energy, save attention.&lt;/strong&gt;&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/pdf-note-taking-workflow/&quot;&gt;PDF Note Taking Workflow&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 13, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Evernote as a Wordbook]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/evernote-as-a-wordbook/" />
-  <id>http://localhost:4000/evernote-as-a-wordbook</id>
-  <published>2014-05-13T00:00:00+01:00</published>
-  <updated>2014-05-13T00:00:00+01:00</updated>
-  <author>
-    <name>lsfalimis</name>
-    <uri>http://localhost:4000</uri>
-    <email></email>
-  </author>
-  <content type="html">&lt;h2 class=&quot;no_toc&quot; id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#function&quot;&gt;Function&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#prerequisites&quot;&gt;Prerequisites&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#how-to-download&quot;&gt;How to download&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#how-to-set-the-title-of-the-vocabulary-note&quot;&gt;How to set the title of the vocabulary note&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#note&quot;&gt;Note&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;function&quot;&gt;Function&lt;/h3&gt;
-
-&lt;p&gt;Add a new word along with the sentence, a timestamp and the window title to your Evernote vocabulary note.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;I map &lt;code&gt;⇧_R&lt;/code&gt; to &lt;code&gt;^⌥⇧&lt;/code&gt; (see my blog for more info). Type &lt;code&gt;^⌥⇧1&lt;/code&gt; to set the clipboard to the word and the meaning (from Google Translate). You will need to decide what to append to that word for this Evernote note, select that, and press &lt;code&gt;^⌥⇧2&lt;/code&gt;. Done!&lt;/p&gt;
-
-&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;You need to install Keyboard Maestro (KM) on your Mac and they are two KM macros.&lt;/li&gt;
-  &lt;li&gt;You need to install PopClip and the extension called &lt;a href=&quot;https://pilotmoon.com/popclip/extensions/page/InstantTranslate&quot;&gt;Instant Translate&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;You need to install the macro called &lt;code&gt;Popclip Translate&lt;/code&gt; which has already included in the bundle.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;how-to-download&quot;&gt;How to download&lt;/h3&gt;
-
-&lt;p&gt;Go to my KM repo and tap &lt;code&gt;Download ZIP&lt;/code&gt;. After download, unzip it and double tap Wordbook.kmmacros to import.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lsfalimis/Qian-KM-Macros&quot; class=&quot;btn&quot;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You are welcome to change the format to whatever you like, it’s your custom wordbook!&lt;/p&gt;
-
-&lt;h3 id=&quot;how-to-set-the-title-of-the-vocabulary-note&quot;&gt;How to set the title of the vocabulary note&lt;/h3&gt;
-
-&lt;p&gt;Open Keyboard Maestro and choose &lt;code&gt;__AS_[select sentence before keystroke!] append vocab to a EN note&lt;/code&gt;, slide to the bottom, and within the edit are of the AppleScript, find and replace TARGETNOTE to your desired note title.&lt;/p&gt;
-
-&lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
-&lt;p&gt;Given I’m ignorant of any programming knowledge, the defects of the solution is the vocabulary note’s title has to be unique, which means there allows only one note with this title in your Evernote account.&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/evernote-as-a-wordbook/&quot;&gt;Evernote as a Wordbook&lt;/a&gt; was originally published by lsfalimis at &lt;a href=&quot;http://localhost:4000&quot;&gt;lsfalimis&lt;/a&gt; on May 13, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
